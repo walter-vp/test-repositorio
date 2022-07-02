@@ -77,6 +77,6 @@ Crear el archivo 1_Estructura_basica.html
 Ingresar entres las etiquetas  <footer> </footer>
     Digitar: 
     - h2{Gerencia de Desarrollo Institucional}
-    - p{&copy;Derechos Reservados. Ultima actualización: 23/09/2021}
+    - p{&copy;Derechos Reservados. Ultima actualización: 2/07/2021}
 
 
