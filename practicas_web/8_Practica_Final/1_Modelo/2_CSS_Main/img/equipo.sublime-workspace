@@ -1,0 +1,228 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-decoration\tproperty"
+			],
+			[
+				"padding",
+				"padding-right\tproperty"
+			],
+			[
+				"list",
+				"list-style-type\tproperty"
+			],
+			[
+				"space",
+				"space-between\tjustify-content"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"min",
+				"min-height\tproperty"
+			],
+			[
+				"flex",
+				"flex-wrap\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/emprinnos/Documents/cursoHTMLIntensivo/index.html",
+		"/home/emprinnos/Documents/cursoHTMLIntensivo/css/estilos.css",
+		"/media/emprinnos/New Volume/Tutoriales/flexboxPropiedades/estilos.css",
+		"/home/emprinnos/Documents/proyectoFinal/css/estilos.css",
+		"/media/emprinnos/New Volume/Tutoriales/acme_website/acme/css/style.css",
+		"/home/emprinnos/Documents/tutorialVideos/index.html",
+		"/home/emprinnos/Documents/tutorialVideos/estilos.css",
+		"/home/emprinnos/Videos/estilos.css",
+		"/home/emprinnos/WebstormProjects/proyecto/css/main.css",
+		"/home/emprinnos/WebstormProjects/proyecto/index.html",
+		"/home/emprinnos/Documents/proyectoFinal/index.html",
+		"/home/emprinnos/Documents/html/index.html",
+		"/home/emprinnos/Documents/html/nosotros.html",
+		"/home/emprinnos/Documents/html/contacto.html",
+		"/media/emprinnos/New Volume/Documents/ProyectoHecho/index.html",
+		"/home/emprinnos/Desktop/proyecto/css/estilos.css",
+		"/media/emprinnos/New Volume/Documents/proyecto/css/estilos.css",
+		"/home/emprinnos/Desktop/proyecto/index.html",
+		"/home/emprinnos/Desktop/proyecto/nosotros.html",
+		"/home/emprinnos/Desktop/proyecto/contacto.html"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 43.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "equipo.sublime-project",
+	"replace":
+	{
+		"height": 82.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 348.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

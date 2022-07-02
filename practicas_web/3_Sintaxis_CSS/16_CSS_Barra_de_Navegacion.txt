@@ -1,0 +1,912 @@
+Barras de navegación
+Tener una navegación fácil de usar es importante para cualquier sitio web.
+
+Con CSS puedes transformar aburridos menús HTML en atractivas barras de navegación.
+
+I.      Barra de navegación = Lista de enlaces
+        Una barra de navegación necesita HTML estándar como base.
+
+        En nuestros ejemplos, crearemos la barra de navegación a partir de una lista HTML estándar.
+        Una barra de navegación es básicamente una lista de enlaces, por lo que usar los elementos <ul> y <li> tiene mucho sentido.
+
+    1.  Ejercicio 01: 16_CSS_Barra_de_Navegacion_Ej-01.html
+        HTML:
+        <ul>
+            <li> <a href="#home"> Inicio </a> </li>
+            <li> <a href="#news"> Noticias </a> </li>
+            <li> <a href="#contact"> Contacto </a> </li>
+            <li> <a href="#about"> Acerca de </a> </li>
+        </ul>
+        <p> Nota: utilizamos href = "#" para los enlaces de prueba. En un sitio web real, estas serían las URL. </p>
+
+
+    2.  Ejercicio 02: 16_CSS_Barra_de_Navegacion_Ej-02.html
+        Ahora eliminemos las viñetas y los márgenes y el relleno de la lista.
+        
+        HTML:
+        <p>In this example, we remove the bullets from the list, and its default padding and margin.</p>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        CSS:
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+II.     Barra de navegación vertical CSS    
+        Esta es una derivación de la Barra de Navegación Estandar.
+
+    3.  Ejercicio 03: 16_CSS_Barra_de_Navegacion_Ej-03.html
+        Para crear una barra de navegación vertical, puede diseñar los elementos <a> dentro de la lista, además del código de la página anterior:
+ 
+        HTML:
+        <ul>
+            <li> <a href="#home"> Inicio </a> </li>
+            <li> <a href="#news"> Noticias </a> </li>
+            <li> <a href="#contact"> Contacto </a> </li>
+            <li> <a href="#about"> Acerca de </a> </li>
+        </ul>
+
+        <p> Se agrega un color de fondo a los enlaces para mostrar el área del enlace. </p>
+        <p> Tenga en cuenta que se puede hacer clic en toda el área del enlace, no solo en el texto. </p>
+
+        CSS:
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li a {
+            display: block;
+            width: 200px;
+            background-color: #dddddd;
+            padding: 5px;
+        }
+
+
+        - display: block; - Mostrar los enlaces como elementos de bloque hace que se pueda hacer clic en toda el área del enlace (no solo en el texto), y nos permite especificar el ancho (y el relleno, margen, alto, etc. si lo desea)
+        - width: 100px;- Los elementos de bloque ocupan todo el ancho disponible por defecto. Queremos especificar un ancho de 100 píxeles.
+
+        También puede establecer el ancho de <ul> y eliminar el ancho de <a>, ya que ocuparán el ancho completo disponible cuando se muestren como elementos de bloque. Esto producirá el mismo resultado que nuestro ejemplo anterior.
+
+
+    Ejemplos de barras de navegación vertical:
+        
+
+    4.  Ejercicio 04: 16_CSS_Barra_de_Navegacion_Ej-04.html
+        Crearemos una barra de navegación vertical básica con un color de fondo gris y cambie el color de fondo de los enlaces cuando el usuario mueva el mouse sobre ellos.
+        
+        HTML:
+        <h2> Barra de navegación vertical </h2>
+
+        <ul>
+            <li> <a href="#home"> Inicio </a> </li>
+            <li> <a href="#news"> Noticias </a> </li>
+            <li> <a href="#contact"> Contacto </a> </li>
+            <li> <a href="#about"> Acerca de </a> </li>
+        </ul>
+
+        CSS:
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Cambiar el color del enlace al pasar el mouse */
+        li a:hover {
+            background-color: #555;
+            color: white;
+        }
+        
+    5.  Ejercicio 05: 16_CSS_Barra_de_Navegacion_Ej-05.html
+        Enlace de navegación activo / actual.
+        Agrega una clase "activa" al enlace actual para que el usuario sepa en qué página se encuentra.
+        
+        HTML:
+        <h2> Barra de navegación vertical </h2>
+        <p> En este ejemplo, creamos una clase "activa" con un color de fondo verde y un texto blanco. La clase se agrega al enlace "Inicio". </p>
+
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        CSS:
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+    
+    6.  Ejercicio 05: 16_CSS_Barra_de_Navegacion_Ej-06.html
+        Vínculos centrales y agregar bordes
+        Agregue text-align:centera <li> o <a> para centrar los enlaces.
+
+        Agregue la borderpropiedad a <ul> agregue un borde alrededor de la barra de navegación. Si también desea bordes dentro de la barra de navegación, agregue a border-bottoma todos los elementos <li>, excepto al último.
+
+        HTML:
+        <h2> Barra de navegación vertical </h2>
+        <p> En este ejemplo, centramos los enlaces de navegación y agregamos un borde a la barra de navegación. </p>
+
+        <ul>
+            <li> <a class="active" href="#home"> Página principal </a> </li>
+            <li> <a href="#news"> Noticias </a> </li>
+            <li> <a href="#contact"> Contacto </a> </li>
+            <li> <a href="#about"> Acerca de </a> </li>
+        </ul>
+        
+        CSS:
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            border: 1px solid #555;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li {
+            text-align: center;
+            border-bottom: 1px solid #555;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        } 
+
+    7.  Ejercicio 05: 16_CSS_Barra_de_Navegacion_Ej-07.html
+        Barra de navegación vertical fija de altura completa
+        Cree una navegación lateral "adhesiva" de altura completa.
+        
+        HTML:
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <div style="margin-left:25%; padding:1px 16px; height:1000px;">
+            <h2> Navegación lateral de altura completa fija </h2>
+            <h3> Intente desplazarse por esta área y observe cómo la navegación lateral se pega a la página </h3>
+            <p> Observe que este elemento div tiene un margen izquierdo del 25%. Esto se debe a que la navegación lateral está configurada en un 25% de ancho. Si elimina el margen, la navegación lateral se superpondrá / se sentará encima de este div. </p>
+            <p> Observe también que hemos configurado overflow: auto en la navegación lateral. Esto agregará una barra de desplazamiento cuando la navegación lateral sea demasiado larga (por ejemplo, si tiene más de 50 enlaces dentro). </p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+            <p>Some text..</p>
+        </div>
+
+        CSS:
+        body {
+            margin: 0;
+        }
+
+        .navegacion {
+            position: fixed;
+            margin: 0;
+            padding: 0;
+            width: 15%;
+            background-color: #f1f1f1;
+            height: 100%;
+            overflow: auto;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        .contenido {
+            margin-left: 15%;
+            /* Este margen es del mismo valor que el "width" del
+               la contenedor (etiqueta) div clase "navegacion" */
+            padding: 1px 16px;
+            height: 1000px;
+        }
+        
+
+III.    Barra de navegación horizontal
+        Hay dos formas de crear una barra de navegación horizontal. Usar elementos de lista flotante o en línea .
+
+A.      Elementos de lista en línea
+        Una forma de crear una barra de navegación horizontal es especificar los elementos <li> como en línea, además del código "estándar" de la página anterior.
+
+        
+    8.  Ejercicio 08: 16_CSS_Barra_de_Navegacion_Ej-08.html
+        
+        HTML:
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        CSS:
+        ul {
+        list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+        }
+
+        a {
+            background-color: burlywood;
+            text-decoration: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        display: inline;- De forma predeterminada, los elementos <li> son elementos de bloque. Aquí, eliminamos los saltos de línea antes y después de cada elemento de la lista, para mostrarlos en una línea.
+
+B.      Elementos de lista flotante
+        Otra forma de crear una barra de navegación horizontal es hacer flotar los elementos <li> y especificar un diseño para los enlaces de navegación.
+
+    9.  Ejercicio 09: 16_CSS_Barra_de_Navegacion_Ej-09.html
+        
+        HTML:
+        <ul>
+            <li> <a href="#home"> Inicio </a> </li>
+            <li> <a href="#news"> Noticias </a> </li>
+            <li> <a href="#contact"> Contacto </a> </li>
+            <li> <a href="#about"> Acerca de </a> </li>
+        </ul>
+
+        <p> <b> Nota: </b> Si no se especifica un DOCTYPE!, los elementos flotantes pueden producir resultados inesperados. </p>
+        <p> Se agrega un color de fondo a los enlaces para mostrar el área del enlace. Se puede hacer clic en toda el área del enlace, no solo en el texto. </p>
+        <p> <b> Nota: </b> overflow: hidden se agrega al elemento ul para evitar que los elementos li salgan de la lista. </p>
+
+        CSS:
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            padding: 8px;
+            background-color: #dddddd;
+        }
+
+        Ejercicio explicado:
+        - float: left; - Use flotar para hacer que los elementos del bloque floten uno al lado del otro
+        - display: block; - Nos permite especificar el relleno (y alto, ancho, márgenes, etc. si lo desea)
+        - padding: 8px; - Especifique algo de relleno entre cada elemento <a>, para que se vean bien
+        - background-color: #dddddd; - Agregue un color de fondo gris a cada elemento <a>
+        
+        Consejo: agregue el color de fondo a <ul> en lugar de cada elemento <a> si desea un color de fondo de ancho completo:
+
+    10.     Ejercicio 10: 16_CSS_Barra_de_Navegacion_Ej-10.html
+            
+            HTML:
+            <ul>
+                <li> <a href="#home"> Inicio </a> </li>
+                <li> <a href="#news"> Noticias </a> </li>
+                <li> <a href="#contact"> Contacto </a> </li>
+                <li> <a href="#about"> Acerca de </a> </li>
+            </ul>
+
+            <p> Se agrega un color de fondo a la lista en lugar de cada vínculo para crear un color de fondo de ancho completo. </p>
+            <p> <b> Nota: </b> overflow: hidden se agrega al elemento ul para evitar que los elementos li salgan de la lista. </p>
+
+            CSS:
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #dddddd;
+            }
+
+            li {
+                float: left;
+                /* Aqui se declara un elemento o contenedor flotante*/
+            }
+
+            li a {
+                display: block;
+                padding: 8px;
+            }
+            
+            Ejemplos de barra de navegación horizontal
+
+    11.     Ejercicio 11: 16_CSS_Barra_de_Navegacion_Ej-11.html
+            Cree una barra de navegación horizontal básica con un color de fondo oscuro y cambie el color de fondo de los enlaces cuando el usuario mueva el mouse sobre ellos.
+
+            HTML:
+            <ul>
+                <li> <a class="active" href="#home"> Página principal </a> </li>
+                <li> <a href="#news"> Noticias </a> </li>
+                <li> <a href="#contact"> Contacto </a> </li>
+                <li> <a href="#about"> Acerca de </a> </li>
+            </ul>
+
+            CSS:
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+    12.     Ejercicio 12: 16_CSS_Barra_de_Navegacion_Ej-12.html
+            Enlace de navegación activo / actual.
+            Agrega una clase "activa" al enlace actual para que el usuario sepa en qué página se encuentra.
+
+            HTML:
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            CSS:
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+    13.     Ejercicio 13: 16_CSS_Barra_de_Navegacion_Ej-13.html
+            Enlaces de alineación a la derecha
+            Alinee los enlaces a la derecha haciendo flotar los elementos de la lista a la derecha ( float:right;):
+            
+            HTML:
+            <ul>
+                <li class="f_left"><a href="#home">Home</a></li>
+                <li class="f_left"><a href="#news">News</a></li>
+                <li class="f_left"><a href="#contact">Contact</a></li>
+                <li class="f_right"><a class="active" href="#about">About</a></li>
+            </ul>
+            
+            CSS:
+            body {
+                margin: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            ul {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .f_left {
+                float: left;
+            }
+
+            .f_right {
+                float: right;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+    14.     Ejercicio 14: 16_CSS_Barra_de_Navegacion_Ej-14.html
+            Divisores de borde
+            Agregue la propiedad border-right a la etiqueta del elemento <li> para crear divisores de enlaces.
+
+            HTML:
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li style="float:right"><a href="#about">About</a></li>
+            </ul>
+
+            CSS:
+            body {
+                margin: 0;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            ul {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .f_left {
+                float: left;
+                border-right: 1px solid white;
+            }
+
+            .f_right {
+                float: right;
+                border-left: 1px solid white;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+            Barra de navegación fija
+            Haga que la barra de navegación permanezca en la parte superior o inferior de la página, incluso cuando el usuario se desplaza por la página.
+
+            Fija al Margen Superior.
+    15.     Ejercicio 15: 16_CSS_Barra_de_Navegacion_Ej-15.html
+
+            HTML:
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div style = "padding: 20px; margin-top: 30px; background-color: #1abc9c; height: 1500px;">
+                <h1> Barra de navegación superior fija </h1>
+                <h2> Desplácese por esta página para ver el efecto </h2>
+                <h2> La barra de navegación permanecerá en la parte superior de la página mientras se desplaza </h2>
+
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+            </div>
+
+            CSS:
+            body {margin:0;}
+
+            ul {
+                position: fixed;
+                top: 0; 
+                width: 100%;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+            Fija al Margen Inferior.
+    16.     Ejercicio 16: 16_CSS_Barra_de_Navegacion_Ej-16.html
+
+            HTML:
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div style = "padding: 20px; background-color: #1abc9c; height: 1500px;">
+                <h1> Barra de navegación inferior fija </h1>
+                <h2> Desplácese por esta página para ver el efecto </h2>
+                <h2> La barra de navegación permanecerá en la parte inferior de la página mientras se desplaza </h2>
+
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+                <p> Algún texto, algún texto, algún texto, algún texto .. </p>
+            </div>
+
+            CSS:
+            body {margin:0;}
+
+            ul {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #04AA6D;
+            }
+
+            Barra de navegación pegajosa
+            Agregue la declaraciónb "position: sticky;" a la <ul> para crear una barra de navegación pegajosa.
+
+            Un elemento adhesivo alterna entre relativo y fijo, según la posición de desplazamiento. Se coloca en una posición relativa hasta que se alcanza una posición de desplazamiento determinada en la ventana gráfica, luego se "pega" en su lugar (como la posición: fija).
+
+    17.     Ejercicio 17: 16_CSS_Barra_de_Navegacion_Ej-17.html
+ 
+            HTML:
+            <div class = "encabezado">
+                <h2> Desplácese hacia abajo </h2>
+                <p> Desplácese hacia abajo para ver el efecto pegajoso. </p>
+            </div>
+
+            <ul>
+                <li> <a class="active" href="#home"> Página principal </a> </li>
+                <li> <a href="#news"> Noticias </a> </li>
+                <li> <a href="#contact"> Contacto </a> </li>
+            </ul>
+
+            <h3> Ejemplo de barra de navegación fija </h3>
+            <p> La barra de navegación se <strong> pegará </strong> en la parte superior cuando llegue a su posición de desplazamiento. </p>
+            
+            <p> <strong> Nota: </strong> Internet Explorer no admite el posicionamiento fijo y Safari requiere un prefijo -webkit-. </p>
+            
+            
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. Aquí hay una historia muy interesante, una que se define por ningún lugar, uno hubiera preferido ser incluido y las otras historias así. Pero la causa está glorificada en tu derecho, eso es todo lo que estoy haciendo es molestarlo. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. He aquí una historia muy interesante: aquella que no se define por capricho, hubiera preferido estar encerrada y las otras historias así. Pero la causa está glorificada en ti, eso es todo lo que estoy haciendo, es anulado. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+            <p> Algún texto para permitir el desplazamiento. Aquí hay una historia muy interesante, una que se define por ningún lugar, uno hubiera preferido ser incluido y las otras historias así. Pero la causa está glorificada en tu derecho, eso es todo lo que estoy haciendo es molestarlo. Trae lucha y no tiene por qué ser rechazado. Estos pueden haber ocurrido con los desechables. Sin molestias a los placeres. </p>
+
+            CSS:
+            body {
+                font-size: 28px;
+            }
+
+            ul {
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                top: 0;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #4CAF50;
+            }
+
+
+            Nota: Internet Explorer no admite el posicionamiento fijo. Safari requiere un prefijo -webkit- (vea el ejemplo anterior). También debe especificar al menos uno de top, right, bottomo leftpara el posicionamiento pegajosa al trabajo.
+
+            Barra de navegación desplegable
+            Cómo agregar un menú desplegable dentro de una barra de navegación.
+    18.     Ejercicio 17: 16_CSS_Barra_de_Navegacion_Ej-18.html
+
+            HTML:
+            <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li class="dropdown">
+
+                <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+
+            </li>
+            </ul>
+
+            <h3> Menú desplegable dentro de una barra de navegación </h3>
+            <p> Desplácese sobre el enlace "Desplegable" para ver el menú desplegable. </p>
+
+            CSS:
+            body {
+                font-size: 28px;
+            }
+
+            .encabezado{
+                margin: 0;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                text-align: center;
+                background-color: rgb(245, 186, 186);
+                color: rgb(9, 33, 61);
+            }   
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a, .dropbtn {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover, .dropdown:hover .dropbtn {
+                background-color: red;
+            }
+
+            li.dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }

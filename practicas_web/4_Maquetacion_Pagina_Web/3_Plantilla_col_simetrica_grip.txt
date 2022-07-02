@@ -1,0 +1,193 @@
+MODELO DE CUADRICULAS (GRID CSS)
+
+La compaginación en cuadrícula con CSS es un método de diseño de páginas web en dos dimensiones. Te permite distribuir el contenido en filas y columnas, y tiene muchas características que facilitan la creación de diseños complejos.
+
+¿Cómo hacer un grid con CSS?
+Resultado de imagen para que es el modelo de cuadrícula css
+Para activar la cuadrícula grid hay que utilizar sobre el elemento contenedor la propiedad display y especificar el valor grid o inline-grid. Establece una cuadrícula con ítems en línea, de forma equivalente a inline-block.
+
+1.  Ejercicio 01:
+    1.  Cree el archivo 3_1_Plantilla_col_simetrica_grip.html
+    2.  Cree el contenido básico. Digite "!" o "HTML5"
+    3.  Ingrese dentro del "Body" el siguiente código:
+
+    h2{CSS Template using Grid}
+    p{En este ejemplo, hemos creado un encabezado, tres columnas iguales y un pie de página. En pantallas más pequeñas, las columnas se apilarán una encima de la otra.}
+    p{Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.}
+    .grid-container>.header>H2{Header}^.left[style="background-color:#aaa"]{Columna01}+.middle[style="background-color:#bbb"]{Columna02}+.right[style="background-color:#ccc"]{Columna03}
+    .footer>p{Footer}
+
+    4.  Grabar  y visualizar navegador.
+    5.  Ingrese el siguiente código antes de la etiqueta </head>:
+
+        <style>
+        /* Estilo de caracter global */
+        /* Modificamos la forma de calcular el
+        TAMAÑO del modelo de caja */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo del encabezado */
+        .header {
+          grid-area: header;
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+        }
+
+        /* Contenedor GRID principal (cuadrícula o rejilla) */
+        .grid-container {
+          display: grid;
+          
+          /* Definimos las áreas del GRID */
+          grid-template-areas: 
+            'header header header header header header' 
+            'left left middle middle right right' 
+            'footer footer footer footer footer footer';
+          /* grid-column-gap: 10px; - si quieres un espacio entre las columnas */
+        } 
+
+        /* Contenedores Secundarios (propiedades comunes) */
+        .left,
+        .middle,
+        .right {
+          padding: 10px;
+          height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Vincula las áreas del grid-template-areas*/
+        /* Estilo de la columna de la izquierda */
+        .left {
+          grid-area: left;
+        }
+
+        /* Estilo de la columna del medio */
+        .middle {
+          grid-area: middle;
+        }
+
+        /* Estilo de la columna de la derecha */
+        .right {
+          grid-area: right;
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+          grid-area: footer;
+          background-color: #f1f1f1;
+          padding: 10px;
+          text-align: center;
+        }
+
+        /* Diseño adaptable: hace que las tres columnas se apilen una encima de la otra en lugar de una al lado de la otra. */
+        @media (max-width: 600px) {
+          .grid-container  {
+            grid-template-areas: 
+              'header header header header header header' 
+              'left left left left left left' 
+              'middle middle middle middle middle middle' 
+              'right right right right right right' 
+              'footer footer footer footer footer footer';
+          }
+        }
+        </style>
+
+2.  Ejercicio 02:
+    1.  Cree el archivo 3_2_Plantilla_col_asimetrica_grip.html
+    2.  Cree el contenido básico. Digite "!" o "HTML5"
+    3.  Ingrese dentro del "Body" el siguiente código:
+
+    h2{CSS Template using Float}
+    p{En este ejemplo, hemos creado un encabezado, tres columnas desiguales y un pie de página. En pantallas más pequeñas, las columnas se apilarán una encima de la otra.}
+    p{Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.}
+    .grid-container>.header>H2{Header}^.left[style="background-color:#aaa"]{Columna01}+.middle[style="background-color:#bbb"]{Columna02}+.right[style="background-color:#ccc"]{Columna03}
+    .footer>p{Footer}
+
+    4.  Grabar  y visualizar navegador.
+    5.  Ingrese el siguiente código antes de la etiqueta </head>:
+
+    <style>
+
+        /* Estilo de caracter global */
+        /* Modificamos la forma de calcular el
+        TAMAÑO del modelo de caja */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo del encabezado */
+        .header {
+          grid-area: header;
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+        }
+
+        /* Contenedor GRID principal (cuadrícula o rejilla) */
+        .grid-container {
+          display: grid;
+          
+          /* Definimos las áreas del GRID */
+          grid-template-areas:
+            'header header header header header header'
+            'left middle middle middle middle right'
+            'footer footer footer footer footer footer';
+          /* grid-column-gap: 10px; - if you want gap between the columns */
+        }
+
+        /* Contenedores Secundarios (propiedades comunes) */
+        .left,
+        .middle,
+        .right {
+          padding: 10px;
+          height: 300px;
+          /* Should be removed. Only for demonstration */
+        }
+
+        /* Vincula las áreas del grid-template-areas*/
+        /* Estilo de la columna de la izquierda */
+        .left {
+          grid-area: left;
+        }
+
+        /* Estilo de la columna del medio */
+        .middle {
+          grid-area: middle;
+        }
+
+        /* Estilo de la columna de la derecha */
+        .right {
+          grid-area: right;
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+          grid-area: footer;
+          background-color: #f1f1f1;
+          padding: 10px;
+          text-align: center;
+        }
+
+        /* Diseño adaptable: hace que las tres columnas se apilen una encima de la otra en lugar de una al lado de la otra. */
+        @media (max-width: 600px) {
+          .grid-container {
+            grid-template-areas:
+              'header header header header header header'
+              'left left left left left left'
+              'middle middle middle middle middle middle'
+              'right right right right right right'
+              'footer footer footer footer footer footer';
+          }
+        }
+      </style>

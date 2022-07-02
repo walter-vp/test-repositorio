@@ -1,0 +1,137 @@
+Ejemplos básicos de HTML
+
+En este capítulo mostraremos algunos ejemplos básicos de HTML.
+No se preocupe si usamos etiquetas de las que aún no ha aprendido.
+
+Pasemos a la parte práctica:
+Nota: Para los ejercicios del presente capítulo se creará el archivo: "1_Sintaxis_HTML_Ej-??.html".
+
+1.      Documentos HTML
+        Todos los documentos HTML deben comenzar con una declaración de tipo de documento: <!DOCTYPE html>.
+        El documento HTML en sí comienza con <html>y termina con </html>.
+        La parte visible del documento HTML está entre <body>y </body>.
+
+        1.      Ejercicio 01: 1_Sintaxis_HTML_Ej-01.html
+                <!DOCTYPE html>
+                <html>
+                        <body>
+                                <h1>My First Heading</h1>
+
+                                <p>My first paragraph.</p>
+                        </body>
+                </html>
+        
+2       La declaración <! DOCTYPE>
+        La declaración <!DOCTYPE> representa el tipo de documento y ayuda a los navegadores a mostrar las páginas web correctamente.
+        Solo debe aparecer una vez, en la parte superior de la página (antes de cualquier etiqueta HTML).
+        La declaración <!DOCTYPE> no distingue entre mayúsculas y minúsculas.
+        La declaración <!DOCTYPE> para HTML5 es:
+
+                <!DOCTYPE html>
+
+3.      Encabezados HTML
+        Los encabezados HTML se definen con las etiquetas <h1> to <h6>.
+        "<h1>" define el encabezado más importante. Solo debería haber un Encabezado H1 por página web.
+        "<h6>" define el encabezado menos importante:
+        
+        2.      Ejercicio 02: 1_Sintaxis_HTML_Ej-02.html
+                <!DOCTYPE html>
+                <html>
+                        <body>
+                                <h1>This is heading 1</h1>
+                                <h2>This is heading 2</h2>
+                                <h3>This is heading 3</h3>
+                                <h4>This is heading 4</h4>
+                                <h5>This is heading 5</h5>
+                                <h6>This is heading 6</h6>
+                        </body>
+                </html>
+
+4.      Párrafos HTML
+        Los párrafos HTML se definen con la etiqueta <p>.
+
+        3.      Ejercicio 03: 1_Sintaxis_HTML_Ej-03.html
+                <!DOCTYPE html>
+                <html>
+                        <body>
+                                <p>This is a paragraph.</p>
+                                <p>This is another paragraph.</p>
+                        </body>
+                </html>
+
+5.      Enlaces HTML
+        Los enlaces HTML se definen con la etiqueta <a>.
+
+        4.      Ejercicio 04: 1_Sintaxis_HTML_Ej-04.html
+                <!DOCTYPE html>
+                <html>
+                <cuerpo>
+
+                <h2> Enlaces HTML </h2>
+                <p> Los enlaces HTML se definen con la etiqueta &lsaquo;a&rsaquo;: </p>
+
+                <p>Este es un enlace a: </p>
+
+                <a href="https://www.w3schools.com">w3schools</a>
+
+                </body>
+                </html>
+
+        El destino del enlace se especifica en el atributo "href". 
+        Los atributos se utilizan para proporcionar información adicional sobre elementos HTML.
+        Aprenderá más sobre los atributos en un capítulo posterior.
+
+6.      Imágenes HTML
+        Las imágenes HTML se definen con la etiqueta <img>.
+        El archivo de origen (src), el texto alternativo (alt), el ancho (width) y el alto (height) se proporcionan como atributos.
+
+        5.      Ejercicio 05: 1_Sintaxis_HTML_Ej-05.html
+                <!DOCTYPE html>
+                <html>
+                <body>
+
+                <h2>HTML Images</h2>
+                <p>HTML images are defined with the img tag:</p>
+
+                <img src="img/w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+
+                </body>
+                </html>
+
+7.      ALCANCES IMPORTANTES.
+
+7.1     ¿Cómo ver el código fuente HTML?
+        ¿Alguna vez has visto una página web y te has preguntado "¡Oye! ¿Cómo hicieron eso?"
+
+        Ver código fuente HTML:
+        Haga clic con el botón derecho en una página HTML y seleccione "Ver código fuente de la página" (en Chrome) o "Ver código fuente" (en Edge), o similar en otros navegadores. Esto abrirá una ventana que contiene el código fuente HTML de la página.
+
+        Inspeccionar un elemento HTML:
+        Haga clic con el botón derecho en un elemento (o un área en blanco) y elija "Inspeccionar" o "Inspeccionar elemento" para ver de qué elementos están compuestos (verá tanto el HTML como el CSS). También puede editar el HTML o CSS sobre la marcha en el panel Elementos o Estilos que se abre.
+
+7.2     Símbolos HTML
+        Los símbolos HTML como operadores matemáticos, flechas, símbolos técnicos y formas no están presentes en un teclado normal.
+
+        Para agregar estos símbolos a una página HTML, puede usar el "nombre de la entidad" HTML, una referencia "decimal" o "hexadecimal".
+
+        Si no existe un nombre de entidad, puede usar el número de entidad.
+
+        Si el carácter no tiene un nombre de entidad, puede usar una referencia decimal o hexadecimal.
+
+        Si usa un nombre de entidad HTML o un número hexadecimal, el carácter siempre se mostrará correctamente.
+        ¡Esto es independiente del conjunto de caracteres (codificación) que usa su página!
+
+        6.      Ejercicio 06: 1_Sintaxis_HTML_Ej-06.html
+                <!DOCTYPE html>
+                <html>
+                <body>
+
+                <p>I will display &euro;</p>
+                <p>I will display &#8364;</p>
+                <p>I will display &#x20AC;</p>
+
+                </body>
+                </html>
+
+        MAYORES ALCANCES Y REFERENCIAS REVISAR la información "W3schools". 
+        https://www.w3schools.com/charsets/default.asp

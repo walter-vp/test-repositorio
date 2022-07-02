@@ -1,0 +1,311 @@
+Diseño CSS : alineación horizontal y vertical
+
+1.      Elementos de alineación central
+        Para centrar horizontalmente un elemento de bloque (como <div>), use la declaració "margin: auto;".
+        
+        Establecer el ancho del elemento evitará que se estire hasta los bordes de su contenedor.
+        A continuación, el elemento ocupará el ancho especificado y el espacio restante se dividirá en partes iguales entre los dos márgenes.
+
+        1.      Ejercicio 1: 3_CSS_alineacion_horizontal_vertical_Ej-01.html
+ 
+                HTML:
+                <h2> Elementos de alineación central </h2>
+                <p> Para centrar horizontalmente un elemento de bloque (como div), use margin: auto; </p>
+
+                <div class = "centro">
+                        <p> ¡Hola mundo! </p>
+                </div>
+
+                CSS:
+                .centro {
+                margin: auto;
+                width: 40%;
+                border: 3px solid #73AD21;
+                padding: 10px;
+                }
+
+        Nota: La alineación central no tiene ningún efecto si la propiedad "width"  no se establece (o se establece en 100%).
+
+
+2.      Centro de alineación de texto
+        Para centrar el texto dentro de un elemento, use la declaración: "text-align: center";
+
+        2.      Ejercicio 2: 3_CSS_alineacion_horizontal_vertical_Ej-02.html
+                                
+                HTML:
+                <h2>Center Text</h2>
+                <div class="center">
+                        <p>This text is centered.</p>
+                </div>
+
+                CSS:
+                .center {
+                text-align: center;
+                border: 3px solid green;
+                }
+
+        Sugerencia: Para obtener más ejemplos sobre cómo alinear texto, consulte el capítulo: "Texto CSS" (https://www.w3schools.com/css/css_text.asp)
+
+3.      Centrar una imagen
+        Para centrar una imagen, establezca el margen izquierdo y derecho en "auto" y  conviértalo en un elemento "block" (display: "block").
+
+        3.      Ejercicio 3: 3_CSS_alineacion_horizontal_vertical_Ej-03.html
+                
+                HTML:
+                <h2> Centrar una imagen </h2>
+
+                        <p> Para centrar una imagen, establezca el margen izquierdo y derecho en automático y conviértalo en un elemento de bloque. </p>
+
+                <img src="img/paris.jpg" alt="Paris">
+                
+                CSS:
+                img {
+                        display: block;
+                        margin-left: auto;
+                        margin-right: auto;
+                }
+
+4.      Alineación izquierda y derecha: usando la propiedad "position"
+        Un método para alinear elementos es usar la declaraciòn "position: absolute".
+
+        4.      Ejercicio 4: 3_CSS_alineacion_horizontal_vertical_Ej-04.html
+
+                HTML:
+                <h2> Alinear a la Derecha e Izqierda con la propiedad de posición </h2>
+
+                <p> Un ejemplo de cómo alinear a la derecha elementos con la propiedad de posición: </p>
+
+                <div class = "right">
+                        <h2>Alineación izquierda</h2>
+                        <p>Lorem</p>
+                </div>
+
+                <div class = "left">
+                        <h2>Alineación derecha</h2>
+                        <p>Lorem</p>
+                </div>
+
+                CSS:
+                div{
+                   position: absolute;
+                   width: 300px;
+                   border: 3px solid #73AD21;
+                   padding: 10px;
+                }
+
+                .right {
+                   right: 0px;
+                }
+                
+                .left {
+                   left: 0px;
+                }
+
+        Nota: Los elementos de posición absoluta se eliminan del flujo normal y pueden superponerse a elementos.
+
+5.      Alineación izquierda y derecha: usando la propiedad "float"
+        Otro método para alinear elementos es usar la propiedad float.
+
+        5.      Ejercicio 5: 3_CSS_alineacion_horizontal_vertical_Ej-05.html
+
+                HTML:
+                <h2> Alinear a la Derecha e Izqierda con la propiedad de posición </h2>
+
+                <p> Un ejemplo de cómo alinear a la derecha elementos con la propiedad de posición: </p>
+
+                <div class = "right">
+                        <h2>Alineación izquierda</h2>
+                        <p>Lorem</p>
+                </div>
+
+                <div class = "left">
+                        <h2>Alineación derecha</h2>
+                        <p>Lorem</p>
+                </div>
+
+                CSS:
+                div{
+                   position: absolute;
+                   width: 300px;
+                   border: 3px solid #73AD21;
+                   padding: 10px;
+                }
+
+                .right {
+                   right: 0px;
+                }
+                
+                .left {
+                   left: 0px;
+                }
+
+
+5.1     El truco "clearfix"
+        Si un elemento es más alto que el elemento que lo contiene y está flotando, se desbordará fuera de su contenedor. Puede utilizar el truco "clearfix" para solucionar este problema (consulte el ejemplo a continuación).
+
+        6.      Ejercicio 6: 3_CSS_alineacion_horizontal_vertical_Ej-06.html
+
+                HTML:
+                <h2> Sin Clearfix </h2>
+
+                <p> Esta imagen flota a la derecha. También es más alto que el elemento que lo contiene, por lo que se desborda fuera de su contenedor: </p>
+
+                <div>
+                <img class="img1" src="img/pineapple.jpg" alt="Pineapple" width="170" height="170">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+                </div>
+
+                <h2 style="clear:right">Con el nuevo y moderno Clearfix</h2>
+                <p>Agregue el truco clearfix al elemento contenedor, para solucionar este problema:</p>
+
+                <div class="clearfix">
+                <img class="img2" src="img/pineapple.jpg" alt="Pineapple" width="170" height="170">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet...
+                </div>
+
+                CSS:
+                div {
+                border: 3px solid #4CAF50;
+                padding: 5px;
+                }
+
+                .img1 {
+                float: right;
+                }
+
+                .img2 {
+                float: right;
+                }
+
+                .clearfix::after {
+                content: "";
+                clear: both;
+                display: table;
+                }    
+
+6.      Centrar verticalmente: usando la propiedad "padding"
+        Hay muchas formas de centrar un elemento verticalmente en CSS. Una solución simple es usar la parte superior e inferior padding.
+
+        7.      Ejercicio 7: 3_CSS_alineacion_horizontal_vertical_Ej-07.html
+
+                HTML:
+                <h2> Centrar verticalmente con relleno </h2>
+
+                <p> En este ejemplo, usamos la propiedad padding para centrar el elemento div verticalmente: </p>
+
+                <div class = "center">
+                <p> Estoy centrado verticalmente. </p>
+                </div>
+
+                CSS:
+                .center {
+                padding: 70px 0;
+                border: 3px solid green;
+                }
+
+
+        
+        Para centrar tanto vertical como horizontalmente, use padding y text-align: center:
+
+        8.      Ejercicio 8: 3_CSS_alineacion_horizontal_vertical_Ej-08.html
+
+                HTML:
+                <h2> Centrar con relleno y alinear texto </h2>
+
+                <p> En este ejemplo, usamos padding y text-align para centrar el elemento div tanto vertical como horizontalmente: </p>
+
+                <div class = "center">
+                <p> Estoy centrado vertical y horizontalmente. </p>
+                </div>
+
+                CSS:
+                .center {
+                padding: 70px 0;
+                border: 3px solid green;
+                text-align: center;
+                }
+
+
+7.      Centrar verticalmente: usando la propiedad "height"
+        Otro truco es usar la propiedad "line-height" con un valor que sea igual a la propiedad "height".
+
+        9.      Ejercicio 9: 3_CSS_alineacion_horizontal_vertical_Ej-09.html
+                HTML:
+                <h2> Centro con altura de línea </h2>
+                <p> En este ejemplo, usamos la propiedad "line-height" (Establece la altura de una casilla remarcada por líneas. Comúnmente se usa para establecer la distancia entre líneas de texto) con un valor que es igual a la propiedad "height" para centrar el elemento div:</p>
+
+                <div class = "center">
+                <p> Estoy centrado vertical y horizontalmente. </p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi saepe ullam minima laudantium. Alias iste repellat quam ex consequuntur architecto optio illo! Nisi ipsa illo quam. Maxime velit cum possimus.</p>
+                </div>
+
+                CSS:
+                .center {
+                line-height: 200px;
+                height: 200px;
+                border: 3px solid green;
+                text-align: center;
+                }
+
+                /* Si el texto tiene varias líneas, agregue lo siguiente: */
+                .center p {
+                line-height: 1.5;
+                display: inline-block;
+                vertical-align: middle;
+                }
+
+8.      Centrar verticalmente: usando las propiedades "position & transform"
+        Si "padding" y "line-height" no son opciones, otra solución es usar el posicionamiento y la propiedad "transform".
+
+        10.     Ejercicio 10: 3_CSS_alineacion_horizontal_vertical_Ej-10.html
+
+                HTML:
+                <h2> Centrar con posición y transformar </h2>
+
+                <p> En este ejemplo, usamos el posicionamiento y la propiedad transform para centrar vertical y horizontalmente el elemento div: </p>
+
+                <div class = "center">
+                <p> Estoy centrado vertical y horizontalmente. </p>
+                </div>
+
+                CSS:
+                .center { 
+                height: 200px;
+                position: relative;
+                border: 3px solid green; 
+                }
+
+                .center p {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                }
+
+
+9.      Centrar verticalmente: uso de Flexbox
+        También puede usar flexbox para centrar las cosas. Solo tenga en cuenta que flexbox no es compatible con IE10 y versiones anteriores.
+
+        11.     Ejercicio 11: 3_CSS_alineacion_horizontal_vertical_Ej-11.html
+
+                HTML:
+                <h2> Centrado de caja flexible </h2>
+
+                <p>Un contenedor con las propiedades de "justify-content" y "align-items" establecidas en <em> center </em> alineará los elementos en el centro (en ambos ejes).</p>
+
+                <div class = "center">
+                <p> Estoy centrado vertical y horizontalmente. </p>
+                </div>
+
+                CSS:
+                .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 200px;
+                border: 3px solid green; 
+                }
+        
+        Sugerencia: Para obtener más ejemplos sobre cómo trabajar con "Flexbox" (Cajas Flexibles), consulte el capítulo: "Texto CSS" (https://www.w3schools.com/css/css3_flexbox.asp)

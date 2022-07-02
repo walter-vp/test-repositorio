@@ -1,0 +1,369 @@
+Sintaxis CSS:
+
+CSS es el lenguaje que usamos para diseñar un documento HTML.
+CSS describe cómo se deben mostrar los elementos HTML.
+Este tutorial le enseñará CSS de básico a avanzado
+
+Sintaxis CSS
+Una regla CSS consta de un selector y un bloque de declaración.
+
+SELECTOR {
+    "propiedad" : "valor";
+    "propiedad" : "valor"; 
+    }
+
+El bloque de declaración contiene una o más declaraciones separadas por punto y coma.
+Cada declaración incluye un nombre de propiedad CSS y un valor, separados por dos puntos.
+Una declaración CSS siempre termina con un punto y coma, y ​​los bloques de declaraciones están rodeados por llaves.
+
+Selectores CSS
+Un selector de CSS selecciona los elementos HTML a los que desea aplicar estilo.
+
+Selectores CSS
+Los selectores CSS se utilizan para "buscar" (o seleccionar) los elementos HTML que desea aplicar estilo.
+
+Podemos dividir los selectores de CSS en cinco categorías:
+
+Selectores simples (seleccione elementos según el nombre, la identificación, la clase)
+Selectores de combinador (seleccione elementos en función de una relación específica entre ellos)
+Selectores de pseudoclase (seleccionar elementos en función de un estado determinado)
+Selectores de pseudo-elementos (seleccionar y aplicar estilo a una parte de un elemento)
+Selectores de atributos (seleccione elementos basados ​​en un atributo o valor de atributo)
+
+Esta página explicará los selectores de CSS más básicos.
+
+Pasemos a la parte práctica:
+Nota: Para los ejercicios del presente capítulo se creará el archivo: "1_Sintaxis_CSS_Ej-??.html". Los ?? serán reemplazados por el número del Ejercio, luego Incruste el siguiente código CSS(entre etiquetas <style> </style>) y HTML (entre etiquetas <body> </body>) en las secciones correspondientes.
+
+1.  El selector universal de CSS
+    El selector universal (*) selecciona todos los elementos HTML de la página.
+    
+    La siguiente regla CSS afectará a todos los elementos HTML de la página.
+ 
+-   Ejercicio 01: 1_Sintaxis_CSS_Ej-01.html 
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    a[href="#nada"]{Etiqueta de Enlace $}*4+br*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    * {
+    text-align: center;
+    color: blue;
+    }
+
+
+
+2.  El selector de elementos CSS:
+    El selector de elementos selecciona elementos HTML en función del nombre del elemento.
+    
+    Aquí, todos los elementos <p> de la página estarán alineados al centro, con un color de texto rojo: 
+    
+-   Ejercicio 02: 1_Sintaxis_CSS_Ej-02.html 
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    (a[href="#nada"]{Etiqueta de Enlace $}+br)*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    p {
+    text-align: center;
+    color: red;
+    }
+
+
+3.  El selector de id de CSS
+    El selector de id utiliza el atributo id de un elemento HTML para seleccionar un elemento específico.
+    La identificación de un elemento es única dentro de una página, por lo que el selector de identificación se utiliza para seleccionar un elemento único.
+    Para seleccionar un elemento con una identificación específica, escriba un carácter de almohadilla (#), seguido de la identificación del elemento.
+    
+    La siguiente regla CSS se aplicará al elemento HTML con id = "para1": 
+    Nota: ¡Un nombre de identificación no puede comenzar con un número!
+    
+-   Ejercicio 03: 1_Sintaxis_CSS_Ej-03.html
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    (a[href="#nada"]{Etiqueta de Enlace $}+br)*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    #para1 {
+    text-align: center;
+    color: red;
+    }
+
+
+4.  El selector de clases CSS
+    El selector de clases selecciona elementos HTML con un atributo de clase específico.
+    Para seleccionar elementos con una clase específica, escriba un punto (.), Seguido del nombre de la clase.
+    
+    En este ejemplo, todos los elementos HTML con class = "center" serán rojos y alineados al centro: 
+    
+-   Ejercicio 04: 1_Sintaxis_CSS_Ej-04.html 
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    (a[href="#nada"]{Etiqueta de Enlace $}+br)*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    .center {
+    text-align: center;
+    color: red;
+    }
+
+    También puede especificar que solo los elementos HTML específicos deben verse afectados por una clase.
+
+    
+    En este ejemplo, solo los elementos <p> con class = "center" serán rojos y alineados al centro: 
+    
+-   Ejercicio 05: 1_Sintaxis_CSS_Ej-05.html 
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    (a[href="#nada"]{Etiqueta de Enlace $}+br)*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    p.center {
+    text-align: center;
+    color: red;
+    }
+
+
+    Nota: Los elementos HTML también pueden hacer referencia a más de una clase.
+    
+    En este ejemplo, el elemento <p> se diseñará de acuerdo con class = "p_clase6" y class = "center": 
+    Nota: ¡El nombre de una clase no puede comenzar con un número!
+
+-   Ejercicio 06: 1_Sintaxis_CSS_Ej-06.html 
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    (a[href="#nada"]{Etiqueta de Enlace $}+br)*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    p.p_clase6.center {
+    text-align: center;
+    color: green;
+    }
+
+
+5.  El selector de agrupación CSS
+    El selector de agrupación selecciona todos los elementos HTML con las mismas definiciones de estilo.
+    Mire el siguiente código CSS (los elementos h1, h2 yp tienen las mismas definiciones de estilo):
+
+    h1 {
+    text-align: center;
+    color: red;
+    }
+
+    h2 {
+    text-align: center;
+    color: red;
+    }
+
+    p {
+    text-align: center;
+    color: red;
+    }
+
+    Será mejor agrupar los selectores para minimizar el código.
+
+    
+    En este ejemplo, hemos agrupado los selectores del código anterior: 
+    
+-   Ejercicio 07: 1_Sintaxis_CSS_Ej-07.html 
+    
+    HTML:
+    h1.center{Etiqueta H1: Título Principal de la Página Web}
+    h2.center{Etiqueta H2: Título Secundario de la Página Web}
+    p.p_clase1.center{Etiqueta P: Declara Parrafos dentro de una página Web}
+    p.p_clase2.center{Etiqueta P:Lorem -> Crea texto aleatorio para el desarrollo de los prototipos de página web}
+    p.p_clase3>Lorem50
+    p.p_clase4#para1{Etiqueta a: Etiqueta utilizada para crear hiperenlaces en el documento HTML}
+    (a[href="#nada"]{Etiqueta de Enlace $}+br)*4
+    p.p_clase5#para1{Etiqueta img: Etiqueta para “pintar” una imagen en la página web}
+    img[src="img/paris.jpg"]
+    p.p_clase6.center>lorem20
+
+    CSS:
+    h1, h2, p {
+    text-align: center;
+    color: red;
+    }
+
+
+CSS Comentarios:
+Los comentarios se utilizan para explicar el código, y pueden ayudar al editar el código fuente en una fecha posterior.
+Los comentarios son ignorados por los navegadores.
+Un comentario CSS comienza con /* y finaliza con */ . Los comentarios también pueden abarcar varias líneas.
+
+
+Práctica:
+1. Cree el archivo 01_Sintaxis_CSS.html
+2. Cree el contenido básico. Digite "!" o "HTML5"
+3. Ingrese dentro del "Body" el siguiente código:
+
+    header>h1{Título Prinicipal de la Página Web.}+h2{Título Secundario}+p>lorem10
+    
+    nav>a[href="#nada$"]{Enlace Item $$}*4
+    
+    main>section>(h1{Título Sección $$}^article>(h3{Titulo Sub Sección $$}+time{2021-07-26}^p>lorem10^p>lorem20)*4)*3
+    
+    Nota: Podemos observar que en esta estructura no tenemos una ETIQUETA DE SECCION que nos permita grupar contenido que es afin. Revertimos y eliminamos el código anterior e ingresamos el nuevo código:
+
+    main>section>(h1{Título Sección $$}^article>(div>(h3{Titulo Sub Sección $$}+time{2021-07-26}^p>lorem10^p>lorem20))*4)*3 
+
+    Incluir entre las etiquetas <main> </main> despues de la etiqueta </section> : 
+    aside>p{Secciones:}+ul>li*4>a[href="#nada"]{Ir al contenido $}
+
+    Incluir despues de la etiqueta </main> :
+    footer>p{Gerencia de Desarrollo Institucional}+p{&copy;2021 Actualizado: 26/09/2021}
+
+4. Grabar  y visualizar navegador.
+5. Cree el archivo 01_Sintaxis_CSS.css
+6.  Ingrese el siguiente código en el archivo 1_Sintaxis_CSS.css:
+
+/* Este es un selector UNIVERSAL - Aplica a todos los elementos  de este documento */
+* {
+    box-sizing: border-box;
+}
+
+/* Este es un selector de ELEMENTO- HTML */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 0; */
+}
+
+/* Este es un selector de CLASE */
+/* Estilo del encabezado */
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Este es un selector de CLASE */
+.nav {
+    background-color: #ffe0bc;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* Este es un selector de CLASE */
+/* Crea UNA columna que floten hacia la derecha del documento. */
+.section {
+    float: right;
+    width: 80%;
+    background-color: #d4e9f3;
+    padding: 30px;
+    /* height: 300px; */
+    /* Should be removed. Only for demonstration */
+}
+
+/* Este es un selector de CLASE */
+/* Crea UNA columna que floten hacia la derecha del documento. */
+.aside {
+    float: left;
+    width: 20%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+/* Aqui tenemos dos tipos de selectores juntos.
+la CLASE: MAIN y el PSEUDO-ELEMENTO: AFTER.
+Los pseudo-elememtos mas usados son ::after y ::before
+el PSEUDO-ELEMENTO:after-> y aplica estilos despues del elemento señalado; y el PSEUDO-ELEMENTO: before-> y aplica estilos despues del elemento señalado */ 
+/* Clear floats after the columns */
+.main::after {
+    content: "";
+    display: table;
+    clear: both;
+    /* La propiedad CSS "clear" especifica si un elemento puede estar al lado de elementos flotantes que lo preceden o si debe ser movido (cleared) debajo de ellos. El valor CSS "both" Es un keyword que indica que el elemento es movido hacia abajo para limpiar tanto elementos flotantes de la izquierda como de la derecha. Usualmente precede o se aplica al PIE DE PÁGINA. */
+}
+
+/* Este es un selector de CLASE */
+/* Estilo del pie de páginar */
+.footer {
+    background-color: #fbe1e1;
+    padding: 10px;
+    text-align: center;
+    clear: both;
+}
+
+/* Este es un selector de GRUPO */
+h1, h2, h3 {
+    color: red;
+}
+
+/* Este es un Comentario */
+/* h3 {
+    color: rgb(22, 48, 165);
+} */
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 850px) {
+    .section {
+        width: 100%;
+    }
+
+    .aside {
+        width: 100%;
+    }
+}
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+    Nota: Cambio el aspecto del documento, sin embargo si revisamos el documento HTML veremos que no hemos declarado ninguna "clase"en el documento HTML... Por lo que los otros estilo no se estan aplicando.
+8. Crear las "CLASES"  en el documento HTML.
+9. Descomentar la regla del selector h3. Grabar y visualizar
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.

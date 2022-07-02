@@ -1,0 +1,239 @@
+Pseudoclases CSS
+¿Cuáles son pseudo-clases?
+Una pseudoclase se usa para definir un estado especial de un elemento.
+Por ejemplo, se puede utilizar para:
+- Aplicar estilo a un elemento cuando un usuario pasa el mouse sobre él
+- Estilo de enlaces visitados y no visitados de manera diferente
+- Aplicar estilo a un elemento cuando se enfoca
+
+Sintaxis
+La sintaxis de las pseudoclases:
+
+selector:pseudo-class { property: value; }
+
+¿Qué son los pseudoelementos?
+Un pseudoelemento CSS se utiliza para diseñar partes específicas de un elemento.
+
+Por ejemplo, se puede utilizar para:
+- Aplicar estilo a la primera letra o línea de un elemento
+- Insertar contenido antes o después del contenido de un elemento
+
+Sintaxis
+La sintaxis de los pseudo-elementos:
+
+selector::pseudo-element { property: value; }
+
+Nota: Observe la doble notación de dos puntos:  ::first-line frente :first-line
+
+A diferencia de las pseudo-clases, los pseudo-elementos no describen un estado sino que permiten añadir estilos a una parte específica del documento. Por ejemplo, el pseudo-elemento :first-line selecciona la primera línea del elemento indicado por el selector.
+
+All CSS Pseudo Classes
+Selector        	    Example	                Example description
+:active         	    a:active    	        Selecciona el enlace activo
+:checked        	    input:checked   	    Selecciona todos los elementos <input> marcados
+:disabled       	    input:disabled	        Selecciona todos los elementos <input> desactivados
+:empty          	    p:empty	                Selecciona todos los elementos <p> que no tienen hijos.
+:enabled        	    input:enabled	        Selecciona todos los elementos <input> habilitados
+:first-child    	    p:first-child	        Selecciona todos los elementos <p> que son el primer hijo de su padre
+:first-of-type  	    p:first-of-type	        Selecciona cada elemento <p> que es el primer elemento <p> de su padre
+:focus	                input:focus	            Selecciona el elemento <input> que tiene el foco
+:hover	                a:hover	                Selecciona enlaces al pasar el mouse sobre
+:in-range	            input:in-range	        Selecciona elementos <input> con un valor dentro de un rango especificado
+:invalid	            input:invalid	        Selecciona todos los elementos <input> con un valor no válido
+:lang(language)	        p:lang(it)	            Selecciona cada elemento <p> con un valor de atributo lang que comienza con "it"
+:last-child	            p:last-child	        Selecciona todos los elementos <p> que son el último hijo de su padre
+:last-of-type	        p:last-of-type	        Selecciona cada <p> elemento que es el último <p> elemento de su padre
+:link	                a:link	                Selecciona todos los enlaces no visitados
+:not(selector)	        :not(p)	                Selecciona cada elemento que no es un elemento <p>
+:nth-child(n)	        p:nth-child(2)	        Selecciona cada elemento <p> que es el segundo hijo de su padre
+:nth-last-child(n)	    p:nth-last-child(2)	    Selecciona cada elemento <p> que es el segundo hijo de su padre, contando desde el último hijo
+:nth-last-of-type(n)	p:nth-last-of-type(2)	Selecciona cada elemento <p> que es el segundo elemento <p> de su padre, contando desde el último hijo
+:nth-of-type(n)	        p:nth-of-type(2)	    Selecciona cada elemento <p> que es el segundo elemento <p> de su padre
+:only-of-type	        p:only-of-type	        Selecciona cada elemento <p> que es el único elemento <p> de su padre
+:only-child	            p:only-child	        Selecciona cada elemento <p> que es el único hijo de su padre
+:optional	            input:optional	        Selecciona elementos <input> sin atributo "obligatorio"
+:out-of-range	        input:out-of-range	    Selecciona elementos <input> con un valor fuera de un rango especificado
+:read-only	            input:read-only	        Selecciona elementos <input> con un atributo "readonly" especificado
+:read-write	            input:read-write	    Selecciona elementos <input> sin atributo "readonly"
+:required	            input:required	        Selecciona elementos <input> con un atributo "obligatorio" especificado
+:root	                root	                Selecciona el elemento raíz del documento.
+:target	                #news:target	        Selecciona el elemento #news activo actual (se hace clic en una URL que contiene ese nombre de ancla)
+:valid	                input:valid	            Selecciona todos los elementos <input> con un valor válido
+:visited	            a:visited	            Selecciona todos los enlaces visitados
+
+All CSS Pseudo Elements
+Selector	            Example	                Example description
+::after	                p::after	            Insert content after every <p> element
+::before	            p::before	            Insert content before every <p> element
+::first-letter	        p::first-letter	        Selects the first letter of every <p> element
+::first-line	        p::first-line	        Selects the first line of every <p> element
+::selection	            p::selection	        Selects the portion of an element that is selected by a user
+
+Practica:
+1.  Cree el archivo 2_Seudo-Clase_Seudo-Elemento.html
+2.  Cree el contenido básico. Digite "!" o "HTML5"
+3.  Ingrese dentro del "Body" el siguiente código:
+    header>h1{Título Prinicipal de la Página Web.}+h2{Título Secundario}+p>lorem10
+    
+    nav>a[href="#nada$"]{Enlace Item $$}*4
+
+    main>aside>p{Secciones:}+ul>li*4>a[href="#nada"]{Ir al contenido $}
+    
+    Incluir entre las etiquetas <main> </main> despues de la etiqueta </aside> :
+    section>(h2{Título Sección$$}^article>(div>(h3{Titulo Sección $$}+time{2021-07-26}^p>lorem10^p>lorem20))*2)*3 
+
+    Incluir despues de la etiqueta </main> :
+    footer>p{Gerencia de Desarrollo Institucional}+p{&copy;2021 Actualizado: 26/09/2021}
+
+4.  Grabar  y visualizar navegador.
+5.  Cree el archivo 2_Seudo-Clase_Seudo-Elemento.css
+6.  Ingrese el siguiente código en el archivo 2_Seudo-Clase_Seudo-Elemento.css:
+ 
+    /* ESTILOS DEL DISEÑO-LAYOUT DE LA PAGINA WEB*/
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+
+    /* Estilo del encabezado */
+    .header {
+        background-color: #f1f1f1;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+    }
+
+    /* Estilo del menú navegación */
+    .nav {
+        background-color: #ffe0bc;
+        padding: 30px;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    /* En esta maqueta usaremos el Metodo de Cajas Flexibles
+       este modelo se declara CON la etiqueta DISPLAY */
+    .main {
+        display: -webkit-flex;
+        display: flex;
+        flex-flow: row wrap;
+        /* Esta es una propiedad RESUMIDA, que indica:
+        Dirección: ROW (en fila, valor por defecto)
+        Desbordamiento: WRAP (activa Desbordamiento hacia la siguiente fila) */
+    }
+
+    /* Este es un selector de CLASE */
+    /* Crea UNA CAJA flexible de un ancho del 80% documento. */
+    .section {
+        flex: 80%;
+        background-color: #b0bdc3;
+        padding: 30px;
+    }
+
+    /* Este es un selector de CLASE */
+    /* Crea UNA CAJA flexible de un ancho del 20% documento. */
+    .aside {
+        flex: 20%;
+        background-color: #d9e7e5;
+        padding: 10px;
+    }
+
+    /* Este es un selector de CLASE */
+    /* Estilo del pie de páginar */
+    .footer {
+        background-color: #fbe1e1;
+        padding: 10px;
+        text-align: center;
+        /* clear: both; */
+    }
+
+    /* Este es un selector de GRUPO */
+    h1, h2 {
+        color: red;
+    }
+
+    /* Este es un Comentario */
+    h3 {
+        color: rgb(22, 48, 165);
+    }
+
+    /* SECCION PRACTICA -- Seudo-Clase & Seudo-Elemento */
+    /* Las pseudo-clases de anclaje */
+    a:link {
+        color: red;
+    }
+
+    /* visited link */
+    a:visited {
+        color: green;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: rgb(60, 91, 228);
+    }
+
+    /* selected link */
+    a:active {
+        color: rgb(93, 93, 238);
+    }
+
+    /* Pase el ratón sobre la sección  <nav> */
+    .nav>a:hover {
+    background-color: rgb(233, 139, 81);
+    color: white;
+    }
+
+    /* Coincidir con el primer "Elemento" (Etiqueta HTML) */
+    h2:first-child {
+        color: blue;
+    }
+
+    /* Aplicar estilo antes del "Elemento" (Etiqueta HTML) */
+    .section h2::before{
+        content:"\27A2";
+        color:#6e1c1c;
+        font-size:25px;
+        padding-right: 10px;
+    }
+
+    /* Aplicar estilo despues del "Elemento" (Etiqueta HTML) */
+    .section h2::after{
+        content:"\27A5";
+        color:#6e1c1c;
+        font-size:25px;
+        padding-right: 10px;
+    }
+
+    /* Aplicar estilo antes del "Elemento" (Etiqueta HTML) */
+    .section h3::before{
+        content:"\2022";
+        color:#6e1c1c;
+        font-size:25px;
+        padding-left: 10px;
+    }
+
+    /* Aplicar estilo a los "Elementos" (Etiqueta HTML) descendientes de MAIN */
+    /* Observación: Notar que el selector no es una clase!!!  */
+    .main p:nth-child(odd) {
+        background: #d4a773;
+        height: 30px;
+    }
+
+    .main p:nth-child(even) {
+        background: #9090d1;
+        height: 30px;
+    }
+
+    /* SECCION DE LA MEDIAQUERY */
+    /* Diseño receptivo: hace que las DOS columnas se apilen una encima de la otra en lugar de una al lado de la otra. */
+    /* @media (max-width: 1000px) {
+        .main {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        }
+    } */

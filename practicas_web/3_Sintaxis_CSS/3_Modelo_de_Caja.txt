@@ -1,0 +1,148 @@
+El modelo de caja CSS:
+
+Todos los elementos HTML pueden ser considerados como cajas. En CSS, el término "modelo de caja" se usa cuando se habla de diseño (PARTE ESTETICA DOCUMENTO) y el diseño DOM (ESTRUCTURA DEL DOCUMENTO) trata sobre la estrucutra de la página web.
+El modelo de caja CSS es esencialmente una caja que envuelve cada elemento HTML. Se compone de: márgenes, bordes, el relleno y el contenido real.
+
+Este modelo de caja cuenta con las siguientes partes:
+1. Contenido - El contenido de la caja, donde aparecen textos e imágenes.
+2. El relleno - Borra un área alrededor del contenido.El relleno es transparente.
+3. Bordes - Un borde que va alrededor del relleno y contenido.
+4. Margenes - Es una zona fuera del borde.El margen es transparente.
+
+Práctica:
+1. Cree el archivo 3_Modelo_de_Caja.html
+2. Cree el contenido básico. Digite "!" o "HTML5"
+3. Ingrese dentro del "Body" el siguiente código:
+    h2{Demonstrating the Box Model}
+    p{The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders,
+        padding, and the actual content.}
+    div>p{lorem30}+p{lorem20}
+
+4. Grabar  y visualizar navegador.
+5. Cree el archivo 3_Modelo_de_Caja.css
+6.  Ingrese el siguiente código en el archivo 3_Modelo_de_Caja.css:
+    div {
+        background-color: lightgrey;
+        width: 300px;
+        height: 350px;
+        padding: 15px;
+        border: 25px solid navy;
+        margin: 35px;
+    }
+    
+7.  Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8.  Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.
+
+9.  En el archivo HTML comentar el contenido actual (entrea las etiquetas <div> </div>) e ingresar el siguiente código:
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+
+    h3{Ejemplo01}
+    p.clase_a>lorem20
+    h3{Ejemplo02}
+    p.clase_b>lorem20
+    h3{Ejemplo03}
+    p.clase_c>lorem20
+    h3{Ejemplo04}
+    p.clase_d>lorem20
+    h3{Ejemplo05}
+    p.clase_e>lorem20
+
+10. Comentar la regla CSS actual {CTRL+k+u} y reemplazar por la siguiente:
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+    p {
+        background-color: lightgrey;
+        width: 300px;
+        height: 350px;
+        padding: 15px;
+        border: 25px solid navy;
+        margin: 35px;
+    }
+
+11. En el archivo CSS incorpore estas nuevas reglas. 
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+
+    p.clase_a 
+    {
+        background-color: lightgrey;
+        width: 300px;
+        height: 150px;
+        padding: 15px;
+        border: 25px solid rgb(151, 65, 15);
+        margin: 35px;
+    }
+
+    p.clase_b 
+    {
+        background-color: lightgrey;
+        width: 300px;
+        height: 150px;
+        padding: 15px 17px 19px 20px;
+        /* border: 25 solid navy; */
+        border-top: 25px solid rgb(151, 65, 15);
+        border-right: 26px solid rgb(151, 65, 15);
+        border-bottom: 27px solid rgb(151, 65, 15);
+        border-left: 28px solid rgb(151, 65, 15);
+        margin: 35px 45px 55px 65px;
+    }
+
+    p.clase_c 
+    {
+        background-color: lightgrey;
+        width: 300px;
+        height: 150px;
+        padding: 15px 17px 20px;
+        /* border: 25 solid navy; */
+        border-top: 25px solid rgb(151, 65, 15);
+        border-right: 26px solid rgb(151, 65, 15);
+        border-bottom: 27px solid rgb(151, 65, 15);
+        border-left: 26px solid rgb(151, 65, 15);
+        margin: 35px 55px 65px;
+    }
+
+    p.clase_d 
+    {
+        background-color: lightgrey;
+        width: 300px;
+        height: 150px;
+        padding: 15px 20px;
+        /* border: 25 solid navy; */
+        border-top: 25px solid rgb(151, 65, 15);
+        border-right: 26px solid rgb(151, 65, 15);
+        border-bottom: 27px solid rgb(151, 65, 15);
+        border-left: 26px solid rgb(151, 65, 15);
+        margin: 35px 65px;
+    }
+
+    p.clase_e 
+    {
+        background-color: lightgrey;
+        width: 300px;
+        height: 150px;
+        padding: 15px;
+        /* border: 27 solid navy; */
+        border-top: 27px solid rgb(151, 65, 15);
+        border-right: 27px solid rgb(151, 65, 15);
+        border-bottom: 27px solid rgb(151, 65, 15);
+        border-left: 27px solid rgb(151, 65, 15);
+        margin: 65px;
+    }
+
+11. En el archivo CSS incorpore estas nuevas reglas. 
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+    div p {
+        background-color: rgb(238, 195, 195);
+        margin: 0;
+        padding: 0;
+        border: 25px solid rgb(65, 128, 187);
+    }
+    Nota: La regla CSS no se esta aplicando, ¿Podría deberse a un error de sintaxis?.
+    - Revisar  la especificidad de la regla en el IDE.
+
+12. En el archivo CSS incorpore estas nuevas reglas. 
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+    div p.clase_a, div p.clase_b, div p.clase_c, div p.clase_d, div p.clase_e{
+        background-color: lightgrey;
+        margin: 0;
+        padding: 0;
+        border: 25px solid rgb(40, 15, 151);
+    }

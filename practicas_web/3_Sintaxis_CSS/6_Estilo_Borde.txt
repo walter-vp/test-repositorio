@@ -1,0 +1,56 @@
+Estilo de borde
+Las propiedades del borde CSS le permiten especificar el estilo, el ancho y el color del borde de un elemento.
+
+Se permiten los siguientes valores:
+
+dotted - Define un borde de puntos
+dashed - Define un borde punteado
+solid - Define un borde continuo
+double - Define un borde doble
+groove - Define un borde acanalado 3D. El efecto depende del valor de border-color
+ridge - Define un borde estriado 3D. El efecto depende del valor de border-color
+inset - Define una frontera inserción 3D. El efecto depende del valor de border-color
+outset - Define un borde principio 3D. El efecto depende del valor de border-color
+none - Define ninguna frontera
+hidden - Define una frontera oculto
+
+La propiedad: "border-style" puede tener de uno a cuatro valores (por el borde superior, borde derecho, borde inferior y el borde izquierdo).
+
+Practica:
+1. Cree el archivo 6_Estilo_Borde.html
+2. Cree el contenido básico. Digite "!" o "HTML5"
+3. Ingrese dentro del "Body" el siguiente código:
+
+    <h2>The border-style Property</h2>
+    <p>This property specifies what kind of border to display:</p>
+
+    <p class="dotted">A dotted border.</p>
+    <p class="dashed">A dashed border.</p>
+    <p class="solid">A solid border.</p>
+    <p class="double">A double border.</p>
+    <p class="groove">A groove border.</p>
+    <p class="ridge">A ridge border.</p>
+    <p class="inset">An inset border.</p>
+    <p class="outset">An outset border.</p>
+    <p class="none">No border.</p>
+    <p class="hidden">A hidden border.</p>
+    <p class="mix">A mixed border.</p>
+
+4. Grabar  y visualizar navegador.
+5. Cree el archivo 6_Estilo_Borde.css
+6.  Ingrese el siguiente código en el archivo 2_Estilo_Borde.css
+
+    p.dotted {border-style: dotted;}
+    p.dashed {border-style: dashed;}
+    p.solid {border-style: solid;}
+    p.double {border-style: double;}
+    p.groove {border-style: groove;}
+    p.ridge {border-style: ridge;}
+    p.inset {border-style: inset;}
+    p.outset {border-style: outset;}
+    p.none {border-style: none;}
+    p.hidden {border-style: hidden;}
+    p.mix {border-style: dotted dashed solid double;}
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.

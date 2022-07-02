@@ -1,0 +1,502 @@
+Flexbox, modelo de caja flexible en CSS
+
+El modelo de caja flexible o flexbox nos ofrece un mecanismo con el que dividir el espacio disponible en la ventana, y crear las filas y columnas necesarias para la implementación del diseño de una página web. Este modelo flexible no necesita utilizar los métodos tradicionales de posicionamiento de cajas (static, relative, absolute, float…) sino que organiza los elementos utilizando contenedores flexibles.
+
+1.      Propiedad Display: flex
+        Para utilizar las propiedades de flexbox es necesario crear un contenedor padre que configure las características de los elementos hijos. A este contenedor padre debemos declararle la propiedad “display:flex“.
+
+        1.      Ejercicio 1: 1_CSS_Flexbox_Ej-01.html
+
+                HTML:
+                <div class="box">
+                    <div>One</div>
+                    <div>Two</div>
+                    <div>
+                        Three
+                        <br>has
+                        <br>extra
+                        <br>text
+                    </div>
+                </div>
+
+                CSS:
+                .box {
+                        display: flex;
+                        justify-content: space-between;
+                }
+
+2.      Propiedad flex-wrap: nowrap | wrap | wrap-reverse
+        Podemos indicar qué elementos flexibles se deben trasladar cuando no hay suficiente espacio en el contenedor mediante la propiedad flex-wrap. Sus valores son los siguientes:
+
+        nowrap: los elementos no pasan a la siguiente fila y se reduce su anchura para mostrarlos. Este es el valor por defecto.
+        wrap: los elementos pasan a la siguiente fila y conservan su anchura.
+        wrap-reverse: los elementos pasan a la siguiente fila, pero en sentido inverso al de su declaración.
+
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        2.      Ejercicio 2: 1_CSS_Flexbox_Ej-02.html
+                
+                HTML:
+                <h2>flex-wrap: no-wrap;</h2>
+                <div id="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </div>
+
+                <h2>flex-wrap: wrap;</h2>
+                <div id="flex-container1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </div>
+                <h2>flex-wrap: wrap-reverse;</h2>
+                <div id="flex-container2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </div>
+
+                CSS:
+                #flex-container{
+                display: flex;
+                flex-wrap: no-wrap;
+                }
+
+                #flex-container div{
+                width: 200px;
+                height: 150px;
+                color: #FFF;
+                text-align: center;
+                line-height: 150px;
+                margin: 10px;
+                font-size: 20px;
+                font-family: Arial;
+                background-color: #E67E22;
+                }
+
+                #flex-container1{
+                display: flex;
+                flex-wrap: wrap;
+                }
+
+                #flex-container1 div{
+                width: 200px;
+                height: 150px;
+                color: #FFF;
+                text-align: center;
+                line-height: 150px;
+                margin: 10px;
+                font-size: 20px;
+                font-family: Arial;
+                background-color: #C0392B;
+                }
+
+                #flex-container2{
+                display: flex;
+                flex-wrap: wrap-reverse;
+                }
+
+                #flex-container2 div{
+                width: 200px;
+                height: 150px;
+                color: #FFF;
+                text-align: center;
+                line-height: 150px;
+                margin: 10px;
+                font-size: 20px;
+                font-family: Arial;
+                background-color: #3498DB;
+                }
+
+3.      Propiedad Justify-content: flex-start | flex-end | center | space-between |space
+        La propiedad justify-content es la que define la justificación horizontal de los elementos hijos de un contenedor flexible. Esta propiedad acepta cinco valores:
+
+        flex-start: posiciona los elementos a la izquierda del contenedor. Valor por defecto.
+        
+        flex-end: posiciona los elementos a la derecha del contenedor.
+        
+        center: centra los elementos en el contenedor
+        
+        space-between: añade un espacio idéntico entre los elementos. El primer elemento está alineado a la izquierda del contenedor, y el último, a la derecha.
+        
+        space-around: espacia de forma regular los elementos que no están alineados a la izquierda y a la derecha del contenedor.
+        
+        #container{
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        3.      Ejercicio 3: 1_CSS_Flexbox_Ej-03.html
+                CSS:
+                #flex-container1{
+                    display: flex;
+                    justify-content: flex-start;
+                }
+
+                #flex-container1 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: 'Roboto', sans-serif;
+                    background-color: #9B59B6;
+                }
+
+                #flex-container2{
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                #flex-container2 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #C0392B;
+                }
+
+                #flex-container3{
+                    display: flex;
+                    justify-content: center;
+                }
+
+                #flex-container3 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #3498DB;
+                }
+
+                #flex-container4{
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                #flex-container4 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #17A589;
+                }
+
+                #flex-container5{
+                    display: flex;
+                    justify-content: space-around;
+                }
+
+                #flex-container5 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #E67E22;
+                }
+
+                HTML:
+                <h2>justify-content: flex-start;</h2>
+                <div id="flex-container1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>justify-content: flex-end;</h2>
+                <div id="flex-container2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>justify-content: center;</h2>
+                <div id="flex-container3">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>justify-content: space-between;</h2>
+                <div id="flex-container4">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>justify-content: space-around;</h2>
+                <div id="flex-container5">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+4.      Propiedad align-items: stretch | flex-start | flex-end | center | baseline
+        La propiedad align-items actúa sobre el eje vertical. Para utilizar esta propiedad primero se debe definir la propiedad flex-direction: row.
+
+        La propiedad align-items acepta cinco valores:
+
+        stretch: los elementos se amplían verticalmente para ocupar toda la altura disponible en el contenedor. Este es el valor por defecto.
+        
+        flex-start: los elementos se colocan en la parte superior del contenedor.
+        
+        flex-end: los elementos se colocan en la parte inferior del contenedor.
+        
+        center: los elementos se colocan en el centro del contenedor.
+        
+        baseline: los elementos se alinean sobre la línea de base del texto.
+        
+        #container{
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        4.      Ejercicio 4: 1_CSS_Flexbox_Ej-04.html
+                CSS:
+                #flex-container1{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: stretch;
+                    height: 250px;
+                }
+
+                #flex-container1 div{
+                    width: 200px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: 'Roboto', sans-serif;
+                    background-color: #9B59B6;
+                }
+
+                #flex-container2{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    height: 250px;
+                }
+
+                #flex-container2 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #C0392B;
+                }
+
+                #flex-container3{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: flex-end;
+                    height: 250px;
+                }
+
+                #flex-container3 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #3498DB;
+                }
+
+                #flex-container4{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 250px;
+                }
+
+                #flex-container4 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 150px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #17A589;
+                }
+
+                #flex-container5{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: baseline;
+                    height: 250px;
+                }
+
+                #flex-container5 div{
+                    width: 200px;
+                    height: 150px;
+                    color: #FFF;
+                    text-align: center;
+                    line-height: 120px;
+                    margin: 10px;
+                    font-size: 20px;
+                    font-family: Arial;
+                    background-color: #E67E22;
+                }
+        
+                HTML:
+                <h2>align-items: stretch;</h2>
+                <div id="flex-container1">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>align-items: flex-start;</h2>
+                <div id="flex-container2">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>align-items: flex-end;</h2>
+                <div id="flex-container3">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>align-items: center;</h2>
+                <div id="flex-container4">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
+
+                <h2>align-items: baseline;</h2>
+                <div id="flex-container5">
+                    <div><h3>1</h3></div>
+                    <div>2</div>
+                    <div><h4>3</h4></div>
+                    <div>4</div>
+                </div>
+        
+        5.      Ejercicio 5: 1_CSS_Flexbox_Ej-04.html
+                RESUMIENDO TODO EL CAPITULO
+                CSS:
+                *{
+                    font-family: "Roboto", Arial, Tahoma, sans-serif;
+                }
+
+                p.big{
+                font-size: 1.1em;
+                line-height: 1.5em;
+                }
+
+                .fa-star, .fa-thumbs-up, .fa-check{
+                font-size: 2.7em;
+                display: block;
+                color: black;
+                color: white;
+                margin-bottom: 30px;
+                }
+
+                .info-box{
+                background-color: #1C1D22;
+                margin: 0px auto;
+                padding: 110px 0 110px 0;
+                color: white;
+                text-align: center;
+                }
+
+                .info-box h2{
+                margin-bottom: 30px;
+                }
+
+                #flex-p{
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                }
+
+                #flex-p p{
+                padding: 30px;
+                max-width: 300px;
+                }
+
+                HTML:
+                
+                HEAD:
+                <script src="https://kit.fontawesome.com/509deda241.js" crossorigin="anonymous"></script>
+
+                BODY:
+                <div class="info-box">
+                <h2>This is an info-box</h2>
+                    <div id="flex-p">  
+                        <p class="big">
+                            <i class="fas fa-star"></i>
+                            <br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci incidunt, laudantium nostrum minus fuga aut dolore fugit cupiditate qui.
+                        </p>
+
+                        <p class="big">
+                            <i class="fas fa-thumbs-up"></i>
+                            <br>
+                            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                        </p>
+
+                        <p class="big">
+                            <i class="fas fa-check"></i>
+                            <br>
+                            Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                        </p>
+                    </div> 
+                </div>
+

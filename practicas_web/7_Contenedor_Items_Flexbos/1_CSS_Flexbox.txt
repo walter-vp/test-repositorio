@@ -1,0 +1,118 @@
+Módulo de diseño CSS Flexbox
+Antes del módulo Flexbox Layout, había cuatro modos de diseño:
+
+1. Bloque, para secciones de una página web
+2. Inline, para texto
+3. Tabla, para datos de tablas bidimensionales
+4. Posicionado, para la posición explícita de un elemento
+
+El módulo de diseño de caja flexible facilita el diseño de una estructura de diseño flexible y receptiva sin usar flotador o posicionamiento.
+
+1.      Elementos Flexbox
+        Para comenzar a usar el modelo Flexbox, primero debe definir un contenedor flexible.
+
+        1.      Ejercicio 1: 1_CSS_Flexbox_Ej-01.html
+                Un contenedor flexible con tres elementos flexibles.
+                Crearemos un elemento que representa un contenedor flexible (de área azul) con tres elementos flexibles.
+
+                HTML:
+                <h1>Create a Flex Container</h1>
+
+                <div class="flex-container">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>  
+                </div>
+
+                <p> Un diseño flexible debe tener un elemento principal con la propiedad <em> display </em> establecida en <em> flex </em>. </p>
+
+                <p> Los elementos secundarios directos del contenedor flexible se convierten automáticamente en elementos flexibles. </p>
+
+                CSS:
+                .flex-container {
+                display: flex;
+                background-color: DodgerBlue;
+                }
+
+                .flex-container > div {
+                background-color: #f1f1f1;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                }
+
+        2.      Ejercicio 2: 1_CSS_Flexbox_Ej-02.html
+                Para utilizar las propiedades de "flexbox" es necesario crear un contenedor padre que configure las características de los elementos hijos. A este contenedor padre debemos declararle la propiedad “display:flex“.
+
+                HTML:
+                <h2>Display: flex</h2>
+                <div id="flex-p">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci incidunt, laudantium nostrum minus fuga aut dolore fugit cupiditate qui et eveniet sed numquam expedita libero suscipit debitis ipsum doloremque eos?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci incidunt, laudantium nostrum minus fuga aut dolore fugit cupiditate qui et eveniet sed numquam expedita libero suscipit debitis ipsum doloremque eos?</p>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                <p>Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <p>Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+                <h2>Ejemplo para ver diferencias entre display: flex y float:left</h2>
+                <h2>Display: flex</h2>
+                <div id="flex-container">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </div>
+                <h2>Float container</h2>
+                <div class="float-container">
+                    <div>1</div>
+                </div>
+                <div class="float-container">
+                    <div>2</div>
+                </div>
+                <div class="float-container">
+                    <div>3</div>
+                </div>
+                <div class="float-container">
+                    <div>4</div>
+                </div>
+                <div class="float-container">
+                    <div>5</div>
+                </div>
+
+                CSS:
+                #flex-p{
+                display: flex;
+                }
+                #flex-p p{
+                margin: 10px;
+                }
+                #flex-container{
+                display: flex;
+                }
+                #flex-container div{
+                width: 50%;
+                height: 150px;
+                color: #FFF;
+                text-align: center;
+                line-height: 150px;
+                margin: 10px;
+                font-size: 20px;
+                font-family: Arial;
+                background-color: #C0392B;
+                }
+                .float-container{
+                float: left;
+                width: 20%;
+                box-sizing: border-box;
+                }
+                .float-container div{
+                height: 150px;
+                margin: 10px;
+                background-color: #2980B9;
+                color: #FFF;
+                text-align: center;
+                line-height: 150px;
+                font-size: 20px;
+                font-family: Arial;
+                }

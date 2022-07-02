@@ -1,0 +1,301 @@
+Posición y comportamiento de contenedores en CSS
+
+En el proceso de creación de una web es imprescindible organizar elementos como imágenes, textos o tablas. Para ello, necesitaremos conocer los elementos de ordenación y las propiedades que nos ayudan a organizar todos los componentes. Las propiedades más importantes se definen en la siguiente tabla y se explican a continuación.
+
+
+                        Tabla: Posición y comportamiento de las cajas o contenedores
+
+Propiedad                   Descripción     	                                    Valores
+display     	            Comportamiento del contenedor       	                inline | block | inline-block | none
+position    	            Esquema de posicionamiento          	                static | relative | absolute | fixed
+top/right/bottom/left   	Desplazamiento de la caja respecto al borde superior,
+                             derecho, inferior o izquierdo	                        longitud | porcentaje | auto
+float                   	Posicionamiento flotante	                            left | right | none
+clear                   	Control de cajas adyacentes a las float	                none | left | right | both
+z-index                 	Nivel de la capa	                                    auto | número entero
+box-sizing              	Control de bordes y relleno en el comportamiento
+                            del contenedor	                                        content-box | border-box
+visibility              	Muestra u oculta un elemento ocupando el espacio	    visible | hidden
+
+1.  Propiedad: Display
+    Valores: none | inline | block | inline-block
+
+    none: los elementos se ocultan y no se muestra el espacio reservado.
+    
+    inline: los elementos se muestran en la misma línea (respetando el flujo) y no se aceptan las propiedades width, height ni márgenes verticales.
+    
+    block: los elementos se muestran en líneas independientes y se aceptan las propiedades width, height y márgenes verticales.
+    
+    inline-block: su comportamiento es una mezcla entre los dos anteriores, los elementos se muestran en la misma línea (respetando el flujo) y se aceptan las propiedades 
+    width, height y márgenes verticales.
+
+    1.      Ejercicio 1: 5_Posicion_y_ comportamiento_de_contenedores_Ej-01.html
+
+            HTML:
+            <h3>display: none</h3>
+                <p class="a">Bloque1 </p> 
+                <p class="a">Bloque2 </p> 
+                <p class="a">Bloque3 </p> 
+            <h3>display: inline</h3>
+                <p class="b">Bloque1 </p> 
+                <p class="b">Bloque2 </p> 
+                <p class="b">Bloque3</p> 
+            <h3>display: block</h3>
+                <p class="c">Bloque1 </p> 
+                <p class="c">Bloque2 </p> 
+                <p class="c">Bloque3 </p> 
+            <h3>display: inline-block</h3>
+                <p class="d">Bloque1 </p> 
+                <p class="d">Bloque2 </p> 
+                <p class="d">Bloque3 </p> 
+            
+            CSS:
+            .a { display: none; }
+            .b { display: inline; width: 100px; height: 50px;}
+            .c { display: block; }
+            .d { display: inline-block; width: 100px; height: 50px;}
+            p  { color: purple; border: dotted;}
+
+
+2.  Propiedad: Position
+    Valores: static | relative | absolute | fixed
+
+    static: los elementos se posicionan de acuerdo al flujo normal de la página. Es la posición natural de los elementos. No son afectados por las propiedades top, bottom, left y right.
+    
+    relative: los elementos se posicionan de forma relativa a su posición normal.
+    
+    fixed: los elementos se posicionan de forma relativa a la ventana del navegador. Su posición permanece fija aunque se desplace la ventana.
+    
+    absolute: los elementos se posicionan de forma relativa al primer elemento padre que tenga una posición distinta a static.
+
+    2.      Ejercicio 2: 5_Posicion_y_ comportamiento_de_contenedores_Ej-02.html
+            Ejemplo position: static
+            Aplica los siguientes estilos sobre diferentes elementos y comprueba que los elementos mantienen su posición natural.
+
+}
+
+            HTML:
+            <h3>Propiedad position: static</h3>
+
+            <p class="a">Bloque1 </p> 
+            <p class="b">Bloque2 </p> 
+            <p class="c">Bloque3 </p> 
+
+            CSS:
+            .a { position: static; }
+            .b { position: static; }
+            .c { position: static; }
+            p  { width: 100px; color: purple; border: dotted;
+          
+    3.      Ejercicio 3: 5_Posicion_y_ comportamiento_de_contenedores_Ej-03.html
+            Ejemplo position: relative
+            Aplica el siguiente estilo sobre un elemento y comprueba que con las propiedades left: 20px y top: 10px el elemento se desplaza 20px hacia la derecha y 10 px hacia abajo desde su posición por defecto.
+
+            HTML:
+            <h3>Propiedad position: relative</h3>
+            <p>Bloque1 </p> 
+            <p class="bloque2">Bloque2 </p> 
+            <p>Bloque3 </p>
+
+            CSS:
+            .bloque2 { position: relative; left: 20px; top: 10px;  }
+            p  { width: 100px; color: purple; border: dotted;}
+
+
+    4.      Ejercicio 4: 5_Posicion_y_ comportamiento_de_contenedores_Ej-04.html
+            Ejemplo position: fixed
+            Tal y como puedes comprobar en el siguiente ejemplo, los elementos con position: fixed toman como referencia la ventana del navegador y permanecen fijos.
+
+            HTML:
+            <h3>Propiedad position: fixed</h3>
+            <p>Bloque1 </p> 
+            <p class="bloque2">Bloque2 </p> 
+            <p>Bloque3 </p>
+
+            CSS:
+            .bloque2 { position: fixed; top: 130px; left: 100px; }
+            p { width: 100px; color: purple; border: dotted;}
+
+
+
+    5.      Ejercicio 5: 5_Posicion_y_ comportamiento_de_contenedores_Ej-05.html
+            Ejemplo position: absolute
+            Establece el siguiente estilo sobre un elemento y comprueba cómo el elemento deja de seguir la posición del flujo normal de la página y se posiciona de forma relativa al primer elemento padre que tiene una posición distinta a static. En este caso, el elemento <div>.
+
+            HTML:
+            <h3>Propiedad position: absolute</h3>
+            <p>Bloque1 </p> 
+            <p class="bloque2">Bloque2 </p> 
+            <p>Bloque3 </p>
+
+            CSS:
+            .container{ position: absolute; left: 100px;}
+            .bloque2 { position: absolute; left: 20px; top: 140px;}
+            p { width: 100px; color: purple; border: dotted;}
+            
+
+3.  Propiedad: Float
+    Valores: left | right | none
+
+    Cuando a un elemento HTML se le aplica un estilo con la propiedad float, el elemento sale del flujo normal y aparece posicionado a la izquierda o a la derecha de su contenedor, donde el resto de elementos de la página se posicionarán alrededor.
+
+    6.      Ejercicio 6: 5_Posicion_y_ comportamiento_de_contenedores_Ej-06.html
+            Ejemplo float
+            Aplica los siguientes estilos sobre diferentes contenedores y comprueba el resultado.
+
+            HTML:
+            <div class="a">
+                <div>A</div>
+            </div>
+
+            <div class="a">
+                <div>A</div>
+            </div>
+
+            <div class="b">
+                <div>B</div>
+            </div>
+
+            <div class="b">
+                <div>B</div>
+            </div>
+
+            <div class="c">
+                <div>C</div>
+            </div>
+
+            CSS:
+            .a {
+            float: left;
+            padding: 10px;
+            }
+            .a div{
+            height: 100px;
+            width: 100px; 
+            background-color: #2980B9;
+            }
+            .b {
+            float: right;
+            padding: 10px;
+            }
+            .b div{
+            height: 100px;
+            width: 100px; 
+            background-color: #17A589;
+            }
+            .c {
+            float: right;
+            padding: 10px;
+            }
+            .c div{
+            height: 100px;
+            width: 100px; 
+            background-color: red;
+            }
+
+4.  Propiedad: Clear
+    Valores: none | left | right | both
+
+    La propiedad clear establece si un elemento debe estar al lado de los elementos flotantes que lo preceden o si debe situarse bajo de ellos. Se suele utilizar para restaurar el flujo normal del documento y así los elementos dejan de flotar hacia la izquierda, la derecha o ambos lados.
+
+    7.      Ejercicio 7: 5_Posicion_y_ comportamiento_de_contenedores_Ej-07.html
+            Ejemplo clear
+            Crea un contenedor y aplícale la propiedad float con el valor left. Sitúa un texto bajo del contenedor creado utilizando la propiedad clear.
+
+            HTML:
+            <div class="a">
+            <div></div>
+            </div>
+            <div class="b">
+                <div></div>
+            </div>
+            <h4>Texto sin propiedad clear</h4>
+            <p>Texto con propiedad clear:both</p>
+
+            CSS:
+            .a {
+            float: left;
+            padding: 10px;
+            }
+            .a div{
+            height: 100px;
+            width: 100px; 
+            background-color: #2980B9;
+            }
+            .b {
+            float: right;
+            padding: 10px;
+            }
+            .b div{
+            height: 100px;
+            width: 100px; 
+            background-color: #17A589;
+            }
+            p{
+            clear: both;
+            }
+
+
+5.  Propiedad: Z-index
+    Valores: auto | número entero
+
+    Mediante el atributo z-index podemos organizar cada uno de los elementos del contenido de una página web.
+
+    8.      Ejercicio 8: 5_Posicion_y_ comportamiento_de_contenedores_Ej-08.html
+            Ejemplo z-index
+            Aplica los siguientes estilos sobre diferentes contenedores que se encuentren superpuestos y comprueba el resultado.
+
+            HTML:
+            <h3>Propiedad z-index</h3>
+            <div class="a"></div> 
+            <div class="b"></div> 
+            <div class="c"></div>
+
+            CSS:
+            .a { width: 150px; height: 200px; background-color: purple; position: relative; z-index: 3;}
+            .b { width: 150px; height: 200px; background-color: black; position: relative; left: 50px;
+            top: -110px; z-index: 1;}
+            .c { width: 150px; height: 200px; background-color: grey; position: relative; left: 100px;
+            top: -210px; z-index: 2;}
+
+
+6.  Propiedad: Box-sizing
+    Por defecto en el modelo de cajas de CSS, el ancho y alto asignado a un elemento es aplicado solo al contenido de la caja del elemento. Si el elemento tiene algún borde (border) o relleno (padding), este es entonces añadido al ancho y alto del tamaño de la caja o contenedor. Esto significa que cuando se define el ancho y alto, se tiene que ajustar el valor para permitir cualquier borde o relleno que se pueda añadir.
+
+    Valores: content-box | border-box
+
+    -   content-box es el comportamiento CSS por defecto para el tamaño de la caja (box-sizing). Si se define el ancho de un elemento en 100 pixeles, la caja del contenido del elemento tendrá 100 pixeles de ancho, y el ancho de cualquier borde o relleno será añadido al ancho final desplegado.
+    
+    -   border-box toma en cuenta cualquier valor que se especifique de borde o de relleno para el ancho o alto de un elemento. Es decir, si se define un elemento con un ancho de 100 pixeles. Esos 100 pixeles incluirán cualquier borde o relleno que se añada, y la caja de contenido se encogerá para absorber ese ancho extra. Esta propiedad es especialmente útil para redimensionar cualquier elemento.
+
+    9.      Ejercicio 9: 5_Posicion_y_ comportamiento_de_contenedores_Ej-09.html
+            Crea un contenedor que ocupe el 100% del ancho de la pantalla. Posiciona tres imágenes en línea y define que cada imagen ocupe el 33,333%. Observa que el conjunto ocupa el 100% de la pantalla. 
+
+            Si a continuación dotamos a las imágenes de un padding o relleno, el conjunto ocupará más del 100%. En este punto podríamos establecer un “box-sizing: border-box“ para incluir en el conjunto el relleno definido. Acuérdate de añadir los prefijos para los navegadores:
+
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            Como puedes ver en el código, se han añadido los prefijos para navegadores necesarios para esta nueva propiedad.
+
+            HTML:
+            <div class="img-container">
+            <img src="img/maple-leaf-4597501_960_720.jpg">
+            </div>
+            <div class="img-container">
+            <img src="img/maple-leaf-4597501_960_720.jpg">
+            </div>
+            <div class="img-container">
+            <img src="img/maple-leaf-4597501_960_720.jpg">
+            </div>
+
+            CSS:
+            .img-container {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            }
+            .img-container img{
+            width: 100%;
+            }

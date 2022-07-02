@@ -1,0 +1,151 @@
+MODELO DE CAJA FLEXIBLES
+
+El modelo de caja flexible o flexbox nos ofrece un mecanismo con el que dividir el espacio disponible en la ventana, y crear las filas y columnas necesarias para la implementación del diseño de una página web.
+
+¿Cómo funciona el flex CSS?
+El modelo CSS Flexbox parte de la alineación horizontal, aunque también es posible organizar los elementos en una columna. Además, se puede invertir la dirección, de izquierda a derecha o de abajo a arriba. Para ello, se utiliza el comando flex-direction: row: de izquierda a derecha.
+
+1.  Ejercicio 01:
+    1.  Cree el archivo 2_1_Plantilla_col_simetrica_flex.html
+    2.  Cree el contenido básico. Digite "!" o "HTML5"
+    3.  Ingrese dentro del "Body" el siguiente código:
+
+    h2{CSS Template using Float}
+    p{En este ejemplo, hemos creado un encabezado, tres columnas iguales y un pie de página. En pantallas más pequeñas, las columnas se apilarán una encima de la otra.}
+    p{Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.}
+    .header>h2{Header}
+    .row>.column[style="background-color:#aaa"]{Columna01}+.column[style="background-color:#bbb"]{Columna02}+.column[style="background-color:#ccc"]{Columna03}
+    .footer>p{Footer}
+
+    4.  Grabar  y visualizar navegador.
+    5.  Ingrese el siguiente código antes de la etiqueta </head>:
+
+    <style>
+        /* Estilo de caracter global */
+        /* Modificamos la forma de calcular el
+        TAMAÑO del modelo de caja */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo del encabezado */
+        .header {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+        }
+
+        /* Contenedor para flexbox (Cajas Flexibles) */
+        .row {
+          display: -webkit-flex;
+          display: flex;
+        }
+
+        /* Cree tres columnas (cajas flexibles) iguales que se encuentren una al lado de la otra */
+        .column {
+          -webkit-flex: 33.33%;
+          -ms-flex: 33.33%;
+          flex: 33.33%;
+          padding: 10px;
+          height: 300px; 
+           /* Alto de 300px. Solo para demostración */
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+          background-color: #f1f1f1;
+          padding: 10px;
+          text-align: center;
+        }
+
+        /* Diseño adaptable: hace que las tres columnas se apilen una encima de la otra en lugar de una al lado de la otra. */
+        @media (max-width: 600px) {
+          .row {
+            -webkit-flex-direction: column;
+            flex-direction: column;
+          }
+        }
+    </style>
+
+2.  Ejercicio 02:
+    1.  Cree el archivo 2_2_Plantilla_col_asimetrica_flex.html
+    2.  Cree el contenido básico. Digite "!" o "HTML5"
+    3.  Ingrese dentro del "Body" el siguiente código:
+
+    h2{CSS Template using Float}
+    p{En este ejemplo, hemos creado un encabezado, tres columnas desiguales y un pie de página. En pantallas más pequeñas, las columnas se apilarán una encima de la otra.}
+    p{Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.}
+    .header>h2{Header}
+    .row>div.column.side[style="background-color:#aaa"]{Columna01}+div.column.middle[style="background-color:#bbb"]{Columna02}+div.column.side[style="background-color:#ccc"]{Columna03}
+    .footer>p{Footer}
+
+    4.  Grabar  y visualizar navegador.
+    5.  Ingrese el siguiente código antes de la etiqueta </head>:
+
+    <style>
+        /* Estilo de caracter global */
+        /* Modificamos la forma de calcular el
+        TAMAÑO del modelo de caja */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo del encabezado */
+        .header {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+        }
+
+        /* Contenedor para flexbox (Cajas Flexibles) */
+        .row {
+          display: -webkit-flex;
+          display: flex;
+        }
+
+        /* Crear tres columnas desiguales que floten una al lado de la otra. */
+        /* Reglas CCS comunes a las tres columnas */
+        .column {
+          padding: 10px;
+          height: 300px; /* Debería ser removido. Solo para demostración */
+        }
+
+        /* Columna izquierda y derecha */
+        .column.side {
+          -webkit-flex: 25%;
+          -ms-flex: 25%;
+          flex: 25%;
+        }
+
+        /* Columna del medio */
+        .column.middle {
+          -webkit-flex: 50%;
+          -ms-flex: 50%;
+          flex: 50%;
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+          background-color: #f1f1f1;
+          padding: 10px;
+          text-align: center;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+          .row {
+            -webkit-flex-direction: column;
+            flex-direction: column;
+          }
+        }
+    </style>

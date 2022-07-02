@@ -1,0 +1,597 @@
+Formularios CSS
+El aspecto de un formulario HTML se puede mejorar enormemente con CSS.
+
+1.  Aplicar estilo a los campos de entrada
+    Utilice la propiedad "width" para determinar el ancho del campo de entrada.
+
+    1.  Ejercicio 1: 4_Estilos_CSS_Formularios_Ej-01.html
+        Este ejercicio es aplicable a todos los elementos <input>. 
+
+        -   Si solo desea diseñar un tipo de entrada "input", puede usa cualquiera de estos selectores de atributos, por ejemplo:
+            input[type=text] - solo seleccionará campos de texto
+            input[type=password] - solo seleccionará campos de contraseña
+            input[type=number] - solo seleccionará campos numéricos
+            etc..
+        -   Si usa mas de un tipo de "input" usará cualquiera de los selectores aprendidos
+        
+        HTML:
+        <h2> Un campo de entrada de ancho completo </h2>
+
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        CSS:
+        input {
+            width: 80%;
+            /* Para otras medidas usar un porcentaje diferente */
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */   
+        }
+
+
+2.  Inputs con "Relleno"
+    Utilice la propiedad "padding" para agregar espacio dentro del campo de texto.
+    Sugerencia: cuando tiene muchas entradas una tras otra, es posible que también que desee agregar algún "margin", para agregar más espacio fuera de ellas.
+
+    2.  Ejercicio 2: 4_Estilos_CSS_Formularios_Ej-02.html
+        Tenga en cuenta que hemos establecido la box-sizingpropiedad en border-box. Esto asegura que el relleno y eventualmente los bordes se incluyan en el ancho y alto total de los elementos.
+        
+        HTML:
+        <h2> Campos de entrada CON relleno </h2>
+
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for = "fname"> Nombre </label>
+            <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        CSS:
+        input[type=text], input[type=email] {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 8px 0;
+        }
+
+3.  Inputs bordeadas
+    Puede ir variando las propiedades que ya conoce sobre css para elemento HTML "border"
+
+    3.  Ejercicio 3: 4_Estilos_CSS_Formularios_Ej-03.html
+        Use la propiedad "border" para cambiar el tamaño y el color del borde, y use la propiedad "border-radius" para agregar esquinas redondeadas.
+
+        HTML:
+        <h2> Campos de entrada con bordes </h2>
+
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        CSS:
+        input[type=text], input[type=email]  {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 10px 0;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid hsl(0, 0%, 0%);
+            border-radius: 10px;   
+        }
+
+    4.  Ejercicio 4: 4_Estilos_CSS_Formularios_Ej-04.html
+        Si solo desea un borde inferior, use la propiedad "border-bottom"
+
+        HTML:
+        <h2> Campos de entrada con borde inferior </h2>
+
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        CSS:
+        input[type=text], input[type=email] {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid red;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 10px 0;
+            padding: 12px 8px;
+            box-sizing: border-box;
+            border: 2px solid hsl(0, 0%, 0%);
+            border-radius: 10px;
+        }
+
+4.  InputS COLOREADAS
+    Use la propiedad "background-color" para agregar un color de fondo a la entrada y la propiedad "color" para cambiar el color del texto.
+
+    5.  Ejercicio 5: 4_Estilos_CSS_Formularios_Ej-05.html
+
+        HTML:
+        <h2> Campos de entrada con color </h2>
+
+        <form action="https://www.w3schools.com/action_page.php">
+             <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        CSS:
+        input[type=text], input[type=email] {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #3CBC8D;
+            color: white;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 10px 0;
+            padding: 12px 8px;
+            box-sizing: border-box;
+            border: 2px solid hsl(0, 0%, 0%);
+            border-radius: 10px;  
+        }
+
+5.  Entrada enfocadas
+    De forma predeterminada, algunos navegadores agregarán un contorno azul alrededor de la entrada cuando se enfoque (se haga clic en ella).
+    Puede eliminar este comportamiento agregando "outline: none"; a la etiqueta "input".
+
+    Use el selector ":focus"  para hacer algo con el campo de entrada cuando se enfoque.
+
+    6.  Ejercicio 6: 4_Estilos_CSS_Formularios_Ej-06.html
+
+        HTML:
+        <h2> Campos de entrada con color activado: foco </h2>
+
+        <p> Aquí, el campo de entrada adquiere un color cuando se enfoca (se hace clic en él): </p>
+
+        <form action="https://www.w3schools.com/action_page.php">
+                       <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+        CSS:
+        input[type=text], input[type=email] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            outline: none;
+        }
+
+        input[type=text]:focus, input[type=email]:focus {
+            background-color: lightblue;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 10px 0;
+            padding: 12px 8px;
+            box-sizing: border-box;
+            border: 2px solid hsl(0, 0%, 0%);
+            border-radius: 10px;   
+        }        
+
+
+    7.  Ejercicio 7: 4_Estilos_CSS_Formularios_Ej-07.html
+
+        HTNL:
+        <h2> Campos de entrada con borde negro en: foco </h2>
+
+        <p> Aquí, el campo de entrada obtiene un color de borde negro cuando se enfoca (se hace clic en él). También hemos agregado la propiedad de transición CSS para animar el color del borde (toma 0.5 segundos para cambiar el color en foco): </p>
+
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for="txtNombre">Ingrese su nombre:</label>
+            <input type="text" name="txtNombre" id="txtNombre" required>
+            <br>
+            <br>
+
+            <label for="txtApellido">Ingrese su apellido: </label>
+            <input type="text" name="txtApellido" id="txtApellido">
+            <br>
+            <br>
+
+            <label for="email"> Ingrese su correo electrónico: </label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        CSS:
+        input[type=text], input[type=email] {
+            width: 80%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=text]:focus, input[type=email]:focus {
+            border: 3px solid #555;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 10px 0;
+            padding: 12px 8px;
+            box-sizing: border-box;
+            border: 2px solid hsl(0, 0%, 0%);
+            border-radius: 10px;     
+        }
+
+6.  Entrada con icono / imagen
+    Si desea un icono dentro de la entrada, use la propiedad: "background-image" y colóquelo con la propiedad: "background-position". También observe que agregamos un gran relleno izquierdo para reservar el espacio del ícono. 
+
+    8.  Ejercicio 8: 4_Estilos_CSS_Formularios_Ej-08.html
+        HTML:
+        <h2> Campo de entrada con un icono dentro </h2>
+    
+        <p>Digitar el texto a buscar y digitar la tecla &ldquo;enter&rdquo;</p>
+        <form action="https://www.w3schools.com/action_page.php">
+
+            <input type = "text" name = "search" placeholder = "Buscar ..">
+
+        </form>
+
+        CSS:
+        input[type=text] {
+            width: 80%;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('img/searchicon_22x22.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+        }
+
+7.  Entrada de búsqueda animada
+    En este ejercicio usaremos la transitionpropiedad CSS para animar el ancho de la entrada de búsqueda cuando se enfoca.
+
+    9.  Ejercicio 9: 4_Estilos_CSS_Formularios_Ej-09.html
+
+        HTML:
+        <h2> Animar el ancho de la entrada de búsqueda </h2>
+
+        <p>Digitar el texto a buscar y digitar la tecla &ldquo;enter&rdquo;</p> 
+        <form action="https://www.w3schools.com/action_page.php">
+
+            <input type = "text" name = "search" placeholder = "Search ..">
+
+        </form>
+
+        CSS:
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('img/searchicon_22x22.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            transition: width 0.4s ease-in-out;
+            }
+
+        input[type=text]:focus {
+            width: 100%; 
+            /* Cambie el porcentaje para diferentes anchos del elemento input */
+        }
+
+8.  Textareas con Estilos
+    Sugerencia: use la propiedad resize para evitar que se cambie el tamaño de las áreas de texto (deshabilite el "capturador" en la esquina inferior derecha).
+
+    10. Ejercicio 10: 4_Estilos_CSS_Formularios_Ej-10.html
+
+        HTML:
+        <h2> Estilo de área de texto </h2>
+
+        <p> <strong> Sugerencia: </strong> use la propiedad de cambio de tamaño para evitar que se cambie el tamaño de las áreas de texto (deshabilite el "capturador" en la esquina inferior derecha): </p>
+
+        <form action="https://www.w3schools.com/action_page.php">
+            
+        <label for="msg">Mensaje:</label>
+        <textarea id="msg" name="user_message">Algún texto ... </textarea>
+
+        <input type="submit" value="Submit">
+
+        </form>
+
+        CSS:
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+
+        input[type="submit"] {
+            width: 10%;
+            /* Para otras medidas usar un porcentaje diferente */
+            margin: 10px 0;
+            padding: 12px 8px;
+            box-sizing: border-box;
+            border: 2px solid hsl(0, 0%, 0%);
+            border-radius: 10px;     
+        }
+
+9.  Input Buttons con Estilos
+
+    11.  Ejercicio 11: 4_Estilos_CSS_Formularios_Ej-11.html
+
+        HTML:
+        <h2> Estilo de botones de formulario </h2>
+
+        <input type = "button" value = "Button">
+        <input type = "reset" value = "Reset">
+        <input type = "submit" value = "Submit">
+
+        CSS:
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover,
+        input[type=submit]:hover,
+        input[type=reset]:hover {
+            background-color: red;
+        }
+
+10.  Responsive Form
+        Cambie el tamaño de la ventana del navegador para ver el efecto. Cuando la pantalla tenga menos de 600 px de ancho, haga que las dos columnas se apilen una encima de la otra en lugar de una al lado de la otra.
+
+        12.  Ejercicio 12: 4_Estilos_CSS_Formularios_Ej-12.html
+
+        HTML:
+        <h2>Formulario Adaptable</h2>
+        <p>Cambie el tamaño de la ventana del navegador para ver el efecto. Cuando la pantalla tenga menos de 600 px de ancho, haga que las dos columnas se apilen una encima de la otra en lugar de una al lado de la otra.</p>
+
+        <div class="container">
+        <form action="https://www.w3schools.com/action_page.php">
+        <div class="row">
+            <div class="col-25">
+            <label for="fname">Nombre: </label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="fname" name="firstname" placeholder="Su nombre..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="lname">Apellidos: </label>
+            </div>
+            <div class="col-75">
+            <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="country">País: </label>
+            </div>
+            <div class="col-75">
+            <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+            </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="subject">Subject</label>
+            </div>
+            <div class="col-75">
+            <textarea id="subject" name="subject" placeholder="Escribe algo.." style="height:200px"></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <input type="submit" value="Enviar Formulario">
+        </div>
+        </form>
+        </div>
+
+        CSS:
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Limpiar flotadores después de las columnas */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Diseño adaptable: cuando la pantalla tiene menos de 600 px de ancho, haga que las dos columnas se apilen una encima de la otra en lugar de una al lado de la otra */
+        @media screen and (max-width: 600px) {
+            .col-25, .col-75, input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }

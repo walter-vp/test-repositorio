@@ -1,0 +1,239 @@
+Atributos de entrada HTML
+Este capítulo se describe los diferentes atributos del elemento HTML <input>, de los muchos que se tienen.
+
+1.  El atributo de valor
+    El atributo de entrada "value" especifica un valor inicial para un campo de entrada.
+
+    1.  Ejercicio 01: 2_HTML_atributos_elemento_INPUT-01.html
+        Campos de entrada con valores iniciales (predeterminados).
+        HTML:
+        <h1> El atributo de valor de entrada </h1>
+        <p> El atributo de valor especifica un valor inicial para un campo de entrada: </p>
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "fname"> Nombre: </label> <br>
+            <input type = "text" id = "fname" name = "fname" value = "John"> <br>
+            <label for = "lname"> Apellido: </label> <br>
+            <input type = "text" id = "lname" name = "lname" value = "Doe"> <br> <br>
+            <input type = "submit" value = "Submit">
+        </form>
+
+2.  El atributo de solo lectura
+    El atributo de entrada "readonly" especifica que un campo de entrada es de solo lectura.
+    Un campo de entrada de solo lectura "readonly" no se puede modificar (sin embargo, un usuario puede tabularlo, resaltarlo y copiar el texto).
+    El valor de un campo de entrada de solo lectura se enviará al enviar el formulario.
+
+    2.  Ejercicio 02: 2_HTML_atributos_elemento_INPUT-02.html
+        Un campo de entrada de solo lectura.
+        HTML:
+        <h1>El atributo de solo lectura de entrada</h1>
+        <p>El atributo de solo lectura especifica que un campo de entrada debe ser de solo lectura (no se puede cambiar):</p>
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John" readonly><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe">
+            <input type = "submit" value = "Submit">
+        </form>
+
+3.  El atributo "desactivado"
+    El atributo de entrada "disabled" especifica que un campo de entrada debe estar deshabilitado.
+    Un campo de entrada deshabilitado es inutilizable y no se puede hacer clic en él.
+    El valor de un campo de entrada deshabilitado no se enviará al enviar el formulario.
+
+    3.  Ejercicio 03: 2_HTML_atributos_elemento_INPUT-03.html
+        Un campo de entrada deshabilitado.
+        HTML:
+        <h1> El atributo de entrada deshabilitado </h1>
+        <p> El atributo deshabilitado especifica que un campo de entrada debe deshabilitarse (inutilizable y en el que no se puede hacer clic): </p>
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "fname"> Nombre: </label> <br>
+            <input type = "text" id = "fname" name = "fname" value = "John" disabled> <br>
+            <label for = "lname"> Apellido: </label> <br>
+            <input type = "text" id = "lname" name = "lname" value = "Doe"> <br> <br>
+            <input type = "submit" value = "Submit">
+        </form>
+
+4.  El atributo de tamaño
+    El sizeatributo de entrada especifica el ancho visible, en caracteres, de un campo de entrada.
+    El valor predeterminado para "size" es 20.
+    Nota: El atributo "size" funciona con los siguientes tipos de entrada: texto, búsqueda, teléfono, url, correo electrónico y contraseña.
+    
+    4.  Ejercicio 04: 2_HTML_atributos_elemento_INPUT-04.html
+        Establezca un ancho para un campo de entrada.
+        HTML:
+        <h1> El atributo de tamaño de entrada </h1>
+        <p> El atributo de tamaño especifica el ancho (en caracteres) de un campo de entrada: </p>
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "fname"> Nombre: </label> <br>
+            <input type = "text" id = "fname" name = "fname" size = "50"> <br>
+            <label for = "pin"> PIN: </label> <br>
+            <input type = "text" id = "pin" name = "pin" size = "4"> <br> <br>
+            <input type = "submit" value = "Submit">
+        </form>
+
+5.  El atributo maxlength
+    El atributo de entrada maxlength especifica el número máximo de caracteres permitidos en un campo de entrada.
+    Nota: Cuando maxlengthse establece a, el campo de entrada no aceptará más del número de caracteres especificado. Sin embargo, este atributo no proporciona ningún comentario. Entonces, si desea alertar al usuario, debe escribir código JavaScript.
+    
+    5.  Ejercicio 05: 2_HTML_atributos_elemento_INPUT-05.html
+        Establezca una longitud máxima para un campo de entrada.
+        HTML:
+        <h1>El atributo maxlength de entrada</h1>
+        <p>El atributo maxlength especifica el número máximo de caracteres permitidos en un campo de entrada:</p>
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" maxlength="50"><br>
+            <label for="pin">PIN:</label><br>
+            <input type="text" id="pin" name="pin" maxlength="4" size="4"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+6.  Los atributos mínimos y máximos
+    Los atributos de entrada "min" y "max" especifican los valores mínimo y máximo para un campo de entrada.
+    Los atributos "min" y "max" funcionan con los siguientes tipos de entrada: número, rango, fecha, fecha y hora local, mes, hora y semana.
+    Sugerencia: use los atributos max y min juntos para crear un rango de valores válidos para usted.
+
+    6.  Ejercicio 06: 2_HTML_atributos_elemento_INPUT-06.html
+        Establezca una fecha máxima, una fecha mínima y un rango de valores válidos.
+        HTML:
+        <h1> Los atributos mínimo y máximo de entrada </h1>
+        <p> Los atributos mínimo y máximo especifican los valores mínimo y máximo para un elemento de entrada. </p>
+
+        <h1>Los atributos mínimo y máximo de entrada</h1>
+        <p>Los atributos min y max especifican los valores mínimo y máximo para un elemento de entrada.</p>
+        <form action="https://www.w3schools.com/action_page.php">
+            <label for="datemax">Introduzca una fecha anterior a 1980-01-01:</label>
+            <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+            
+            <label for="datemin">Enter a date after 2000-01-01:</label>
+            <input type="date" id="datemin" name="datemin" min="2000-01-02"><br><br>
+            
+            <label for="quantity">Quantity (between 1 and 5):</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="5"><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+
+7.  El atributo de marcador de posición
+    El atributo de entrada "multiple"  especifica que el usuario puede ingresar más de un valor en un campo de entrada.
+    El atributo "multiple" funciona con los siguientes tipos de entrada: "correo electrónico" y "archivo".
+
+    7.  Ejercicio 07: 2_HTML_atributos_elemento_INPUT-07.html
+        Un campo de carga de archivos que acepta varios valores.
+        HTML:
+        <h1> Los atributos múltiples de entrada </h1>
+        <p> El atributo múltiple especifica que el usuario puede ingresar más de un valor en un campo de entrada. </p>
+        
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "files"> Seleccionar archivos: </label>
+            <input type = "file" id = "files" name = "files" multiple> <br> <br>
+            <input type = "submit" value = "Submit">
+        </form>
+
+        <p> Para seleccionar varios archivos, mantenga presionada la tecla CTRL o MAYÚS mientras selecciona. </p>
+
+8.  El atributo requerido
+    El atributo de entrada "required" especifica que se debe completar un campo de entrada antes de enviar el formulario.
+    El atributo "required" funciona con los siguientes tipos de entrada: texto, búsqueda, url, teléfono, correo electrónico, contraseña, selectores de fecha, número, casilla de verificación, radio y archivo.
+    
+    8.  Ejercicio 08: 2_HTML_atributos_elemento_INPUT-08.html
+        Un campo de entrada obligatorio.
+        HTML:
+        <h1> El atributo de entrada requerido </h1>
+        <p> El atributo obligatorio especifica que se debe completar un campo de entrada antes de enviar el formulario. </p>
+
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "username"> Nombre de usuario: </label>
+            <input type = "text" id = "username" name = "username" required>
+            <input type = "submit" value = "Submit">
+        </form>
+
+        <p> <strong> Nota: </strong> el atributo obligatorio de la etiqueta de entrada no es compatible con Safari anterior a la versión 10.1. </p>
+
+
+9.  El atributo de enfoque automático
+    El atributo de entrada "autofocus" especifica que un campo de entrada debe recibir el foco automáticamente cuando se carga la página.
+
+    9.  Ejercicio 09: 2_HTML_atributos_elemento_INPUT-09.html
+        Deje que el campo de entrada "Nombre" se enfoque automáticamente cuando se cargue la página.
+        HTML:
+        <h1> El atributo de enfoque automático de entrada </h1>
+        <p> El atributo de enfoque automático especifica que el campo de entrada debe enfocarse automáticamente cuando se carga la página. </p>
+
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "fname"> Nombre: </label> <br>
+            <input type = "text" id = "fname" name = "fname" autofocus> <br>
+            <label for = "lname"> Apellido: </label> <br>
+            <input type = "text" id = "lname" name = "lname"> <br> <br>
+            <input type = "submit" value = "Submit">
+        </form>
+
+10. Los atributos de altura y ancho
+    Los atributos de entrada "height" y "width" especifican la altura y el ancho de un elemento <input type="image">.
+
+    Sugerencia: especifique siempre los atributos de alto y ancho para las imágenes. Si se establecen la altura y el ancho, el espacio requerido para la imagen se reserva cuando se carga la página. Sin estos atributos, el navegador no conoce el tamaño de la imagen y no puede reservarle el espacio apropiado. El efecto será que el diseño de la página cambiará durante la carga (mientras se cargan las imágenes).
+
+    10. Ejercicio 10: 2_HTML_atributos_elemento_INPUT-10.html
+        Defina una imagen como botón de envío, con atributos de alto y ancho.
+        HTML:
+        <h1> Los atributos de altura y ancho de entrada </h1>
+        <p> Los atributos de alto y ancho especifican el alto y el ancho de un elemento de tipo de entrada = "imagen". </p>
+
+        <form action = "https://www.w3schools.com/action_page.php">
+            <label for = "fname"> Nombre: </label>
+            <input type = "text" id = "fname" name = "fname"> <br> <br>
+            <label for = "lname"> Apellido: </label>
+            <input type = "text" id = "lname" name = "lname"> <br> <br>
+            <input type = "image" src = "img/img_submit.gif" alt = "Enviar" width = "48" height = "48">
+        </form>
+
+    <p> <b> Nota: </b> El tipo de entrada = "imagen" envía las coordenadas X e Y del clic que activó el botón de imagen. </p>
+
+11. El atributo de lista
+    El atributo de entrada "list" se refiere a un elemento <datalist> que contiene opciones predefinidas para un elemento <input>.
+    
+    11. Ejercicio 11: 2_HTML_atributos_elemento_INPUT-11.html
+        HTML:
+        <h1> El atributo de la lista de entrada </h1>
+
+        <p> El atributo de lista se refiere a un elemento de lista de datos que contiene opciones predefinidas para un elemento de entrada. </p>
+
+        <form action = "https://www.w3schools.com/action_page.php">
+            <input list = "browsers" name = "browser">
+            <datalist id = "browsers">
+                <option value = "Internet Explorer">
+                <option value = "Firefox">
+                <option value = "Chrome">
+                <option value = "Opera">
+                <option value = "Safari">
+            </datalist>
+            <input type = "submit" value = "Submit">
+        </form>
+
+    <p> <b> Nota: </b> La etiqueta de lista de datos no es compatible con Safari 12.0 (o anterior). </p>
+
+12. El atributo de autocompletar
+    El atributo de entrada "autocomplete" especifica si un formulario o un campo de entrada debe tener autocompletado activado o desactivado.
+
+    Autocompletar permite que el navegador prediga el valor. Cuando un usuario comienza a escribir en un campo, el navegador debe mostrar opciones para completar el campo, según los valores ingresados ​​anteriormente.
+
+    El atributo "autocomplete" funciona con <form> los siguientes tipos de entrada <input>: texto, búsqueda, url, teléfono, correo electrónico, contraseña, selectores de fechas, rango y color.
+
+   12.  Ejercicio 12: 2_HTML_atributos_elemento_INPUT-12.html
+        Un formulario HTML con autocompletar activado y desactivado para un campo de entrada.
+        HTML:
+
+        <h1> El atributo de autocompletar </h1>
+        <p> El atributo de autocompletar especifica si un campo de entrada debe tener habilitado el autocompletado. </p>
+        <p> Complete y envíe el formulario, luego vuelva a cargar la página para ver cómo funciona la función de autocompletar. </p>
+        <p> Tenga en cuenta que la función de autocompletar está "activada" para el formulario, pero "desactivada" para el campo de correo electrónico. </p>
+
+        <form action = "https://www.w3schools.com/action_page.php" autocomplete = "es">
+            <label for = "fname"> Nombre: </label>
+            <input type = "text" id = "fname" name = "fname"> <br> <br>
+            <label for = "lname"> Apellido: </label>
+            <input type = "text" id = "lname" name = "lname"> <br> <br>
+            <label for = "email"> Correo electrónico: </label>
+            <input type = "email" id = "email" name = "email" autocomplete = "off"> <br> <br>
+            <input type = "submit" value = "Submit">
+        </form>

@@ -1,0 +1,95 @@
+Elementos en Bloque y  en Línea HTML
+
+Cada elemento HTML tiene un valor de visualización predeterminado, dependiendo del tipo de elemento que sea.
+Hay dos valores de visualización: bloque y en línea.
+
+1.  Elementos a nivel de bloque
+
+    Un elemento a nivel de bloque siempre ocupa todo el ancho disponible (se extiende hacia la izquierda y hacia la derecha tanto como puede)
+    Un elemento de nivel de bloque tiene un margen superior e inferior, mientras que un elemento en línea no, tampoco se le puede aplicaR la propiedad "WhidtW y "height".
+    El elemento <div> es un elemento a nivel de bloque.
+
+    1.      Ejercicio 1: 1_Elementos_bloque_y_en_linea_Ej-01.html
+            HTML:
+            <div style = "border: 1px solid black; padding: 5px;"> Hola mundo </div>
+            <p> El elemento DIV es un elemento de bloque, y siempre comenzará en una nueva línea y ocupará todo el ancho disponible (se extiende hacia la izquierda y hacia la derecha tanto como sea posible).</p>
+
+    Estos son los elementos a nivel de bloque en HTML:
+    <header> <nav> <main>  <footer>
+    <div> <section> <aside> <article>  
+    <h1>-<h6> <p> <blockquote> <figcaption> <figure> <ul> <ol> <li>
+    <form> <fieldset>
+    <canvas> <address> <video>
+    <table> <thead> <tbody> <tfoot> <dd> <dl> <dt>
+    <hr> <noscript> <pre>
+
+
+2.  Elementos en línea
+    Un elemento en línea no comienza en una nueva línea.
+    Un elemento en línea solo ocupa el ancho necesario.
+
+    2.      Ejercicio 2: 1_Elementos_bloque_y_en_linea_Ej-02.html
+    
+            HTML:
+            <p> Este es un elemento <span> Hello World </span> en línea dentro de un párrafo.
+            </p>
+            <br>
+            <p> El elemento SPAN es un elemento en línea, y no comenzará en una nueva línea y solo ocupará el ancho necesario.
+            </p>
+            <br>
+            <p> Se le puede aplicar una regla <span class="a">"padding" (relleno)</span></p>
+            <br>
+            <p> No se le puede aplicar una regla <span class="b">"Whidt" o "Height"</span> y de aplicarsele no tendrá ningún
+                efecto</p>
+            <br>
+            <p> Se le puede aplicar una regla <span class="c">"margin-left" o "margin-right".</span>que si tendrán efecto en el
+                elemento</p>
+            <br>
+            <p> No se le puede aplicar una regla <span class="d">"margin-top" o "margin-bottom".</span> y de aplicarsele no
+                tendrá ningún efecto</p>
+
+            CSS:
+            span {
+                    border: 1px solid black;
+            }
+
+            span.a {
+                padding-top: 15px;
+                padding-left: 20px;
+                padding-bottom: 25px;
+                padding-right: 30px;
+            }
+
+            span.b {
+                width: 100px;
+                height: 100px;
+            }
+
+            span.c {
+                margin-left: 20px;
+                margin-right: 30px;
+            }
+
+            span.d {
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+
+    
+    Estos son los elementos en línea en HTML:
+
+    <a> <abbr> <acronym> <b> <bdo> <big> <br> <button> cite> <code> <dfn> <em> <i> <img> <input>
+    <kbd> <label> <map> <object> <output> <q> <samp> <script> <select> <small> <span> <strong>
+    <sub> <sup> <textarea> <time> <tt> <var>
+
+    Nota: ¡ Un elemento en línea no puede contener un elemento a nivel de bloque!
+
+    RESUMEN:
+    Hay dos valores de visualización: bloque y en línea
+    Un elemento a nivel de bloque siempre comienza en una nueva línea y ocupa todo el ancho disponible.
+    Un elemento en línea no comienza en una nueva línea y solo ocupa el ancho necesario
+    El elemento <div> es un nivel de bloque y a menudo se usa como contenedor para otros elementos HTML.
+    El elemento <span> es un contenedor en línea que se utiliza para marcar una parte de un texto o una parte de un documento.
+
+    IMPORTANTE:
+     Un elemento de nivel de bloque tiene un margen superior e inferior, mientras que un elemento en línea no, tampoco se le puede aplicable la propiedad "WhidtW y "height".

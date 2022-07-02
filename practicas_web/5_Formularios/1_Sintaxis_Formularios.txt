@@ -1,0 +1,396 @@
+HTML & CSS - Formularios
+
+Los formularios son los elementos en los que se integran los botones y las áreas de texto que se utilizan para que los usuarios introduzcan sus datos o que puedan elegir entre varias opciones. Veamos las etiquetas que se utilizan para la creación de formularios en HTML5.
+
+El Elemento HTML <form> 
+El elemento HTM <form> se utiliza para crear un formulario HTML para la entrada del usuario.
+Sintaxis:
+    <form> 
+    ......
+     Elementos del Formulario
+    ......
+     </form>
+
+El elemento <form> es un contenedor para diferentes tipos de elementos de entrada, como: campos de texto, casillas de verificación, botones de opción, botones de envío, etc.
+
+        Elementos de formulario HTML:
+
+        Elemento        	Descripción
+        <form>	            Define un formulario.
+        <fieldset>	        Permite organizar en grupos los campos de un formulario.
+        <legend>	        Representa el título de un <fieldset>.
+        <input>	            Se usa para crear controles interactivos que reciben datos del usuario. Ver atributos
+        <label>	            Representa el título de un elemento de control de un formulario.
+        <button>	        Representa un botón.
+        <option>	        Representa una opción en un elemento <select> o <datalist>.
+        <select>	        Representa un elemento de control que permite la selección entre un conjunto de opciones <option>.
+        <optgroup>	        Representa un conjunto de opciones, agrupadas lógicamente.
+        <datalist>	        Representa un elemento de control que permite la selección entre un conjunto de opciones <option>.
+        <textarea>	        Representa un elemento de control de edición de texto multilínea.
+        <output>	        Representa el resultado de un cálculo.
+
+    1.      Ejercicio 01: 1_Sintaxis_Formularios_Ej-01.html
+            Este es el formato de una etiqueta FORM el cual debe ir entre las etiquetas <body> </body>.
+            HTML:
+    
+            <br>
+            <form action = "https://www.w3schools.com/action_page.php">
+            <!--Etiqueta fieldset-->
+            <fieldset>
+                <!--Etiqueta legend-->
+                <legend>Datos personales</legend>
+                <!--Etiqueta label-->
+                <label>Nombre y apellidos: </label>
+                <!--Etiqueta input tipo texto-->
+                <input name='nombre' type='text' /><br>
+                <label>Sexo: </label>
+                <!--Etiqueta select-->
+                <select name="select">
+                    <!--Etiqueta option-->
+                    <option value="value1">Hombre</option>
+                    <option value="value2" selected>Mujer</option>
+                </select><br><br>
+                <label>Edad: </label>
+                <!--Etiqueta input tipo checkbox-->
+                <input type='checkbox' name='edad' value='20-39' /> 20-39
+                <input type='checkbox' name='edad' value='40-59' /> 40-59
+                <input type='checkbox' name='edad' value='60-79' /> 60-79<br><br>
+                <label>Email: </label>
+                <!--Etiqueta input tipo email-->
+                <input name='nombre' type='email' /><br><br>
+                <label>Estudios: </label>
+                <!--Etiqueta select-->
+                <select id="dino-select">
+                    <!--Etiqueta optgroup-->
+                    <optgroup label="Estudios Universitarios">
+                        <!--Etiqueta option-->
+                        <option>Doctorado</option>
+                        <option>Máster</option>
+                        <option>Grado</option>
+                    </optgroup>
+                    <optgroup label="Ciclo Formativo">
+                        <option>Grado Superior</option>
+                        <option>Grado Medio</option>
+                    </optgroup>
+                </select><br><br>
+                <label>Elige tu navegador favorito: </label>
+                <input list="browsers" name="myBrowser" />
+                <!--Etiqueta datalist-->
+                <datalist id="browsers">
+                    <option value="Chrome">
+                    <option value="Firefox">
+                    <option value="Internet Explorer">
+                    <option value="Opera">
+                    <option value="Safari">
+                    <option value="Microsoft Edge">
+                </datalist><br><br>
+                <!--Etiqueta textarea-->
+                <textarea name="textarea" rows="10" cols="50" placeholder="Escribe aquí tu mensaje"></textarea>
+            </fieldset>
+            <br>
+
+            /* Con este valor "button" para el atributo "type" se envia el formulario */
+            <input type="submit" value="Enviar" />
+            </form>
+            <br>
+            <br>
+
+            <!--Nuevo formulario con output-->
+            <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+                <input type="range" name="b" value="50" /> +
+                <input type="number" name="a" value="10" /> =
+                <output name="result">60</output>
+            </form>
+            <br>
+
+I.      El elemento <input>
+        El elemento <input> HTML es el elemento de formulario más utilizado.
+        Un elemento <input> se puede mostrar de muchas formas, según el atributo: type.
+
+        Estos son los diferentes tipos de entrada que puede usar en HTML:
+        <input type="button">
+        <input type="checkbox">
+        <input type="color">
+        <input type="date">
+        <input type="datetime-local">
+        <input type="email">
+        <input type="file">
+        <input type="hidden">
+        <input type="image">
+        <input type="month">
+        <input type="number">
+        <input type="password">
+        <input type="radio">
+        <input type="range">
+        <input type="reset">
+        <input type="search">
+        <input type="submit">
+        <input type="tel">
+        <input type="text">
+        <input type="time">
+        <input type="url">
+        <input type="week">
+    
+II.     El elemento <label>
+        El elemento <label>  define una etiqueta para varios elementos del formulario.
+
+        El elemento <label>  es útil para los usuarios de lectores de pantalla, porque el lector de pantalla leerá en voz alta la etiqueta cuando el usuario se concentre en el elemento de entrada.
+
+        El elemento <label> también ayuda a los usuarios que tienen dificultades para hacer clic en regiones muy pequeñas (como botones de opción o casillas de verificación), porque cuando el usuario hace clic en el texto dentro del elemento <label>, cambia el botón de opción / casilla de verificación.
+
+        El atributo: "for"  de la etiqueta <label> debe ser igual al atributo: "id"  del elemento <input> para unirlos.
+
+        2.      Ejercicio 02: 1_Sintaxis_Formularios_Ej-02.html
+                HTML:
+                <h2> Campo de texto </h2>
+                <p> El tipo de entrada <strong> type= &quot;texto&quot; </strong> define un campo de entrada de texto de una línea:</p>
+
+                <form action = "https://www.w3schools.com/action_page.php">
+                    
+                    /* Combinación 01 de Etiqueta Label y Etiqueta Type */
+                    <label for = "fname"> Nombre: </label> <br>
+                    <input type = "text" id = "fname" name = "fname"> <br>
+                    
+                    /* Combinación 01 de Etiqueta Label y Etiqueta Type */
+                    <label for = "lname"> Apellido: </label> <br>
+                    <input type = "text" id = "lname" name = "lname"> <br> <br>
+                    
+                    /* Con este valor "button" para el atributo "type" se envia el formulario */
+                    <input type = "submit" value = "Submit">
+                </form>
+
+                <p> Tenga en cuenta que el formulario en sí no es visible. </p>
+                <p> También tenga en cuenta que el ancho predeterminado de un campo de texto es de 20 caracteres. </p>
+
+        3.      Ejercicio 03: 1_Sintaxis_Formularios_Ej-03.html
+                HTML:
+                <form action="https://www.w3schools.com/action_page.php">
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="check">Acepto condiciones</label>
+                    <input type="checkbox" id="check">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="color">Elige un color:</label>
+                    <input type="color" id="color">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="fecha">Elige una fecha:</label>
+                    <input type="date" id="fecha">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="correo">Indica tu correo:</label>
+                    <input type="email" id="correo">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="archivo">Selecciona un archivo:</label>
+                    <input type="file" id="archivo">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="archivo">Pincha en la imagen:</label>                                                         
+                    <input type="image"  src="img/eniun-icon-user-experience.svg" alt="Submit" width="38" height="38">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="mes">Indica el mes:</label>
+                    <input type="month" id="mes">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="numero">Selecciona un número:</label>
+                    <input type="number" id="numero">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="contrasenya">Indica tu contraseña:</label>
+                    <input type="password" id="contrasenya">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="radio">Esto es un radio button:</label>
+                    <input type="radio" id="radio">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="rango">Selecciona un número del rango:</label>
+                    <input type="range" id="rango" min="0" max="100">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 01 de Etiqueta Label y Etiqueta Type -->
+                    <label for="buscar">Campo de búsqueda:</label>
+                    <input type="search" id="buscar">
+                    
+                    <input type="submit" value="Enviar">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 02 de Etiqueta Label y Etiqueta Type -->
+                    <label for="telefono">Indica tu teléfono:</label>
+                    <input type="tel" id="telefono">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 03 de Etiqueta Label y Etiqueta Type -->
+                    <label for="nombre">Indica tu nombre:</label>
+                    <input type="text" id="nombre">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 04 de Etiqueta Label y Etiqueta Type -->
+                    <label for="hora">Indica la hora:</label>
+                    <input type="time" id="hora">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 05 de Etiqueta Label y Etiqueta Type -->
+                    <label for="url">Indica una URL:</label>
+                    <input type="url" id="url">
+                    <br>
+                    <br>
+                    
+                    <!-- Combinación 06 de Etiqueta Label y Etiqueta Type -->
+                    <label for="semana">Indica la semana:</label>
+                    <input type="week" id="semana">
+                    <br>
+                    <br>
+
+                    <!-- Con este valor "button" para el atributo "type" se envia el formulario  -->
+                    <input type = "submit" value = "Submit">
+
+                </form>
+
+            Nota: Luego de ejecutar y enviar el formulario, habrás observado que el "SERVIDOR" NO retornó ningún valor, esto se debe:
+            A que ninguna de las etiquetas "input" tiene un atributo "name".
+
+            Atributo HTML "NAME".
+            
+            El atributo "name" especifica un nombre para un elemento HTML.
+            Este atributo "name" se puede utilizar para hacer referencia al elemento en un programa de JavaScript.
+            Para un elemento <form>, el atributo "name" se utiliza como referencia cuando se envían los datos.
+            Para un elemento <iframe>, el atributo "name" se puede utilizar para apuntar a un envío de formulario.
+            Para un elemento <map>, el atributo "name" está asociado con el <img>'s atributo "usemapde" y crea una relación entre la imagen y el mapa.
+            Para un elemento <meta>, el atributo "name" especifica un nombre para la información/valor del atributo "content".
+            Para un elemento <param>, el atributo "name" se usa junto con el atributo "value" para especificar parámetros para el complemento especificado con la etiqueta <object>.
+
+            Como se puede observar el atributo "name" se puede utilizar para muchos otros elementos HTML a parte del elemento "form".
+            Veamos alguos ejemplos:
+
+        4.  Ejercicio 04: 1_Sintaxis_Formularios_Ej-04.html
+            Dos botones con nombres iguales, que envían valores diferentes cuando se hace clic en ellos.
+            
+            HTML:
+            <form action="https://www.w3schools.com/action_page.php" method="get">
+                Elige tu materia favorita:
+                <button name="subject" type="submit" value="HTML">HTML</button>
+                <button name="subject" type="submit" value="CSS">CSS</button>
+            </form>
+
+        5.  Ejercicio 05: 1_Sintaxis_Formularios_Ej-05.html
+            Un elemento <fieldset> con un atributo de nombre.
+
+            HTML:
+            <h1>The fieldset name attribute</h1>
+            <form action="https://www.w3schools.com/action_page.php" method="get">
+                <fieldset name="personalia">
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname">
+                </fieldset>
+                <br>
+                <button type="button" onclick="form.personalia.style.backgroundColor='yellow'">
+                    Change background color of fieldset
+                </button>
+                <input type="submit" value = "Submit">
+            </form>
+
+        6.  Ejercicio 06: 1_Sintaxis_Formularios_Ej-06.html
+            Un elemento <fieldset> con un atributo de nombre.
+
+            HTML:
+            <h1>The fieldset element</h1>
+
+            <form action="https://www.w3schools.com/action_page.php">
+                <fieldset>
+                    <legend>Personalia:</legend>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday"><br><br>
+                    <input type="submit" value="Submit">
+                </fieldset>
+            </form>
+
+        7.  Ejercicio 07: 1_Sintaxis_Formularios_Ej-07.html
+            Un formulario HTML con un atributo de nombre.
+
+            HEAD:
+            <script>
+                function formSubmit() {
+                    document.forms["myForm"].submit();
+                }
+            </script>
+
+            HTML:
+            <h1>The form name attribute</h1>
+
+            <form name="myForm" action="https://www.w3schools.com/action_page.php" method="get">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <input type="button" onclick="formSubmit()" value="Send form data!">
+            </form>
+
+            <p>Tenga en cuenta que el JavaScript en la sección principal usa el nombre del formulario para especificar qué formulario enviar.</p>
+
+        8.  Ejercicio 08: 1_Sintaxis_Formularios_Ej-08.html
+            Realice un cálculo y muestre el resultado en un elemento <output>.
+
+            HTML:
+            <h1>The output element</h1>
+
+            <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                <input type="range" id="a" value="50">
+                +<input type="number" id="b" value="25">
+                =<output name="x" for="a b"></output>
+            </form>
+
+            <p><strong>Note:</strong> El elemento de salida no es compatible con Edge 12 (o anterior).</p>
+
+        9. Ejercicio 9: 1_Sintaxis_Formularios_Ej-09.html
+            Una lista desplegable con un atributo de nombre.
+
+            HTML:
+            <h1>The select name attribute</h1>
+
+            <p>El atributo de nombre especifica el nombre de una lista desplegable:</p>
+
+            <form action="https://www.w3schools.com/action_page.php">
+            <label for="cars">Choose a car:</label>
+            <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+            </form>

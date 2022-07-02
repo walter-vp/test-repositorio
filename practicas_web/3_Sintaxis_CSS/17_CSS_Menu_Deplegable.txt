@@ -1,0 +1,222 @@
+Menú desplegable básico
+En este capítulo vamos a crea un cuadro desplegable que aparece cuando el usuario mueve el mouse sobre un elemento.
+
+Para el código HTML: 
+1.  Utilice cualquier elemento para abrir el contenido desplegable, por ejemplo, un elemento <span> o <button>.
+
+2.  Use un elemento contenedor (como <div>) para crear el contenido desplegable y agregue lo que quiera dentro de él.
+
+3.  Envuelva un elemento <div> alrededor de los elementos para colocar el contenido desplegable correctamente con CSS.
+
+Para el código CSS:
+1.  La clase ".dropdown"  usa la declaración CSS "position:relative", que es necesaria cuando queremos que el contenido desplegable se coloque justo debajo del botón desplegable, use la declaración CSS "position:absolute".
+
+2.  La clase ".dropdown-content" contiene el contenido desplegable real. Está oculto de forma predeterminada y se mostrará al pasar el mouse (ver más abajo). Tenga en cuenta que "min-width" se establece en 160px. Siéntase libre de cambiar esto. Consejo: si desea que el ancho del contenido desplegable sea tan ancho como el botón desplegable, establezca el "width" en 100% (y "overflow:auto" para habilitar el desplazamiento en pantallas pequeñas).
+
+3.  En lugar de utilizar un borde, hemos utilizado la propiedad CSS "box-shadow"  para hacer que el menú desplegable parezca una "tarjeta".
+
+4.  El selector ":hover" se utiliza para mostrar el menú desplegable cuando el usuario mueve el mouse sobre el botón desplegable.
+
+Veamos el siguiente ejemplo:
+
+1.  Ejercicio 01: 17_CSS_Menu_Deplegable_Ej-01.html
+    Menú desplegable Básico.
+                                                
+    HTML:
+    <h2>Hoverable Dropdown</h2>
+    <p>Mueva el mouse sobre el texto a continuación para abrir el contenido desplegable.</p>
+
+    <div class="dropdown">
+        <span>Pasa el mouse sobre mi</span>
+        <div class="dropdown-content">
+            <p>Hola Mundo!</p>
+        </div>
+    </div>
+
+    CSS:
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }    
+
+2.  Ejercicio 02: 17_CSS_Menu_Deplegable_Ej-02.html
+    Este ejemplo es similar al anterior, excepto que agregamos enlaces dentro del cuadro desplegable y les damos estilo para que se ajusten a un botón desplegable con estilo.
+
+    HTML:
+    <h2> Menú desplegable </h2>
+    <p> Mueva el mouse sobre el botón para abrir el menú desplegable. </p>
+
+    <div class = "dropdown">
+        <button class = "dropbtn"> Menú desplegable </button>
+        <div class = "dropdown-content">
+            <a href="#"> Enlace 1 </a>
+            <a href="#"> Enlace 2 </a>
+            <a href="#"> Vínculo 3 </a>
+        </div>
+    </div>
+
+    <p> <strong> Nota: </strong> utilizamos href = "#" para los enlaces de prueba. En un sitio web real, estas serían las URL. </p>
+
+    CSS:
+    .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    }
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+
+    .dropdown-content a {
+    display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    }
+
+    .dropdown-content a:hover {background-color: #d3d0d0}
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+
+
+
+3.  Ejercicio 03: 17_CSS_Menu_Deplegable_Ej-03.html
+    Este ejemplo es similar al anterior, excepto que agregamos enlaces dentro del cuadro desplegable y les damos estilo para que se ajusten a un botón desplegable con estilo.
+
+    HTML:
+    <h2> Menú desplegable </h2>
+    <p> Mueva el mouse sobre el botón para abrir el menú desplegable. </p>
+
+    <div class = "dropdown">
+        <button class = "dropbtn"> Menú desplegable </button>
+        <div class = "dropdown-content">
+            <a href="#"> Enlace 1 </a>
+            <a href="#"> Enlace 2 </a>
+            <a href="#"> Vínculo 3 </a>
+        </div>
+    </div>
+
+    <p> <strong> Nota: </strong> utilizamos href = "#" para los enlaces de prueba. En un sitio web real, estas serían las URL. </p>
+
+    CSS:
+    /* Estilo del botón desplegable */
+    .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+
+    /* El contenedor <div> - necesario para colocar el contenido desplegable */
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+
+    /* Contenido desplegable (oculto de forma predeterminada) */
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+
+    /* Enlaces dentro del menú desplegable */
+    .dropdown-content a {
+    display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    }
+
+    /* Cambiar el color de los enlaces desplegables al pasar el mouse */
+    .dropdown-content a:hover {background-color: #d3d0d0}
+
+    /* Mostrar el menú desplegable al pasar el mouse */
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    /* Cambiar el color de fondo del botón desplegable cuando se muestra el contenido desplegable */
+    .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+    }
+
+4.  Ejercicio 04: 17_CSS_Menu_Deplegable_Ej-04.html
+    Imagen desplegable
+    Cómo agregar una imagen y otro contenido dentro del cuadro desplegable.
+
+    HTML:
+    <h2> Imagen desplegable </h2>
+    <p> Mueva el mouse sobre la imagen de abajo para abrir el contenido desplegable. </p>
+
+    <div class = "dropdown">
+        <img src = "img/img_5terre.jpg" alt = "Cinque Terre" width = "100" height = "50">
+        <div class = "dropdown-content">
+            <img src = "img/img_5terre.jpg" alt = "Cinque Terre" width = "300" height = "200">
+            <div class = "desc"> Hermosas Cinque Terre </div>
+        </div>
+    </div>
+
+    CSS:
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    .desc {
+    padding: 15px;
+    text-align: center;
+    }

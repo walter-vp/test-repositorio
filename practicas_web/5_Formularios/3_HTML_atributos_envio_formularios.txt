@@ -1,0 +1,108 @@
+Atributos para el envio de Formularios
+En este capítulo describimos los principales atributos de los formularios para el elemento INPUT en  HTML.
+
+    1.  El atributo "formmethod"
+        El atributo de entrada "formmethod" define el método HTTP para enviar datos de formulario a la URL de acción (en resumen con este atributo enviamos datos para que sean procesados por algun tipo de programa desde el servidor).
+
+        Nota: este atributo anula el atributo de método del elemento <form> .
+
+        El atributo "formmethod" funciona con los siguientes tipos de entrada: "submit" e "image".
+
+        Los datos del formulario se pueden enviar como variables de URL (method = "get") o como una transacción de publicación HTTP (method = "post").
+
+        Notas sobre el método "get":
+        Este método agrega los datos del formulario a la URL en pares de nombre / valor
+        Este método es útil para envíos de formularios donde un usuario desea marcar el resultado.
+        Existe un límite en la cantidad de datos que puede colocar en una URL (varía entre los navegadores), por lo tanto, no puede estar seguro de que todos los datos del formulario se transferirán correctamente.
+        ¡Nunca use el método "get" para pasar información confidencial! (la contraseña u otra información confidencial será visible en la barra de direcciones del navegador)
+        
+        Notas sobre el método "post":
+        Este método envía los datos del formulario como una transacción de publicación HTTP
+        Los envíos de formularios con el método "post" no se pueden marcar.
+        El método "publicar" es más sólido y seguro que "obtener", y "publicar" no tiene limitaciones de tamaño.
+
+        1.  Ejercicio 1: 3_HTML_atributos_envio_formularios_Ej-01.html
+            Un formulario con dos botones de envío. El primero envía los datos del formulario con method = "get". El segundo envía los datos del formulario con method = "post".
+            HTML:
+            <h1> El atributo de método de formulario de entrada </h1>
+            <p> El atributo formmethod define el método HTTP para enviar datos de formulario a la URL de acción. </p>
+
+            <form action = "https://www.w3schools.com/action_page.php" method = "get" target = "_ blank">
+
+                <label for = "fname"> Nombre: </label>
+                <input type = "text" id = "fname" name = "fname"> <br> <br>
+                <label for = "lname"> Apellido: </label>
+                <input type = "text" id = "lname" name = "lname"> <br> <br>
+
+                <!-- Sintaxis usando el método GET -->
+                <input type = "submit" value = "Enviar usando GET">
+
+                <!-- Sintaxis usando el método POST -->
+                <input type = "submit" formmethod = "post" value = "Enviar usando POST">
+
+            </form>
+
+    2.  El atributo "formtarget"
+        El atributo de entrada "formtarget" especifica un nombre o una palabra clave que indica dónde mostrar la respuesta que se recibe después de enviar el formulario.
+        Nota: este atributo anula el atributo de destino del <form>elemento.
+
+        El atributo formtarget funciona con los siguientes tipos de entrada: enviar e imagen.
+
+        2.  Ejercicio 2: 3_HTML_atributos_envio_formularios_Ej-02.html
+            Un formulario con dos botones de envío, con diferentes ventanas de destino.
+            HTML:
+            <h1> El atributo de destino del formulario de entrada </h1>
+
+            <p> El atributo formtarget especifica un nombre o una palabra clave que indica dónde mostrar la respuesta que se recibe después de enviar el formulario. </p>
+
+            <form action = "https://www.w3schools.com/action_page.php">
+                <label for = "fname"> Nombre: </label>
+                <input type = "text" id = "fname" name = "fname"> <br> <br>
+                <label for = "lname"> Apellido: </label>
+                <input type = "text" id = "lname" name = "lname"> <br> <br>
+                <input type = "submit" value = "Submit">
+                <input type = "submit" formtarget = "_ blank" value = "Enviar a una nueva ventana / pestaña">
+            </form>
+
+    3.  El atributo "formnovalidate"
+        El atributo de entrada "formnovalidate" especifica que un elemento <input> no debe validarse cuando se envía.
+        Nota: este atributo anula el atributo novalidate del <form> elemento.
+
+        El atributo "formnovalidate" funciona con los siguientes tipos de entrada: "submit".
+
+        3.  Ejercicio 3: 3_HTML_atributos_envio_formularios_Ej-03.html
+            Un formulario con dos botones de envío (con y sin validación)
+            HTML:
+            <h1> El atributo de entrada de formulario novalidate </h1>
+
+            <form action = "https://www.w3schools.com/action_page.php">
+
+                <label for = "email"> Ingrese su correo electrónico: </label>
+                <input type = "email" id = "email" name = "email" required> <br> <br>
+
+                <input type = "submit" value = "Submit">
+
+                <input type = "submit" formnovalidate = "formnovalidate" value = "Enviar sin validación">
+
+            </form>
+
+            <p> <strong> Nota: </strong> el atributo formnovalidate de la etiqueta de entrada no es compatible con Safari 10 (o anterior). </p>
+
+    4.  El atributo "novalidate"
+        El atributo "novalidate" es un atributo del elemento <form> .
+        Cuando está presente, "novalidate" especifica que todos los datos del formulario no deben validarse cuando se envían.
+
+        4.  Ejercicio 4: 3_HTML_atributos_envio_formularios_Ej-04.html
+            Especifique que no se deben validar los datos del formulario al enviarlo.
+            HTML:
+            <h1> El atributo de formulario novalidate </h1>
+
+            <p> El atributo novalidate especifica que los datos del formulario no deben validarse cuando se envían. </p>
+
+            <form action = "https://www.w3schools.com/action_page.php" novalidate>
+                <label for = "email"> Ingrese su correo electrónico: </label>
+                <input type = "email" id = "email" name = "email" required> <br> <br>
+                <input type = "submit" value = "Submit">
+            </form>
+
+            <p> <strong> Nota: </strong> el atributo novalidate de la etiqueta de formulario no es compatible con Safari 10 (o versiones anteriores). </p>

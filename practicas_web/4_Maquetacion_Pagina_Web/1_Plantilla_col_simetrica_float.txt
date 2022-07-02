@@ -1,0 +1,152 @@
+MODELO DE CAJA FLOTANTE
+
+El posicionamiento flotante es el más difícil de comprender pero al mismo tiempo es el más utilizado. La mayoría de estructuras de las páginas web complejas están diseñadas con el posicionamiento flotante, como se verá más adelante.
+
+Cuando una caja se posiciona con el modelo de posicionamiento flotante, automáticamente se convierte en una caja flotante, lo que significa que se desplaza hasta la zona más a la izquierda o más a la derecha de la posición en la que originalmente se encontraba.
+
+Modelo:
+En este ejemplo, hemos creado un encabezado, tres columnas iguales y un pie de página. En pantallas más pequeñas, las columnas se apilaran una encima del otra.
+
+1.  Ejercicio 01:
+    1.  Cree el archivo 1_1_Plantilla_col_simetrica_float.html
+    2.  Cree el contenido básico. Digite "!" o "HTML5"
+    3.  Ingrese dentro del "Body" el siguiente código:
+
+    h2{CSS Template using Float}
+    p{En este ejemplo, hemos creado un encabezado, tres columnas iguales y un pie de página. En pantallas más pequeñas, las columnas se apilarán una encima de la otra.}
+    p{Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.}
+    .header>h2{Header}
+    .row>.column[style="background-color:#aaa"]{Columna01}+.column[style="background-color:#bbb"]{Columna02}+.column[style="background-color:#ccc"]{Columna03}
+    .footer>p{Footer}
+
+    4.  Grabar  y visualizar navegador.
+    5.  Ingrese el siguiente código antes de la etiqueta </head>:
+
+    <style>
+        /* Estilo de caracter global */
+        /* Modificamos la forma de calcular el
+        TAMAÑO del modelo de caja */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo del encabezado */
+        .header {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+        }
+
+        /* Crea tres columnas iguales que floten una al lado de la otra. */
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+          height: 300px;
+          /* Alto de 300px. Solo para demostración */
+        }
+
+        /* Limpiar flotadores después de las columnas */
+        .row::after {
+          content: "";
+          display: table;
+          clear: both;
+          /* Esta declaración FUERZA a un item a moverse por debajo de elementos flotantes. Por ejemplo, secciones
+          de pie de página. */
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+          background-color: #f1f1f1;
+          padding: 10px;
+          text-align: center;
+        }
+
+        /* Diseño adaptable: hace que las tres columnas se apilen una encima de la otra en lugar de una al lado de la otra. */
+        @media (max-width: 600px) {
+          .column {
+            width: 100%;
+          }
+        }
+      </style>
+
+2.  Ejercicio 02:
+    1.  Cree el archivo 1_2_Plantilla_col_asimetrica_float.html
+    2.  Cree el contenido básico. Digite "!" o "HTML5"
+    3.  Ingrese dentro del "Body" el siguiente código:
+
+    h2{CSS Template using Float}
+    p{En este ejemplo, hemos creado un encabezado, tres columnas desiguales y un pie de página. En pantallas más pequeñas, las columnas se apilarán una encima de la otra.}
+    p{Cambie el tamaño de la ventana del navegador para ver el efecto de respuesta.}
+    .header>h2{Header}
+    .row>div.column.side[style="background-color:#aaa"]{Columna01}+div.column.middle[style="background-color:#bbb"]{Columna02}+div.column.side[style="background-color:#ccc"]{Columna03}
+    .footer>p{Footer}
+
+    4.  Grabar  y visualizar navegador.
+    5.  Ingrese el siguiente código antes de la etiqueta </head>:
+
+    <style>
+        /* Estilo de caracter global */
+        /* Modificamos la forma de calcular el
+        TAMAÑO del modelo de caja */
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Estilo del encabezado */
+        .header {
+          background-color: #f1f1f1;
+          padding: 30px;
+          text-align: center;
+          font-size: 35px;
+        }
+
+        /* Crear tres columnas desiguales que floten una al lado de la otra. */
+        /* Reglas CCS comunes a las tres columnas */
+        .column {
+          float: left;
+          padding: 10px;
+          height: 300px; /* Debería ser removido. Solo para demostración */
+        }
+
+        
+        /* Columna izquierda y derecha */
+        .column.side {
+          width: 25%;
+        }
+
+        /* Columna del medio */
+        .column.middle {
+          width: 50%;
+        }
+
+        /* Limpiar flotadores después de las columnas */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* Estilo del pie de página */
+        .footer {
+          background-color: #f1f1f1;
+          padding: 10px;
+          text-align: center;
+        }
+
+        /* Diseño adaptable: hace que las tres columnas se apilen una encima de la otra en lugar de una al lado de la otra. */
+        @media (max-width: 600px) {
+          .column.side, .column.middle {
+            width: 100%;
+          }
+        }
+    </style>

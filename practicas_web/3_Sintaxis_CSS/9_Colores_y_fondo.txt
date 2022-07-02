@@ -1,0 +1,40 @@
+Colores y Fondo
+
+Los valores de los colores se pueden definir mediante su nombre, en código hexadecimal o mediante sus valores en los siguientes formatos:
+- RGB (Red, Green, Blue)
+- HSL (Hue, Saturation, Lightness)
+- RGBA (Red, Green, Blue, Alpha) 
+- HSLA (Hue, Saturation, Lightness, Alpha)
+
+La propiedad 
+color: Modifica el color de los textos en general.
+background-color: Modifica el color del contenedor de elemento HTML5
+Otras propiedades del background modifica el fondo del contenedor de elemento HTML5
+
+Practica de la propiedad.
+Practica:
+1.  Cree el archivo 9_Colores_y_fondo.html
+2.  Cree el contenido básico. Digite "!" o "HTML5"
+3.  Ingrese dentro del "Body" el siguiente código:
+    .colores_rgba>(h1{Definir colores con valores RGBA}^p.p1{Red}^p.p2{Green}^p.p3{Blue}^p.p4{Grey}^p.p5{Yellow}^p.p6{Cerise})
+    .colores_hsla>(h1{Definir colores con valores HSLA}^p.p1{Green}^p.p2{Light green}^p.p3{Dark green}^p.p4{Pastel green}^p.p5{Viole}^p.p6{Pastel violet})
+
+4.   Grabar  y visualizar navegador.
+5.  Cree el archivo 9_Colores_y_fondo.css
+6.  Ingrese el siguiente código en el archivo 9_Colores_y_fondo.css:
+    .colores_rgba .p1 {background-color:rgba(255,0,0,0.8);}
+    .colores_rgba .p2 {background-color:rgba(0,255,0,0.7);}
+    .colores_rgba .p3 {background-color:rgba(0,0,255,0.6);}
+    .colores_rgba .p4 {background-color:rgba(192,192,192,0.5);}
+    .colores_rgba .p5 {background-color:rgba(255,255,0,0.4);}
+    .colores_rgba .p6 {background-color:rgba(255,0,255,0.3);}
+
+    .colores_hsla .p1 {background-color:hsla(120,100%,50%,0.3);}
+    .colores_hsla .p2 {background-color:hsla(120,100%,75%,0.4);}
+    .colores_hsla .p3 {background-color:hsla(120,100%,25%,0.5);}
+    .colores_hsla .p4 {background-color:hsla(120,60%,70%,0.6);}
+    .colores_hsla .p5 {background-color:hsla(290,100%,50%,0.7);}
+    .colores_hsla .p6 {background-color:hsla(290,60%,70%,0.8);}
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.

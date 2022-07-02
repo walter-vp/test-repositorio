@@ -1,0 +1,510 @@
+        CSS TABLAS
+        El aspecto de una tabla HTML puede ser mejorado con CSS.
+        Ejercicio 01: 13_Propiedades_de_las_tablas_Ej-01.html
+
+        HTML:
+        h1{Modelo de una TABLA elegante}
+        
+        Modelo-Ejemplo:
+        table>tr>th{Company}+th{Contact}+th{Country}^
+              tr>td{Alfreds Futterkiste}+td{Maria Anders}+td{Germany}^
+              tr>td{Berglunds snabbköp}+td{Christina Berglund}+td{Sweden}^
+              tr>td{Centro comercial Moctezuma}+td{Francisco Chang}+td{Mexico}^
+              tr>td{Ernst Handel}+td{Roland Mendel}+td{Austria}^   
+              tr>td{Island Trading}+td{Helen Bennett}+td{UK}^
+              tr>td{Königlich Essen}+td{Philip Cramer}+td{Germany}^   
+              tr>td{Laughing Bacchus Winecellars}+td{Yoshi Tannamuri}+td{Canada}^
+              tr>td{Magazzini Alimentari Riuniti}+td{Giovanni Rovelli}+td{Italy}^  
+              tr>td{North/South}+td{Simon Crowther}+td{UK}
+        
+        Código HTML:
+        table>tr>th{Company}+th{Contact}+th{Country}^tr>td{Alfreds Futterkiste}+td{Maria Anders}+td{Germany}^tr>td{Berglunds snabbköp}+td{Christina Berglund}+td{Sweden}^tr>td{Centro comercial Moctezuma}+td{Francisco Chang}+td{Mexico}^tr>td{Ernst Handel}+td{Roland Mendel}+td{Austria}^tr>td{Island Trading}+td{Helen Bennett}+td{UK}^tr>td{Königlich Essen}+td{Philip Cramer}+td{Germany}^tr>td{Laughing Bacchus Winecellars}+td{Yoshi Tannamuri}+td{Canada}^tr>td{Magazzini Alimentari Riuniti}+td{Giovanni Rovelli}+td{Italy}^tr>td{North/South}+td{Simon Crowther}+td{UK}
+
+        Nota: Crear la clase id="customers" dentro de la Etiqueta "table".
+
+        CSS:
+        #customers {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                /* width: 80%;
+                margin-left: auto;
+                margin-right: auto; */
+        }
+
+        #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+        }
+
+        #customers tr:nth-child(even){
+                background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+                background-color: #ddd;
+                cursor: pointer;
+        }
+
+        #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+        }
+
+
+ 
+I.      Los bordes de tabla
+        Para especificar bordes de la tabla en CSS, utilice la border propiedad.
+        El ejemplo siguiente especifica un borde negro de <table> , <th> y <td> elementos.
+
+        Ejercicio 02: 13_Propiedades_de_las_tablas_Ej-02.html
+        
+        HTML:
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                </tr>
+		<tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                </tr>
+        </table>
+
+        CSS:
+        table, th, td { border: 1px solid black; }
+        table{ width: 80%; margin-left: auto; margin-right: auto; }
+
+        Contraer bordes de tabla
+        La propiedad: "border-collapse" establece si los bordes de la tabla deben colapsarse en un solo borde.
+        
+        Ejercicio 03: 13_Propiedades_de_las_tablas_Ej-03.html
+        
+        HTML:
+        h1{Deja que los bordes de la tabla se collapse}
+        table>tr>(th{Item 1}+th{Glosa}+th{Descripción Comercial}^(tr>td>Lorem3^td>Lorem6^td>Lorem16)^(tr>td>Lorem3^td>Lorem6^td>Lorem16)^(tr>td>Lorem3^td>Lorem6^td>Lorem16)^(tr>td>Lorem3^td>Lorem6^td>Lorem16)^(tr>td>Lorem3^td>Lorem6^td>Lorem16))
+
+        CSS:
+        table, td, th {
+                border: 1px solid black;
+        }
+
+        table {
+                width: 100%;
+                border-collapse: collapse;
+        }
+
+II:     Tabla Ancho y Altura
+        Anchura y altura de una tabla se definen por las width y height propiedades.
+        El ejemplo siguiente establece el ancho de la tabla a 100%, y la altura de la <th> elementos de 50px.
+
+        Ejercicio 04: 13_Propiedades_de_las_tablas_Ej-04.html
+       
+        HTML:
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table, td, th {
+        border: 1px solid black;
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th {
+        height: 70px;
+        }
+
+ III.   Alineación horizontal
+        La propiedad "text-align"  establece la alineación horizontal (como izquierda, derecha o centro) parte del contenido de <th> o <td> .
+        De manera predeterminada, el contenido de <th> elementos son alineados-centro y el contenido de <td> elementos se alinea a la izquierda.
+
+        Ejercicio 05: 13_Propiedades_de_las_tablas_Ej-05.html
+       
+        HTML:
+        <h2>The text-align Property</h2>
+        <p>This property sets the horizontal alignment (like left, right, or center) of the content in th or td.</p>
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table, td, th {
+        border: 1px solid black;
+        }
+
+        table {
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        th {
+        text-align: left;
+        }
+        
+
+ IV.    Alineamiento vertical
+        La propiedad: vertical-align establece la alineación vertical (como superior, inferior o central) del contenido en <th> o <td> .
+        Por defecto, la alineación vertical del contenido de una tabla es el espacio "medio" (por tanto <th> y <td> elementos).
+        El ejemplo siguiente define la alineación de texto vertical hacia abajo para <td> elementos.
+        
+        Ejercicio 06: 13_Propiedades_de_las_tablas_Ej-06.html
+        
+        HTML:
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table, td, th {
+                border: 1px solid black;
+        }
+
+        table {
+                border-collapse: collapse;
+                width: 100%;
+        }
+
+        th {
+                height: 70px;
+        }
+
+        td {
+                height: 40px;
+                vertical-align: bottom;
+        }
+
+        
+V.      Relleno de Tablas
+        Para controlar el espacio entre el borde y el contenido de una tabla, utilice el padding la propiedad en el <td> y <th> elementos.
+        
+        Ejercicio 07: 13_Propiedades_de_las_tablas_Ej-07.html
+        
+        HTML:
+        <h2>The padding Property</h2>
+        <p>This property adds space between the border and the content in a table.</p>
+
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table, td, th {  
+                border: 1px solid #ddd;
+                text-align: left;
+        }
+
+        table {
+                border-collapse: collapse;
+                width: 100%;
+        }
+
+        th, td {
+                padding: 15px;
+        }
+
+
+VI.     Los divisores horizontales
+        Añadir la border-bottom propiedad a <th> y <td> para los divisores horizontales.
+
+        Ejercicio 08: 13_Propiedades_de_las_tablas_Ej-08.html
+        
+        HTML:
+        <h2>Bordered Table Dividers</h2>
+        <p>Add the border-bottom property to th and td for horizontal dividers:</p>
+
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table {
+                border-collapse: collapse;
+                width: 100%;
+        }
+
+        th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+        }
+
+VII.    Tabla Hoverable
+        Utilice el selector:hover despues del elemento HTML <tr> para resaltar filas de la tabla al pasar el mouse.
+        
+        Ejercicio 09: 13_Propiedades_de_las_tablas_Ej-09.html
+        HTML:
+        <h2>Hoverable Table</h2>
+
+        <p>Move the mouse over the table rows to see the effect.</p>
+
+        <table>
+                <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Points</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table { border-collapse: collapse; width: 100%; }
+
+        th, td {padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+
+        tr:hover {background-color: yellow;}
+
+VIII.   Tablas de rayas
+        Para las tablas de rayas de cebra, utilice el selector nth-child()  y añadir un background-color para todos las filas pares o impares de la tabla.
+
+        Ejercicio 10: 13_Propiedades_de_las_tablas_Ej-10.html
+
+        HTML:
+        <h2>Striped Table</h2>
+        <p>Para las tablas con rayas de cebra, use el selector nth-child() y agregue un color de fondo a todas las filas pares (o impares) de la tabla:</p>
+
+        <table>
+                <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Points</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>        
+        
+        CSS:
+        table {
+                border-collapse: collapse;
+                 width: 100%;
+        }
+
+        th, td {
+                text-align: left;
+                padding: 8px;
+        }
+
+        tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+IX.     Tabla de colores
+        El ejemplo siguiente se especifica el color de fondo y el color del texto de <th> elementos.
+
+        Ejercicio 11: 13_Propiedades_de_las_tablas_Ej-11.html
+        HTML:
+        <h2>Colored Table Header</h2>
+        <br>
+        <p>El siguiente ejemplo especifica el color de fondo y el color del texto de los elementos &lt; th &gt; :</p>
+        <table>
+                <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Savings</th>
+                </tr>
+                <tr>
+                        <td>Peter</td>
+                        <td>Griffin</td>
+                        <td>$100</td>
+                </tr>
+                <tr>
+                        <td>Lois</td>
+                        <td>Griffin</td>
+                        <td>$150</td>
+                </tr>
+                <tr>
+                        <td>Joe</td>
+                        <td>Swanson</td>
+                        <td>$300</td>
+                </tr>
+                <tr>
+                        <td>Cleveland</td>
+                        <td>Brown</td>
+                        <td>$250</td>
+                </tr>
+        </table>
+
+        CSS:
+        table {
+                border-collapse: collapse;
+                width: 100%;
+        }
+
+        th, td {
+                text-align: left;
+                padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+        th {
+                background-color: #04AA6D;
+                color: white;
+        }

@@ -1,0 +1,148 @@
+Diseño CSS: La propiedad de visualización: DISPLAY.
+
+La propiedad CSS "display" es la propiedad en conjunto con otras reglas de las más importante para controlar el diseño.
+
+La propiedad de visualización
+La propiedad "display" especifica cómo se muestra un elemento o si es que se muestre el elemento. ???
+
+Cada elemento HTML tiene un valor de visualización predeterminado según el tipo de elemento que sea. 
+El valor de visualización predeterminado para la mayoría de los elementos es en "block" (en bloque) o "inline" (en linea).
+
+1.      Elementos a nivel de bloque
+        Un elemento a nivel de bloque siempre comienza en una nueva línea y ocupa todo el ancho disponible (se extiende hacia la izquierda y hacia la derecha tanto como puede).
+
+        El elemento <div> es un elemento a nivel de bloque.
+        Ejemplos de elementos a nivel de bloque:
+
+        <div>
+        <h1> - <h6>
+        <p>
+        <formulario>
+        <encabezado>
+        <footer>
+        <sección>
+
+2.      Elementos en línea
+        Un elemento en línea no comienza en una nueva línea y solo ocupa el ancho necesario.
+
+        El elemento <span> es ub elemento en línea que puede estar contenido dentro de un párrafo, titulos, etc.
+
+        Ejemplos de elementos en línea:
+
+        <span>
+        <a>
+        <img>
+
+3.      Anular el valor de visualización predeterminado
+        Como se mencionó, cada elemento tiene un valor de visualización predeterminado. Sin embargo, se puede anular esto.
+
+        Cambiar un elemento en línea a un elemento de bloque, o viceversa, puede ser útil para hacer que la página se vea de una manera específica y aún así siga los estándares web.
+
+        Un ejemplo común es la creación de elementos lista <li> en línea para menús horizontales.
+
+        1.      Ejercicio 1: 2_CSS_propiedad_display_Ej-01.html
+ 
+                HTML:
+                <p> Muestra una lista de enlaces como un menú horizontal: <p>
+                <ul>
+                    <li><a href="https://www.w3schools.com//html/default.asp" target="_blank">HTML</a></li>
+                    <li><a href="https://www.w3schools.com//css/default.asp" target="_blank">CSS</a></li>
+                    <li><a href="https://www.w3schools.com//js/default.asp" target="_blank">JavaScript</a></li>
+                </ul>
+
+                CSS:
+                li { display: inline; }
+
+                Nota: Establecer la propiedad de visualización de un elemento solo cambia cómo se muestra el elemento , NO qué tipo de elemento es. Por lo tanto, un elemento en línea con display: "block"; no puede tener otros elementos de bloque dentro.
+
+         2.     Ejercicio 2: 2_CSS_propiedad_display_Ej-02.html
+
+                HTML:
+                <h1> Mostrar elementos de tramo como elementos de bloque </h1>
+                <span> Una propiedad de visualización con </span> <span> un valor de "bloque" da como resultado </span> <span> un salto de línea entre cada elemento del intervalo. </span>
+                
+                CSS:
+                span {  display: block; }
+
+4.      Diseño CSS - pantalla: inline-block
+
+        La pantalla: valor de bloque en línea
+        En comparación con display: inline, la principal diferencia es que display: inline-block permite establecer un ancho y un alto en el elemento.
+
+        Además, con "display: inline-block" se respetan los márgenes / rellenos superior e inferior, pero con "display: inline" no.
+
+        En comparación con "display: block", la principal diferencia es que "display: inline-block" no agrega un salto de línea después del elemento, por lo que el elemento puede ubicarse junto a otros elementos.
+
+        3.      Ejercicio 3: 2_CSS_propiedad_display_Ej-03.html
+                El siguiente ejemplo muestra el comportamiento diferente de display: inline, display: inline-block y display: block.
+
+                HTML:
+                <h1>The display Property</h1>
+
+                <h2>display: inline</h2>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="a">Aliquam</span> <span class="a">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+                <h2>display: inline-block</h2>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="b">Aliquam</span> <span class="b">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+                <h2>display: block</h2>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat scelerisque elit sit amet consequat. Aliquam erat volutpat. <span class="c">Aliquam</span> <span class="c">venenatis</span> gravida nisl sit amet facilisis. Nullam cursus fermentum velit sed laoreet. </div>
+
+                CSS:
+                span.a {
+                display: inline; /* the default for span */
+                width: 100px;
+                height: 100px;
+                padding: 5px;
+                border: 1px solid blue;
+                background-color: yellow;
+                }
+
+                span.b {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                padding: 5px;
+                border: 1px solid blue;
+                background-color: yellow;
+                }
+
+                span.c {
+                display: block;
+                width: 100px;
+                height: 100px;
+                padding: 5px;
+                border: 1px solid blue;
+                background-color: yellow;
+                }
+
+5.      Uso de bloques en línea para crear vínculos de navegación
+        Un uso común de "display: inline-block" es mostrar elementos de lista horizontalmente en lugar de verticalmente. El siguiente ejemplo crea enlaces de navegación horizontales.
+
+        4.      Ejercicio 4: 2_CSS_propiedad_display_Ej-04.html
+                HTML:
+                <h1> Vínculos de navegación horizontal </h1>
+                <p> De forma predeterminada, los elementos de la lista se muestran verticalmente. En este ejemplo usamos display: inline-block para mostrarlos horizontalmente (uno al lado del otro). </p>
+                <p> Nota: si cambia el tamaño de la ventana del navegador, los enlaces se romperán automáticamente cuando se llene demasiado. </p>
+
+                <ul class = "nav">
+                        <li> <a href="#home"> Inicio </a> </li>
+                        <li> <a href="#about"> Acerca de nosotros </a> </li>
+                        <li> <a href="#clients"> Nuestros clientes </a> </li>
+                        <li> <a href="#contact"> Comuníquese con nosotros </a> </li>
+                </ul>
+
+                CSS:
+                .nav {
+                        background-color: yellow; 
+                        list-style-type: none;
+                        text-align: center;
+                        margin: 0;
+                        padding: 0;
+                }
+
+                .nav li {
+                        display: inline-block;
+                        font-size: 20px;
+                        padding: 20px;
+                }

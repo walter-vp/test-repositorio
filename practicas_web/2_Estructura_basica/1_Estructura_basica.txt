@@ -1,0 +1,82 @@
+Diseño de sitio web usando HTML5
+HTML5 ofrece nuevos elementos semánticos que definen diferentes partes de una página web:
+
+Semántica Elementos HTML5	
+<header> - Define un encabezado de un documento o una sección del documento HTML
+<nav> - Define un contenedor de enlaces de navegación del documento HTML
+<main> - Define el inicio del cuerpo del documento HTML
+<section> - Define una sección de un documento
+<article> - Define un artículo independiente autónomo
+<aside> - Define el contenido aparte del contenido (like a sidebar)
+<footer> - Define un pie de página de un documento o una sección del documento HTML
+<details> - Define detalles adicionales
+<summary> - Define un título del <details> elemento
+
+Una Página Web esta formada por cajas, cajas que contienes otras cajas, y elementos de estructura.
+Revisar las hojas de referencia rápida.
+
+En este ejemplo se utiliza <header> , <nav> , <section> y <footer> para crear un diseño de varias columnas:
+
+
+Crear el archivo 1_Estructura_basica.html
+
+1. Generar las etiqueras de Cabecera y cuerpo del documento HTML:
+   Digitar: < ! > {shit+1}
+
+2. Entre las etiquetas <body> /body> ingresar  el siguiente código:
+
+2.1 Etiquetas de Cabecera: <header> </header>
+    Digitar: header>h1{Titulo Principal de la Página}+h2{Titulo Secundario de la Página}
+
+2.2 Etiquetas de Navegación: <nav> </nav>
+    Entre estas etiquetas pueden contener "listas"+"enlaces" o "enlaces"
+    Digitar: nav>ul>(li>a{Enlace$})*5
+
+2.3 Etiqueta de Cuerpo del documento WEB: <main> </main> 
+    Se usa para definir el contenido principal del documento. Solamente puede existir uno por documento.
+    Digitar: mai
+
+2.4 Etiqueta de Pie de Página del documento WEB: <footer> </footer>
+    Usadas para definir el pie de página.
+    Digitar:foo
+
+3. Entre las etiquetas <main> </main> ingresar  el siguiente código:
+
+3.1 Creamos una sección con las etiquetas: <section> </section> 
+    Define una sección del documento.
+    Digitar: sect
+
+3.2 Entre las etiquetas de sección <section> </section>: Creamos un contenedor de artículos con las etiquetas 
+    <article> </article>
+    Digitar: art
+    
+3.3 Entre las etiquetas <article> </article> ingresamos el contenido correspondiente al artículo
+    Digitar:section>h2{Titulo de la Sección 1}+p>lorem20+br+img
+
+3.2 Crear la carpeta "img", y agregaremos una imagen a esta carpeta
+
+3.3 Ubicamos el atributo "SRC" de la etiqueta "IMG" y entre las comillas, abrimos el explorador de archivos y seleccionamos una imagen.
+
+
+3.4 Volver a repetir los pasos 3.1 y 3.2.
+
+3.5 Editar el titulo H2 por el Siguiente: "Titulo de la Sección 2"
+
+3.6 Editar y cambiar la imagen de la nueva sección (2) por cualquier otra.
+
+3.7 Despues de la etiqueta de cierre de sección </section> ingresar las etiquetas: <aside> </aside>
+    Digitar: asid
+
+3.8 Ingresar un menú lateral entre las etiquetas <aside> </aside>.
+    Dentro de estas etiquetas suele alojarse el contenido adicional de la web. Suele ser contenido relacionado con la web pero de poca importancia o un menú de navegación lateral.
+    Digitar: 
+    - h2{Contenidos:}+ul>(li>a{enlace 1.$})*5
+    - h2{Paginas:}+ul>(li>a{enlace 2.$})*3
+
+3.9 Ingresar el contenido pertinente para el pie de página (expresión que se usa para referir la sección inferior de una página, en la cual suele incluirse información adicional al cuerpo).
+Ingresar entres las etiquetas  <footer> </footer>
+    Digitar: 
+    - h2{Gerencia de Desarrollo Institucional}
+    - p{&copy;Derechos Reservados. Ultima actualización: 23/09/2021}
+
+

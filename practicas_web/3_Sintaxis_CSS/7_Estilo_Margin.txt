@@ -1,0 +1,106 @@
+CSS Margin Propiedades
+Las propiedades: margin en CSS se utilizan para crear espacio alrededor de los elementos, fuera de los bordes definidos.
+Con CSS, tienes control total sobre los márgenes. Hay propiedades para establecer el margen para cada lado de un elemento (superior, derecha, inferior e izquierda)
+
+En CSS se tiene propiedades para especificar el margen para cada lado de un elemento:
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+Todas las propiedades:margin pueden tener los siguientes valores:
+
+auto - el navegador calcula el margin
+longitud - especifica un margin en px, pt, cm , etc.
+% - Especifica un margin en% de la anchura del elemento que contiene
+inherit - especifica que el margin debe ser heredado de elemento padre
+
+Nota: También es posible utilizar valores negativos para margins; para solapar contenido.
+
+Practica:
+1.  Cree el archivo 7_Estilo_Margin.html
+2.  Cree el contenido básico. Digite "!" o "HTML5"
+3.  Ingrese dentro del "Body" el siguiente código:
+    h2{Using Individual margin Properties:}+p{This is a paragraph with no specified margins.}+p.regular{This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px.}
+
+4.   Grabar  y visualizar navegador.
+5.  Cree el archivo 7_Estilo_Margin.css
+6.  Ingrese el siguiente código en el archivo 7_Estilo_Margin.css:
+    p {
+        background-color: yellow;
+    }
+
+    p.regular {
+        border:1px solid red;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 80px;
+        padding-top: 50px;
+        padding-right: 80px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+    }
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.
+
+Abreviación de las propiedades:
+Para acortar el código, es posible especificar todas las propiedades de relleno en una propiedad.
+La siguiente sintaxis es una propiedad resumida para las siguientes propiedades de relleno individuales:
+
+margin-top: ;
+margin-right: ;
+margin-bottom: ;
+margin-left: ;
+
+padding: [margin-top]px [margin-right]px [margin-bottom]px [margin-left]px;
+
+9.  En el archivo HTML ingresar  el siguiente código:
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+    p.resumido>lorem20
+
+10. En el archivo CSS incorpore estas nuevas reglas. 
+    Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+    p.resumido {
+        border:1px solid red;
+        margin: 100px 150px 100px 80px;
+        padding: 30px;
+}
+
+Centrando un elemento de bloque:
+Para centrar un elemento de bloque del cual conocemos su ancho (width), solo basta con agregar al elemento un margin-left:auto y margin-right:auto.
+A continuación les mostraré dos ejemplos. En el primero utilizaremos margin-left y margin-right; mientras que en el segundo usaremos solo el shorthand margin.
+
+11. En el archivo HTML incorporar sin eliminar el contenido anterior el siguiente código:
+Nota: No olvidar grabar al finalizar cada estructura HTML y visualizar.
+.padre>p.hijo_uno{Ejercicio 1. Lorem10}
+.padre>p.hijo_dos{Ejercicio 2. Lorem20}
+
+12. En el archivo CSS incorporar sin eliminar el contenido anterior el siguiente código:
+Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+
+.padre {
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 0 1rem;
+  margin: 1rem;
+}
+
+.hijo_uno {
+  background-color: yellow;
+  
+  /* IMPORTANTE */
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hijo_dos {
+  background-color: yellow;
+  
+  /* IMPORTANTE */
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}

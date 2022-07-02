@@ -1,0 +1,60 @@
+Configuración de la altura y el ancho
+Las propiedades "height" (ALTO) y la "width" (ANCHO) se utilizan para ajustar la altura y el ancho de un elemento.
+
+El "height" y el "width" se pueden ajustar en automático (esto es por defecto. Significa que el navegador calcula la altura y anchura), o especificarse en valores de longitud, como px, cm , etc., o en porcentaje (%) del bloque de contención.
+
+Nota: Recuerde que las propiedades height y width no NO INCLUYEN relleno, bordes ni márgenes. ¡Ellos establecen la altura / ancho del área dentro del relleno, borde y margen del elemento!
+
+Ejercicio
+Establezca la altura y el ancho de otro elemento <div>:
+
+div {
+  height: 100px;
+  width: 500px;
+  background-color: powderblue;
+}
+
+Ajuste de ancho máximo
+El max-width propiedad se utiliza para establecer el ancho máximo de un elemento.
+
+El max-width se puede especificar en los valores de longitud, como px, cm , etc., o en porcentaje (%) del bloque de contención, o en Ninguno (esto es por defecto. Significa que no hay ancho máximo).
+
+Practica:
+1.  Cree el archivo 4_Estilo_Alto_Ancho.html
+2.  Cree el contenido básico. Digite "!" o "HTML5"
+3.  Ingrese dentro del "Body" el siguiente código:
+
+<h2>Establecer el ancho máximo de un elemento:</h2>
+
+<div class="container_uno">
+Este elemento div tiene una altura de 200 px y un ancho máximo de 500 px.
+Cambie el tamaño de la ventana del navegador para ver el efecto.
+lorem10
+</div>
+
+<div class="container_dos">
+Este elemento div tiene una altura de 200 px y un ancho máximo de 600 px.
+Cambie el tamaño de la ventana del navegador para ver el efecto.
+lorem20
+</div>
+
+4.  Grabar  y visualizar navegador.
+5.  Cree el archivo 4_Estilo_Alto_Ancho.css
+6.  Ingrese el siguiente código en el archivo 4_Estilo_Alto_Ancho.html:
+
+    .container_uno {
+    margin: 20px;
+    max-width: 500px;
+    height: 100px;
+    padding: 5px;
+    border: 3px solid #73AD21;
+    }
+
+    .container_dos {
+    margin: 20px;
+    max-width: 600px;
+    height: 200px;
+    padding: 5px;
+    border: 3px solid #73AD21;
+    }
+

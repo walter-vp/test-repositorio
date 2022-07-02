@@ -1,0 +1,362 @@
+Propiedades de Texto:
+Entre sus principales propiedades tenemos las siguientes:
+  
+    Pasemos a la parte práctica:
+    Nota: Para los ejercicios del presente capítulo se creará el archivo: "10_Propiedades_de_texto_Ej-??.html". Los ?? serán reemplazados por el número del Ejercio, luego cncruste el siguiente código CSS(entre etiquetas <style> </style>) y HTML (entre etiquetas <body> </body>) en las secciones correspondientes.
+
+
+1.  Color de texto
+    La propiedad:"color" se utiliza para establecer el color del texto. El color viene especificado por:
+
+    un nombre de color, como "rojo"
+    un valor HEX, como "# ff0000"
+    un valor RGB, como "rgb (255,0,0)"
+    Consulte Valores de color de CSS para obtener una lista completa de los posibles valores de color.
+
+    Ejercicio 01: 10_Propiedades_de_texto_Ej-01.html
+    El color de texto predeterminado para una página se define en el selector de cuerpo.
+    
+    HTML: h1{Ejercicio 01}+p>Lorem10^p>lorem20
+    
+    CSS:  body {color: blue;}
+          h1 {color: green;}
+          h1:hover{color: brown; cursor: pointer; }
+          p:hover{color: red; cursor: pointer; }
+          
+    
+    Nota: Para CSS compatible con W3C: si define la colorpropiedad, también debe definir el background-color.
+
+    - Color del texto y color de fondo
+    En este ejemplo, definimos tanto la background-colorpropiedad como la colorpropiedad:
+
+    Ejercicio 02: 10_Propiedades_de_texto_Ej-02.html
+    - Cree el archivo 10_Propiedades_de_texto_Ej-02.html. Incruste el siguiente código:
+    HTML: 
+    h1{This is a Heading}+p{This page has a grey background color and a blue text.}+div>p{This is a div}
+    
+    CSS:
+    body {
+    background-color: lightgrey;
+    color: blue;
+    }
+
+    h1 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    }
+
+    div {
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    }
+
+    
+
+2.  Alineación del texto
+    La text-alignpropiedad se utiliza para establecer la alineación horizontal de un texto.
+    Un texto puede estar alineado a la izquierda o a la derecha, centrado o justificado.
+
+    El siguiente ejemplo muestra texto alineado al centro y alineado a la izquierda y a la derecha (la alineación a la izquierda es la predeterminada si la dirección del texto es de izquierda a derecha y la alineación a la derecha es la predeterminada si la dirección del texto es de derecha a izquierda):
+
+    Ejercicio 03: 10_Propiedades_de_texto_Ej-03.html
+    - Cree el archivo 10_Propiedades_de_texto_Ej-03.html. Incruste el siguiente código:
+    HTML: h1{Heading 1 (center)}+h2{Heading 2 (left)}+h3{Heading 3 (right)}+p{Los tres encabezados de arriba están alineados al centro, a la izquierda y a la derecha}
+    
+    CSS:
+    h1 { text-align: center; }
+    h2 { text-align: left; }
+    h3 { text-align: right; }
+    
+
+
+    Cuando la propiedad "text-align" se establece en "justificar", cada línea se estira para que cada línea tenga el mismo ancho y los márgenes izquierdo y derecho sean rectos (como en revistas y periódicos):
+
+    Ejercicio 04: 10_Propiedades_de_texto_Ej-04.html
+    
+    HTML: h1{Ejemplo de alineación de texto: justificar}+p{El text-align: justify; valor estira las líneas para que cada línea tenga el mismo ancho (como en periódicos y revistas)}+div>p{En mis años más jóvenes y vulnerables, mi padre me dio algunos consejos que he estado dando vueltas en mi mente desde entonces. "Siempre que tengas ganas de criticar a alguien", me dijo, "recuerda que todas las personas en este mundo no han tenido las ventajas que tú has tenido".}
+
+    CSS: div { text-align: justify; }
+
+
+    Dirección del texto
+    Las propiedades "direction" y "unicode-bidise" pueden usar para cambiar la dirección del texto de un elemento.
+
+    Ejercicio 05: 10_Propiedades_de_texto_Ej-05.html
+    HTML: p{esta es la dirección de texto predeterminada}^p.ex1{Esta es la dirección del texto de derecha a izquierda}
+    
+    CSS:
+    p.ex1 {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    }
+    
+3.  Alineamiento vertical
+    La propiedad "vertical-align" establece la alineación vertical de un elemento.
+
+    Ejercicio 06: 10_Propiedades_de_texto_Ej-06.html
+    Establecer la alineación vertical de una imagen en un texto: 
+    
+    HTML:
+    <h1>La propiedad de alineación vertical</h1>
+
+    <h2>vertical-align: baseline (default):</h2>
+
+    <p>An <img class="a" src="img/sqpurple.gif" width="9" height="9"> image with a default alignment.</p> 
+
+    <h2>vertical-align: text-top:</h2>
+    <p>An <img class="b" src="img/sqpurple.gif" width="9" height="9"> image with a text-top alignment.</p> 
+
+    <h2>vertical-align: text-bottom:</h2>
+    <p>An <img class="c" src="img/sqpurple.gif" width="9" height="9"> image with a text-bottom alignment.</p>
+
+    <h2>vertical-align: sub:</h2>
+    <p>An <img class="d" src="img/sqpurple.gif" width="9" height="9"> image with a sub alignment.</p> 
+
+    <h2>vertical-align: sup:</h2>
+    <p>An <img class="e" src="img/sqpurple.gif" width="9" height="9"> image with a super alignment.</p>
+
+    CSS:
+    img.a { vertical-align: baseline; }
+    img.b { vertical-align: text-top; }
+    img.c { vertical-align: text-bottom; }
+    img.d { vertical-align: sub; }
+    img.e { vertical-align: super; }
+
+4.  Decoración de texto
+    La propiedad "text-decoration" se utiliza para establecer o eliminar decoraciones del texto.
+
+    El valor text-decoration: none; se usa a menudo para eliminar los subrayados de los enlaces:
+
+    Ejercicio 07-1: 10_Propiedades_de_texto_Ej-07-1.html
+    CSS: a { text-decoration: none; }
+    HTML: h1{Usando decoración de texto:none}^p{Un enlace sin subrayado:}>a[href="https://www.w3schools.com]{W3Schools.com}
+    
+    Los otros text-decorationvalores se utilizan para decorar texto:
+    Ejercicio 07-2:: 10_Propiedades_de_texto_Ej-07-2.html
+    
+    HTML:
+    h1{Algunas decoraciones de texto diferentes}^h2{Decoración de texto superpuesto}^h3{Decoración de texto de línea continua}^h4{Underline text decoration}p>strong{Note:}{No se recomienda subrayar el texto que no es un enlace, ya que esto suele confundir al lector}.
+
+    CSS:  
+    h2 { text-decoration: overline; }
+    h3 { text-decoration: line-through; }
+    h4 { text-decoration: underline; }
+
+5.  Transformación de texto
+    La propiedad "text-transform" se utiliza para especificar letras mayúsculas y minúsculas en un texto.
+    Se puede usar para convertir todo en letras mayúsculas o minúsculas, o poner en mayúscula la primera letra de cada palabra:
+
+    Ejercicio 08: 10_Propiedades_de_texto_Ej-08.html
+    
+    HTML:
+    H1{Usando la propiedad text-transform}+p.uppercase{Este texto se transforma en mayúculas.}+p.lowercase{ESTE TEXTO SE TRANSFORMA EN MINÚCULAS.}+p.capitalize{Este texto contiene las primeras en mayúsculas}
+
+    CSS:
+    p.uppercase { text-transform: uppercase; }
+    p.lowercase { text-transform: lowercase; }
+    p.capitalize { text-transform: capitalize; }
+
+6.  Espaciado de texto CSS
+
+    - Sangría de texto
+      La propiedad "text-indent" se utiliza para especificar la sangría de la primera línea de un texto:
+
+    Ejercicio 09: 10_Propiedades_de_texto_Ej-09.html
+    
+    HTML:  h1{Usar sangría de texto}^p{En mis años más jóvenes y vulnerables, mi padre me dio algunos consejos que he estado dando vueltas en mi mente desde entonces. "Siempre que tengas ganas de criticar a alguien", me dijo, "recuerda que todas las personas en este mundo no han tenido las ventajas que tú has tenido".}
+
+    CSS:    p { text-indent: 50px; }
+
+    - Espaciado de letras
+      La propiedad "letter-spacing" se utiliza para especificar el espacio entre los caracteres en un texto.
+
+    El siguiente ejemplo demuestra cómo aumentar o disminuir el espacio entre caracteres:
+
+    Ejercicio 10: 10_Propiedades_de_texto_Ej-10.html
+    
+    HTML: h1{Using letter-spacing}^h2{Este es el título H2 con espaciado de 5px}^h3{Este es el título H3 con espaciado de -2px}
+
+    CSS:  h2 { letter-spacing: 5px; }
+          h3 { letter-spacing: -2px; }
+
+    - Altura de la línea
+      La propiedad "line-height" se utiliza para especificar el espacio entre líneas:
+
+    Ejercicio 11: 10_Propiedades_de_texto_Ej-11.html
+    
+    HTML: h1{Usando el Espaciado de línea}
+          p>{Este es un párrafo con una altura de línea estándar.}+br+{La altura de línea predeterminada en la mayoría de los navegadores es aproximadamente del 110% al 120%.}
+          p.small>{Este es un párrafo con una línea de espacio pequeño.}+br+{Este es un párrafo con una línea de espacio pequeño.}+br+{Este es un párrafo con una línea de espacio pequeño.}
+          p.big>{Este es un párrafo con una línea de espacio grande.}+br+{Este es un párrafo con una línea de espacio grande.}+br+{Este es un párrafo con una línea de espacio grande.}
+
+    CSS :  p.small { line-height: 0.8; }
+           p.big { line-height: 1.8; }
+
+    - Espaciado entre palabras
+    La propiedad "word-spacing" se usa para especificar el espacio entre las palabras en un texto.
+
+    El siguiente ejemplo demuestra cómo aumentar o disminuir el espacio entre palabras:
+
+    Ejercicio 12: 10_Propiedades_de_texto_Ej-12.html
+    
+    HTML:   h1{Usar el espaciado de palabras}^p{Este es un párrafo con espaciado normal entre palabras.}^p.one{Este es un párrafo con un espaciado de palabras más grande.}^p.two{Este es un párrafo con un espaciado de palabras más pequeño.}
+
+    CSS:
+    p.one   { word-spacing: 10px; }
+    p.two   { word-spacing: -2px; }
+
+    - Espacio en blanco
+      La propiedad "white-space" especifica cómo se maneja el espacio en blanco dentro de un elemento.
+      Este ejemplo demuestra cómo deshabilitar el ajuste de texto dentro de un elemento:
+
+    Ejercicio 13: 10_Propiedades_de_texto_Ej-13.html
+    
+    HTML:
+    <h1>Usando espacios en blanco</h1>
+    <p>
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    Este es un texto que no se ajusta.
+    </p>
+    <p>Intente eliminar la propiedad "white-space" de espacio en blanco para ver la diferencia!</p>
+
+    CSS:  p { white-space: nowrap; }
+
+7.  Sombra de texto CSS
+    Sombra de texto
+    La propiedad "text-shadow" agrega sombra al texto.
+
+    En su uso más simple, solo especifica la sombra horizontal (2px) y la sombra vertical (2px):
+
+    ¡Efecto de sombra de texto!
+    Ejercicio 14: : 10_Propiedades_de_texto_Ej-14.html
+    
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+          
+    CSS:  h1 { text-shadow: 3px 3px; }
+          p { text-shadow: 2px 2px; font-size: 1em; }
+    
+    A continuación, agregue un color (claro) a la sombra:
+
+    ¡Efecto de sombra de texto!
+    Ejercicio 15: : 10_Propiedades_de_texto_Ej-15.html
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+          
+    CSS:  h1 { text-shadow: 3px 3px rgb(185, 123, 123); }
+          p { text-shadow: 2px 2px rgb(199, 195, 195); font-size: 1em; }
+    
+    Luego, agregue un efecto de desenfoque (5px) a la sombra:
+
+    ¡Efecto de sombra de texto!
+    Ejercicio 16: : 10_Propiedades_de_texto_Ej-16.html
+
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+
+    CSS:    h1 { text-shadow: 3px 3px 5px rgb(185, 123, 123); }
+            p{ text-shadow: 2px 2px 5px rgb(153, 152, 152); font-size: 1em; }
+    Más ejemplos de sombras de texto
+
+    Ejercicio 17: 10_Propiedades_de_texto_Ej-17.html
+    Sombra de texto sobre un texto blanco:
+
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+
+    CSS: h1 { color: white; text-shadow: 2px 2px 10px #000000; }
+         p{ text-shadow: 2px 2px 5px rgb(153, 152, 152); font-size: 1em; }
+
+    Ejercicio 18: 10_Propiedades_de_texto_Ej-18.html
+    Sombra de texto con brillo de neón rojo:
+
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+
+    CSS:    h1 { text-shadow: 0 0 3px #ff0000; }
+            p{ text-shadow: 2px 2px 5px rgb(153, 152, 152); font-size: 1em; }
+
+    Ejercicio 19: 10_Propiedades_de_texto_Ej-19.html
+    Sombra de texto con brillo de neón rojo y azul:
+
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+
+    CSS:    h1 { text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff; }
+            p{ text-shadow: 2px 2px 5px rgb(153, 152, 152); font-size: 1em; }
+
+    Ejercicio 20: 10_Propiedades_de_texto_Ej-20.html
+    
+    HTML: <h1>Text-shadow effect!</h1>
+          <br>
+          <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora excepturi suscipit assumenda aspernatur, ad
+              rerum perspiciatis. Quo provident, veniam veritatis animi quod perferendis quos expedita, dignissimos suscipit
+              debitis cum voluptatem.
+          </p>
+    
+    CSS:   
+    h1 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    }
+    p{ text-shadow: 2px 2px 5px rgb(153, 152, 152); font-size: 1em; }
+
+    Consejo: vaya a nuestro capítulo Fuentes CSS para aprender cómo cambiar las fuentes, el tamaño del texto y el estilo de un texto.
+    Consejo: vaya a nuestro capítulo Efectos de texto CSS para obtener más información sobre los diferentes efectos de texto.
+
+    Todas las propiedades de texto CSS
+    Property        	Description
+    color	            Establece el color del texto
+    direction	        Especifica la dirección del texto / dirección de escritura
+    letter-spacing	    Aumenta o reduce el espacio entre caracteres en un texto
+    line-height	        Establece la altura de la línea
+    text-align	        Especifica la alineación horizontal del texto.
+    text-decoration 	Especifica la decoración agregada al texto.
+    text-indent	        Especifica la sangría de la primera línea en un bloque de texto
+    text-shadow	        Especifica el efecto de sombra agregado al texto
+    text-transform	    Controla las mayúsculas del texto.
+    text-overflow	    Especifica cómo se debe señalar al usuario el contenido desbordado que no se muestra
+    unicode-bidi	    Se usa junto con la propiedad de dirección para establecer o devolver si el texto debe anularse para admitir varios idiomas en el mismo documento
+    vertical-align	    Establece la alineación vertical de un elemento
+    white-space	        Especifica cómo se manejan los espacios en blanco dentro de un elemento
+    word-spacing	    Aumenta o reduce el espacio entre palabras en un texto.

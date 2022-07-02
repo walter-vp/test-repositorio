@@ -1,0 +1,138 @@
+Unidades CSS
+CSS tiene varias unidades diferentes para expresar una longitud.
+Muchas de las propiedades CSS toman valores "longitud", tales como width, margin, padding, font-size, etc.
+Longitud es un número seguido de una unidad de longitud, tal como 10px, 2em, etc.
+
+Ejercicio
+Establezca diferentes valores de longitud, usando px (píxeles):
+
+h1 { font-size: 60px; }
+
+p { 
+  font-size: 25px;
+  line-height: 50px;
+}
+
+Nota: No puede aparecer un espacio en blanco entre el número y la unidad. Sin embargo, si el valor es 0, la unidad se puede omitir.
+
+Para algunas propiedades CSS, se permiten longitudes negativas.
+Hay dos tipos de unidades de longitud: absolutas y relativas .
+
+longitudes relativas
+Las unidades de longitud relativa especifican una longitud relativa a otra propiedad de longitud. Las unidades de longitud relativa escalan mejor entre diferentes medios de renderizado.
+
+Unidad	Descripción
+em	    En relación con el tamaño de fuente del elemento (2em significa 2 veces el tamaño de la fuente actual)
+ex	    Con relación a la altura de la x de la fuente actual (raramente usado)
+ch	    Con respecto a la anchura de la "0" (Cero)
+rem	    En relación al tamaño de fuente del elemento raíz
+vw	    En relación con el 1% de la anchura de la ventana *
+vh	    En relación con el 1% de la altura de la ventana *
+vmin	En relación con el 1% de la ventana gráfica de menor dimensión *
+vmax	En relación con el 1% de la ventana gráfica de mayor dimensión *
+%	    En relación al porcentaje del contendor.
+
+Longitudes absoluta
+Las unidades de longitud absoluta son fijas y una longitud expresada en cualquiera de estas aparecerá exactamente como ese tamaño.
+No se recomienda el uso de unidades de longitud absoluta en la pantalla, porque los tamaños de la pantalla varían mucho. Sin embargo, se pueden utilizar si se conoce el medio de salida, como para el diseño de impresión.
+
+Unidad	Descripción
+cm  	centímetros
+mm	    milímetros
+in	    pulgadas (1in = 96px = 2.54cm)
+px *	píxeles (1px = 1/96th of 1in)
+pt	    puntos (1pt = 1/72 of 1in)
+pc	    picas (1pc = 12 pt)
+
+* Píxeles (px) son en relación con el dispositivo de visualización. Para dispositivos de bajo ppp, 1 píxel es un píxel dispositivo (dot) de la pantalla. Para las impresoras y pantallas de alta resolución 1px implica múltiples píxeles de dispositivo. 
+
+Tamaño de fuente
+    El font-size propiedad establece el tamaño del texto.
+
+    Ser capaz de gestionar el tamaño del texto es importante en el diseño web. Sin embargo, no se debe utilizar ajustes de tamaño de fuente para que los puntos se parecen a las partidas, o en las partidas parecen párrafos.
+    Utilice siempre las etiquetas HTML apropiados, como <h1> - <h6> para los títulos y <p> para los párrafos.
+
+    El valor de tamaño de fuente puede ser un tamaño absoluto o relativo.
+
+    1.  Tamaño absoluto:
+
+        Establece el texto a un tamaño especificado
+        No permite a un usuario cambiar el tamaño del texto en todos los navegadores (mal por razones de accesibilidad)
+        Tamaño absoluto es útil cuando se conoce el tamaño físico de la salida
+
+    2.  Tamano relativo:
+
+        Establece el tamaño en relación con los elementos que rodean
+        Permite a un usuario cambiar el tamaño del texto en los navegadores
+        Nota	Nota: Si no se especifica un tamaño de fuente, el tamaño predeterminado para el texto normal, como párrafos, es 16px (16px = 1 em).
+
+        Tamaño de fuente del cuerpo
+
+        En la siguiente tabla, seleccione un tamaño de fuente de cuerpo en píxeles (px) para mostrar una tabla de conversión completa de "px a em y porcentaje". 
+    
+        Consejo: el tamaño de fuente predeterminado suele ser de 16 píxeles.
+
+        px	        em	            percent
+        5px	        0.3125em	    31.25%
+        6px	        0.3750em	    37.50%
+        7px	        0.4375em	    43.75%
+        8px	        0.5000em	    50.00%
+        9px	        0.5625em	    56.25%
+        10px	      0.6250em	    62.50%
+        11px	      0.6875em	    68.75%
+        12px	      0.7500em	    75.00%
+        13px	      0.8125em	    81.25%
+        14px	      0.8750em	    87.50%
+        15px	      0.9375em	    93.75%
+        16px	      1.0000em	    100.00%
+        17px	      1.0625em	    106.25%
+        18px	      1.1250em	    112.50%
+        19px	      1.1875em	    118.75%
+        20px	      1.2500em	    125.00%
+        21px	      1.3125em	    131.25%
+        22px	      1.3750em	    137.50%
+        23px	      1.4375em	    143.75%
+        24px	      1.5000em	    150.00%
+        25px	      1.5625em	    156.25%
+
+Practica:
+1.  Cree el archivo 8_Unidades_Medida.html
+2.  Cree el contenido básico. Digite "!" o "HTML5"
+3.  Ingrese dentro del "Body" el siguiente código:
+
+    .ejm_px>(h1{Modelo Unidades PX}^p{El tamaño de fuente del elemento div se establece en 20px.}>span{El elemento span dentro del elemento div tiene un tamaño de fuente de 1ex.})
+
+    .ejm_em>(h1{Modelo Unidades EM}^p{Estos párrafos tienen una altura de línea calculada de: 2 x 16px = 32px.}^div>p{El tamaño de fuente del elemento div se establece en 30px.}>span{El elemento span dentro del elemento div tiene un tamaño de fuente de 0.5em, que equivale a 0.5x30 = 15px.})
+
+    .ejm_vh>(h1{Modelo Unidades VH}^h2{Hello}^p{Cambie el tamaño de la altura de la ventana del navegador para ver cómo cambia el tamaño de fuente de la etiqueta "h2".}^p{1vh = 1% de la altura de la ventana gráfica.}^p{La unidad vh no es compatible con IE8 y versiones anteriores.})
+  
+    .ejm_vw>(h1{Modelo Unidades VW}^h2{Hello}^p{Cambie el tamaño de la altura de la ventana del navegador para ver cómo cambia el tamaño de fuente de la etiqueta "h2".}^p{1vw = 1% de la altura de la ventana gráfica.}^p{La unidad vh no es compatible con IE8 y versiones anteriores.})
+
+4.   Grabar  y visualizar navegador.
+5.  Cree el archivo 8_Unidades_Medida.css
+6.  Ingrese el siguiente código en el archivo 8_Unidades_Medida.css:
+    .ejm_px p {
+            font-size: 20px;
+            border: 1px solid black;
+    }
+
+    .ejm_px span {
+            font-size: 1ex;
+    }
+
+    .ejm_em div {
+            font-size: 30px;
+            border: 1px solid black;
+    }
+
+    .ejm_em p {
+            font-size: 16px;
+            line-height: 2em;
+        }
+
+    .ejm_em span {
+            font-size: 0.5em;
+    }
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.

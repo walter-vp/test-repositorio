@@ -1,0 +1,578 @@
+Imágenes HTML
+
+Las imágenes pueden mejorar el diseño y la apariencia de una página web.
+
+Sintaxis de la Etiqueta Imágenes HTML: <IMG> 
+(Nota: esta de las pocas etiquetas que no se cierran)
+
+Formato Principal:
+<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+
+Formato Secundario:
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+
+1.  Detalle de la Sintaxis:
+    - Usae la etiqueta HTML: "<img>" para definir una imagen.
+    - Utilice el atributo: "src"  HTML para definir la URL o ruta de una (de la carpeta de la ubicación) de la imagen.
+    - Utilice el atributo HTML: "alt"  para definir un texto alternativo para una imagen, si no se puede mostrar.
+    - Utilice los atributos HTML: "width" y "height" o una regla CSS con las propiedades: "width" y "height" para definir el tamaño de la imagen.
+
+    Ejercicio 01: 14_Propiedades_de_las_imagenes_Ej-01.html
+
+    HTML:
+    <h2> ¿Atributos o estilo de ancho / alto? </h2>
+
+    <p> La primera imagen usa el atributo de ancho (establecido en 128 píxeles), pero el estilo en la sección del encabezado lo anula y establece el ancho en 100%. </p>
+
+    <img src = "img/html5.gif" alt = "Icono HTML5" width = "128" height = "128">
+
+    <p> La segunda imagen usa el atributo de estilo para establecer el ancho en 128 píxeles, esto no será anulado por el estilo en la sección del encabezado: </p>
+
+    <img src = "img/html5.gif" alt = "Icono HTML5" style = "width:128px; height:128 px;">
+
+    CSS:
+    img { width: 100%; }
+
+
+2. Imagen como enlace
+    Para usar una imagen como enlace, coloque la <img>etiqueta dentro de la <a> etiqueta.
+
+    Ejercicio 02: 14_Propiedades_de_las_imagenes_Ej-02.html
+
+    HTML:
+    <h2> Imagen como enlace </h2>
+    <p> La imagen es un enlace. Puede hacer clic en él. </p>
+    <a href="default.asp">
+        <img src = "img/smiley.gif" alt = "Tutorial HTML" style = "width: 42 px; height: 42 px;">
+    </a>
+
+
+3. Imagen flotante
+    Utilice la propiedad CSS "float" para dejar que la imagen flote a la derecha oa la izquierda de un texto.
+    
+    Ejercicio 03: 14_Propiedades_de_las_imagenes_Ej-03.html
+    
+    HTML:
+    <h2> Imágenes flotantes </h2>
+    <p> <strong> Hacer flotar la imagen a la derecha: </strong> </p>
+    <p>
+        <img class="img1" src = "img/smiley.gif" alt = "Carita sonriente">
+        Un párrafo con una imagen flotante. Un párrafo con una imagen flotante. Un párrafo con una imagen flotante.
+    </p>
+
+    <p> <strong> Hacer flotar la imagen hacia la izquierda: </strong> </p>
+    <p>
+        <img class="img2" src = "img/smiley.gif" alt = "Carita sonriente" >
+        Un párrafo con una imagen flotante. Un párrafo con una imagen flotante. Un párrafo con una imagen flotante.
+    </p>
+
+    CSS:
+    .img1{
+        float:right; 
+        width:42px; 
+        height:42px;
+    }
+
+    .img2{
+        float: left; 
+        width: 42 px; 
+        height: 42 px;
+    }
+
+4.  Mapas de imágenes HTML
+    Con los mapas de imágenes HTML, puede crear áreas en las que se puede hacer clic en una imagen.
+
+    Mapas de imágenes
+    La etiqueta HTML "<map>" define un mapa de imagen. Un mapa de imagen es una imagen con áreas en las que se puede hacer clic. Las áreas se definen con una o más etiquetas "<area>".
+
+    Ejercicio 04: 14_Propiedades_de_las_imagenes_Ej-04.html 
+    Intente hacer clic en la computadora, el teléfono o la taza de café en la imagen a continuación.
+
+    HTML:
+    <h2> Mapas de imágenes </h2>
+    <p> Haga clic en la computadora, el teléfono o la taza de café para ir a una nueva página y leer más sobre el tema: </p>
+
+    <img src="img/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.w3schools.com/tags/computer.htm">
+
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.w3schools.com/tags/phone.htm">
+
+        <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="https://www.w3schools.com/tags/coffee.htm">
+    </map>
+
+    ¿Como funciona?
+    La idea detrás de un mapa de imagen es que debería poder realizar diferentes acciones dependiendo de en qué parte de la imagen haga clic.
+    Para crear un mapa de imágenes, necesita una imagen y un código HTML que describa las áreas en las que se puede hacer clic.
+
+    Utilice el elemento HTML "<map>" para definir un mapa de imagen
+    Utilice el elemento HTML "<area>" para definir las áreas en las que se puede hacer clic en el mapa de imágenes
+    Utilice el  atributo HTML "usemap" del elemento "<img>" para apuntar a un mapa de imagen
+
+    Etiquetas de imagen HTML
+    Tag	Description
+    <picture>	Defines un contenedor para múltiples recursos de imagen.
+    <img>	Defines una image.
+    <map>	Defines una image para definir un mapa de imagen.
+    <area>	Defines un area clickable dentro de una image declarada como un mapa de imagen.
+
+    Para obtener una explicación completa y paso a paso seguir el siguiente enlace.
+    (https://www.w3schools.com/html/html_images_imagemap.asp)
+
+5.  Imágenes de fondo HTML
+    Se puede especificar una imagen de fondo para casi cualquier elemento HTML.
+
+    Imagen de fondo en un elemento HTML
+    Para agregar una imagen de fondo en un elemento HTML, use el atributo HTML "style" y la propiedad CSS "background-image".
+
+    Ejercicio 05: 14_Propiedades_de_las_imagenes_Ej-05.html
+    <h2> Imagen de fondo </h2>
+    <p> Una imagen de fondo para un elemento div: </p>
+    <div style = "background-image: url('img/Imagen_Fondo.jpg');">
+        Puede especificar imágenes de fondo para cualquier elemento HTML visible. 
+        <br>
+        En este ejemplo, la imagen de fondo se especifica para un elemento div. 
+        <br>
+        De forma predeterminada, la imagen de fondo se repetirá en la(s) dirección (es) 
+        donde es más pequeño que el elemento donde se especifica. (Intente cambiar el tamaño de la ventana del navegador para ver cómo se comporta la imagen de fondo.
+        <br>
+        lorem100
+    </div>
+
+    <p> Una imagen de fondo para un elemento p: </p>
+
+    <p style = "background-image: url('img/FONDOS_TUMBLR_PARA_TU_CELULAR.jpg');">
+        Puede especificar imágenes de fondo para cualquier elemento HTML visible. 
+        <br>
+        En este ejemplo, la imagen de fondo se especifica para un elemento p. 
+        <br>
+        De forma predeterminada, la imagen de fondo se repetirá en la (s) dirección (es) donde es más pequeño que el elemento donde se especifica. 
+        (Intente cambiar el tamaño de la ventana del navegador para ver cómo se comporta la imagen de fondo).
+        <br>
+        lorem100
+    </p>
+
+6.  Imagen de fondo en una página
+    Si desea que toda la página tenga una imagen de fondo, debe especificar la imagen de fondo en el <body>elemento.
+
+    Ejercicio 06: 14_Propiedades_de_las_imagenes_Ej-06.html
+    Agregando una imagen de fondo para toda la página.
+    
+    HTML:
+    <h2> Imagen de fondo </h2>
+    <p> Por defecto, la imagen de fondo se repetirá si es más pequeña que el elemento donde se especifica, en este caso el elemento del cuerpo. </p>
+
+    CSS:
+    body {
+        background-image: url('img/portada.jpg');
+    }
+
+7.  Cubierta de fondo
+
+    Para todos los casos que deses usar una imagen de cubierta de su pagina web, siga los siguientes pasos:
+
+    Si desea que la imagen de fondo cubra todo el elemento, puede establecer la propiedad "background-size" con el valor: "cover". 
+    
+    Y Para evitar que la imagen de fondo se repita, establezca la propiedad: "background-repeat" con el valor "no-repeat".
+
+    Además, para asegurarse de que todo el elemento esté siempre cubierto, establezca la propiedad "background-attachment" con el valor: "fixed". De esta forma, la imagen de fondo cubrirá todo el elemento, sin estiramiento (la imagen mantendrá sus proporciones originales).
+
+    Finalmente para ajustar el tamaño de la imagen al tamaño de la pantalla del dispositivo en el que se visualizar a la propiedad "height" asignarle el valor de "100vh".
+
+    Ejercicio 07: 14_Propiedades_de_las_imagenes_Ej-07.html
+    
+    HTML:
+    <h2> Portada de fondo </h2>
+    <p> Establezca la propiedad background-size en "cubrir" y la imagen de fondo cubrirá todo el elemento, en este caso el elemento del cuerpo. </p>
+
+    CSS:
+    body {
+            /* 
+            Estos son las propiedades y valores que conforma la regla CSS
+
+            background-image: url('img/portada.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            Opcionalmente puede usar la regla resumida, como se muestra línea abajo
+            */
+            
+            background: url('img/portada.jpg') no-repeat fixed;
+            background-size: cover;
+            height: 100vh;
+    }
+
+8.  Galería de Imágenes
+    Con HTML y CSS se puede crear una galería de imágenes.
+    Veamos el siguiente ejemplo.
+
+    Ejercicio 08: 14_Propiedades_de_las_imagenes_Ej-08.html
+
+    HTML:
+    <div class="gallery">
+        <a target="_blank" href="img/img_5terre.jpg">
+            <img src="img/img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/img_forest.jpg">
+            <img src="img/img_forest.jpg" alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/img_lights.jpg">
+            <img src="img/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="img/img_mountains.jpg">
+            <img src="img/img_mountains.jpg" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+    </div>
+
+    CSS:
+    div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    }
+
+    div.gallery:hover {
+    border: 1px solid #777;
+    }
+
+    div.gallery img {
+    width: 100%;
+    height: auto;
+    }
+
+    div.desc {
+    padding: 15px;
+    text-align: center;
+    }
+
+10. Superposición de desplazamiento de imagen
+    Crea un efecto de superposición al pasar el mouse
+
+    1.  Fade in text:
+        Ejercicio 09: 14_Propiedades_de_las_imagenes_Ej-09.html
+        
+        HTML:
+        <h2>Fade in Overlay</h2>
+        <div class="container">
+            <img src="img/img_avatar.png" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+
+        CSS:
+        .container {
+        position: relative;
+        width: 25%;
+        }
+
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #008CBA;
+        }
+
+        .container:hover .overlay {
+        opacity: 1;
+        }
+
+        .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        }
+        
+    2.  Fade in a box:
+        Ejercicio 10: 14_Propiedades_de_las_imagenes_Ej-10.html
+
+        HTML:
+        <h2>Fade in a Box</h2>
+        <div class="container">
+            <img src="img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+            <div class="middle">
+                <div class="text">John Doe</div>
+            </div>
+        </div>
+
+        CSS:
+        .container {
+        position: relative;
+        width: 50%;
+        }
+
+        .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        }
+
+        .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+        }
+
+        .container:hover .image {
+        opacity: 0.3;
+        }
+
+        .container:hover .middle {
+        opacity: 1;
+        }
+
+        .text {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+        }
+  
+
+    3.  Slide in (top):
+        Ejercicio 11: 14_Propiedades_de_las_imagenes_Ej-11.html
+        
+        HTML:
+        <h2>Slide in Overlay from the Top</h2>
+        <div class="container">
+            <img src="img/img_avatar.png" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+
+        CSS:
+        .container {
+        position: relative;
+        width: 50%;
+        }
+
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        .overlay {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        background-color: #008CBA;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+        bottom: 0;
+        height: 100%;
+        }
+
+        .text {
+        white-space: nowrap; 
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        }
+
+    4.  Slide in (bottom):
+        Ejercicio 12: 14_Propiedades_de_las_imagenes_Ej-12.html
+
+        HTML:
+        <h2>Slide in Overlay from the Top</h2>
+        <div class="container">
+            <img src="img/img_avatar.png" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+
+         CSS:
+        .container {
+        position: relative;
+        width: 50%;
+        }
+
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #008CBA;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+        height: 100%;
+        }
+
+        .text {
+        white-space: nowrap; 
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        }
+
+    5.  Slide in (left):
+        Ejercicio 13: 14_Propiedades_de_las_imagenes_Ej-13.html
+
+        HTML:
+        <div class="container">
+        <img src="img/img_avatar.png" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+
+        CSS:
+        .container {
+        position: relative;
+        width: 50%;
+        }
+
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #008CBA;
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+        width: 100%;
+        }
+
+        .text {
+        white-space: nowrap; 
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        }
+
+    6.  Slide in (right):
+        Ejercicio 14: 14_Propiedades_de_las_imagenes_Ej-14.html
+        
+        HTML:
+        <h2>Slide in Overlay from the Right</h2>
+        <div class="container">
+            <img src="img/img_avatar.png" alt="Avatar" class="image">
+            <div class="overlay">
+                <div class="text">Hello World</div>
+            </div>
+        </div>
+
+        CSS:
+        .container {
+        position: relative;
+        width: 50%;
+        }
+
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        background-color: #008CBA;
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+        width: 100%;
+        left: 0;
+        }
+
+        .text {
+        white-space: nowrap; 
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        overflow: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        }

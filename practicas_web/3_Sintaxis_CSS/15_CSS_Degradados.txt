@@ -1,0 +1,386 @@
+Degradados CSS
+Los degradados CSS le permiten mostrar transiciones suaves entre dos o más colores especificados.
+
+CSS define dos tipos de degradados:
+- Degradados lineales (baja / arriba / izquierda / derecha / diagonalmente)
+- Gradientes radiales (definidos por su centro)
+
+5.1     Degradados lineales CSS
+        Para crear un degradado lineal, debe definir al menos dos paradas de color. Las paradas de color son los colores entre los que desea generar transiciones suaves. También puede establecer un punto de partida y una dirección (o un ángulo) junto con el efecto de degradado.
+
+        Sintaxis:
+        background-image: linear-gradient(direction, color-stop1, color-stop2, ...);
+
+    1.  Ejercicio 01: 15_CSS_Degradados_Ej-01.html
+        Dirección: de arriba a abajo (esto es predeterminado):
+        El siguiente ejemplo muestra un degradado lineal que comienza en la parte superior. Comienza en rojo, pasando a amarillo.
+        
+        HTML:
+        <h1>Gradiente lineal: de arriba a abajo</h1>
+        <p>Este degradado lineal comienza en rojo en la parte superior y pasa a amarillo en la parte inferior:</p>
+        <div id="grad1"></div>
+
+        CSS:
+        #grad1 {
+        height: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(red, yellow);
+        }
+
+
+    2.  Ejercicio 02: 15_CSS_Degradados_Ej-02.html
+        Dirección: de izquierda a derecha
+        El siguiente ejemplo muestra un degradado lineal que comienza desde la izquierda. Comienza en rojo, pasando a amarillo.
+                
+        HTML:
+        <h1>Gradiente lineal: de izquierda a derecha</h1>
+        <p>Este degradado lineal comienza en rojo a la izquierda, pasando a amarillo (a la derecha):</p>
+        <div id="grad1"></div>
+
+        CSS:
+        #grad1 {
+        height: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, red , yellow);
+        }
+
+
+    3.  Ejercicio 03: 15_CSS_Degradados_Ej-03.html
+        Dirección - Diagonal
+        Puede hacer un degradado en diagonal especificando las posiciones de inicio horizontal y vertical.
+        El siguiente ejemplo muestra un degradado lineal que comienza en la parte superior izquierda (y va hacia la parte inferior derecha). Comienza en rojo, pasando a amarillo.
+        
+        HTML:
+        <h1>Gradiente Lineal - Diagonal</h1>
+        <p>Este degradado lineal comienza en rojo en la parte superior izquierda y pasa a amarillo (en la parte inferior derecha):</p>
+        <div id="grad1"></div>
+        
+        CSS:
+        #grad1 {
+        height: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to bottom right, red, yellow);
+        }
+
+ 
+
+5.2     Usando ángulos
+        Si desea tener más control sobre la dirección del degradado, puede definir un ángulo, en lugar de las direcciones predefinidas (hacia abajo, hacia arriba, hacia la derecha, hacia la izquierda, hacia abajo a la derecha, etc.). Un valor de 0deg es equivalente a "to top". Un valor de 90 grados es equivalente a "a la derecha". Un valor de 180 grados equivale a "abajo".
+
+        Sintaxis
+        background-image: linear-gradient(angle, color-stop1, color-stop2).
+
+        
+    4.  Ejercicio 04: 15_CSS_Degradados_Ej-04.html
+        El siguiente ejemplo muestra cómo usar ángulos en gradientes lineales.
+        Uso de angulos (sintaxis regular).
+
+        HTML:
+        <h1>Gradientes lineales: uso de diferentes ángulos</h1>
+        <div id="grad1" style="text-align:center;">0deg</div><br>
+        <div id="grad2" style="text-align:center;">90deg</div><br>
+        <div id="grad3" style="text-align:center;">180deg</div><br>
+        <div id="grad4" style="text-align:center;">-90deg</div>
+
+        CSS:
+        #grad1 {
+        height: 100px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(0deg, red, yellow);
+        }
+
+        #grad2 {
+        height: 100px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(90deg, red, yellow);
+        }
+
+        #grad3 {
+        height: 100px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(180deg, red, yellow);
+        }
+
+        #grad4 {
+        height: 100px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(-90deg, red, yellow);
+        }
+
+    5.  Ejercicio 05: 15_CSS_Degradados_Ej-05.html
+        El siguiente ejemplo muestra cómo crear un degradado lineal (de izquierda a derecha) con el color del arco iris y algo de texto.
+
+        HTML:
+        <h1>Gradientes lineales - Arco iris</h1>
+        <div id="grad1" style="text-align:center;margin:auto;color:#888888;font-size:40px;font-weight:bold">
+        Fondo del arco iris
+        </div>
+
+        CSS:
+        #grad1 {
+        height: 100px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+    
+5.3     Usar transparencia:
+        Los degradados CSS también admiten la transparencia, que se puede utilizar para crear efectos de desvanecimiento.
+
+        Para agregar transparencia, usamos la función rgba () para definir las paradas de color. El último parámetro de la función rgba () puede ser un valor de 0 a 1, y define la transparencia del color: 0 indica transparencia total, 1 indica todo color (sin transparencia).
+
+    6.  Ejercicio 06: 15_CSS_Degradados_Ej-06.html
+        El siguiente ejemplo muestra un degradado lineal que comienza desde la izquierda. Comienza completamente transparente, pasando a rojo a todo color..
+
+        HTML:
+        <h1> Degradado lineal: Transparencia </h1>
+        <p> Para agregar transparencia, usamos la función rgba () para definir las paradas de color. El último parámetro en la función rgba () puede ser un valor de 0 a 1, y define la transparencia del color: 0 indica transparencia total, 1 indica todo color (sin transparencia). </p>
+        <div id = "grad1"> </div>
+
+        CSS:
+        #grad1 {
+        height: 200px;
+        background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+        }
+
+5.4     Degradados radiales CSS
+        Un degradado radial está definido por su centro.
+
+        Para crear un degradado radial, también debe definir al menos dos paradas de color.
+
+        Sintaxis:
+        background-image: radial-gradient(shape size at position, start-color, ..., last-color);
+
+        De forma predeterminada, la forma es elipse, el tamaño es la esquina más lejana y la posición es el centro.
+        Degradado radial: paradas de color espaciadas uniformemente (esto es predeterminado)
+
+    7.  Ejercicio 07: 15_CSS_Degradados_Ej-07.html
+        El siguiente ejemplo muestra un degradado radial con paradas de color espaciadas uniformemente.
+        
+        HTML:
+        <h1>Gradiente radial: paradas de color espaciadas uniformemente</h1>
+        <div id="grad1"></div>
+
+        CSS:
+        #grad1 {
+        height: 250px;
+        width: 450px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: radial-gradient(red, yellow, green);
+        }
+
+    8.  Ejercicio 08: 15_CSS_Degradados_Ej-08.html
+        Degradado radial: paradas de color espaciadas de manera diferente
+        El siguiente ejemplo muestra un degradado radial con paradas de color espaciadas de manera diferente.
+
+        HTML:
+        <h1>Gradiente radial: paradas de color espaciadas uniformemente</h1>
+        <div id="grad1"></div>
+
+        CSS:
+        #grad1 {
+        height: 250px;
+        width: 450px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: radial-gradient(red 10%, yellow 25%, green 60%);
+        }
+
+    9.  Ejercicio 09: 15_CSS_Degradados_Ej-09.html
+        Establecer forma
+        El parámetro de forma define la forma. Puede tomar el valor del círculo o elipse. El valor predeterminado es elipse.
+        El siguiente ejemplo muestra un degradado radial con forma de círculo y elipse.
+        
+        HTML:
+        <h1>Radial lineal: uso de diferentes ángulos</h1>
+        <div id="grad1" style="text-align:center;">Gradiente Elipse</div><br>
+        <div id="grad2" style="text-align:center;">Gradiente Circular</div><br>
+
+        CSS:
+        #grad1 {
+        height: 150px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: radial-gradient(red, yellow, green);
+        }
+
+        #grad2 {
+        height: 150px;
+        width: 200px;
+        background-color: red; /* For browsers that do not support gradients */
+        background-image: radial-gradient(circle, red, yellow, green);
+        }
+
+
+Practica de la propiedad: Creando la Landing Page del Portal "Eje de Modernización de la GDI".
+Practica:
+1.  Cree el archivo 15_CSS_Degradado_Cabecera.html
+2.  Cree el contenido básico. Digite "!" o "HTML5"
+3.  Ingrese dentro de las etiquetas correspondiente el siguiente código:
+
+    head:
+    <!-- Estilos de Fuentes para textos y cabeceras -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+
+    <!-- Link: https://michalsnik.github.io/aos/ -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    body:
+    <header>
+    
+        <div class="header__index">
+
+            <div class="textos-header" data-aos="zoom-in-down" data-aos-duration="3000">
+                
+                <div class="box_card_logo">
+                    <div class="card_log">
+                        <img src="img/logo-MPC.png" alt="" srcset="">
+                    </div>
+                    <div class="card_texto">
+                        <h2>Gerencia de Desarrollo Institucional</h2>
+                    </div>
+                </div>
+                
+                <h1 class="textos-header titulo">IMPLEMENTACIÓN DE LA MODERNIZACION DE LA GESTIÓN PÚBLICA EN LA MPC</h1>
+                <div class="textos-header box_definicion">
+                    <h2>Impulsando la modernización en la Municipalidad Provincial del Callao</h2>
+                    <p> <span class="resaltado">“Las cosas increíbles en el mundo de los negocios nunca las hace una
+                            sola persona, sino un equipo”</span></p><br>
+                    <P>Steve Jobs.</P>
+                </div>
+
+            </div>
+
+            <div class="wave" style="height: 120px; overflow: hidden;">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                    <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                        style="stroke: none; fill: #fff;">
+                    </path>
+                </svg>
+            </div>
+
+        </div>
+    </header>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+4.   Grabar  y visualizar navegador.
+5.  Cree el archivo 15_CSS_Degradado_Cabecera.css
+6.  Ingrese el siguiente código en el archivo 15_CSS_Degradado_Cabecera.css:
+    
+     /* Inicializa Configuración Global de la Página */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'open sans';
+        }
+
+        header {
+            width: 100%;
+        }
+
+        .resaltado {
+            font-weight: bold;
+        }
+
+        /* --- INICIA ESTILOS PAGINA INDEX ---*/
+        /* HEADER - Seccion: Imagen - Efecto Wave */
+        .header__index {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #373B44;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, hsla(217, 89%, 61%, 0.6), hsla(222, 11%, 24%, 0.6));
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, hsla(217, 89%, 61%, 0.6), hsla(222, 11%, 24%, 0.6)), url(img/portada.jpg);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .header__index .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .header.header__index .box_card_logo {
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+            color: #fff;
+        }
+
+
+        .header__index .box_card_logo .card_log {
+            width: 40%;
+            
+        }
+
+        .header__index .box_card_logo .card_text {
+            width: 60%;
+        }
+
+        .header__index .textos-header {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+
+        .textos-header .titulo {
+            font-size: 45px;
+            width: 85%;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=112, Color=#000000)";
+            /*IE 8*/
+            text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.7);
+            /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color=#000000);
+            /*IE 5.5-7*/
+        }
+
+        .textos-header .box_definicion {
+            width: 75%;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-color: hsla(0, 1%, 69%, 0.6);
+            border-radius: 20px;
+        }
+
+        .textos-header .box_definicion h2 {
+            font-size: 30px;
+            width: 80;
+            padding-bottom: 20px;
+            font-weight: 300px bold;
+        }
+
+        .textos-header .box_definicion p {
+            font-size: 16px;
+            margin-left: 40px;
+            margin-right: 40px;
+            font-weight: 200;
+            text-align: center;
+            color: black
+        }
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.

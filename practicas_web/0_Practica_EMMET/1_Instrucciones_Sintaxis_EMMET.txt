@@ -1,0 +1,189 @@
+SINTAXIS DE ABREVIATURAS EMMET
+Emmet usa una sintaxis similar a los selectores CSS para describir las posiciones de los elementos dentro del árbol
+generado y los atributos de los elementos.
+
+Práctica
+1. Cree el archivo 1_Sintaxis_EMMET.html
+2. Cree el contenido básico. Digite "!" o "HTML5"
+3. Ingrese dentro del "Body" el siguiente código:
+
+Elementos
+Puede utilizar los nombres de los elementos como "div" o "p" para generar etiquetas HTML. Emmet no tiene un conjunto
+predefinido de nombres de etiquetas disponibles, puede escribir cualquier palabra y transformarla en una etiqueta: div→
+<div></div>, foo→ <foo></foo>y así sucesivamente.
+
+
+A.  Operadores de anidamiento
+
+    Los operadores de anidamiento se utilizan para colocar elementos de abreviatura dentro del árbol generado: si debe
+    colocarse dentro o cerca del elemento de contexto.
+
+    1. Hijo: >
+    Puede usar el operador ">" para anidar elementos entre sí:
+
+    div>ul>li{Elemento $}
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    div>p{lorem10}>bq{lorem10}
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    2. Hermano: +
+    Utilice el + operador para colocar elementos cerca unos de otros, en el mismo nivel:
+
+    div+p{lorem10}+bq{lorem10}
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    3 Subir: ^
+    Con el operador ">", está descendiendo por el árbol generado y las posiciones de todos los elementos hermanos se
+    resolverán contra el elemento más profundo:
+
+    div{Lorem10}+div{Lorem10}>p{Lorem10}>span{Lorem10}+em{Lorem10}+bq{Lorem10}
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    Con el operador "^", puede subir un nivel en el árbol y cambiar el contexto donde deberían aparecer los siguientes
+    elementos:
+
+    div{lorem10}+div{lorem10}>p{lorem10}>span{lorem10}+em{lorem10}^bq{lorem10}
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    Puede utilizar tantos ^operadores como desee, cada operador subirá un nivel:
+
+    div{lorem10}+div{lorem10}>p{lorem10}>span{lorem10}+em{lorem10}^^^bq{lorem10}
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    4. Multiplicación: *
+    Con el *operador puede definir cuántas veces se debe generar el elemento:
+
+    ul>li{Lista $}*5
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    5. Agrupamiento: ()
+    Los usuarios avanzados de Emmets utilizan paréntesis para agrupar subárboles en abreviaturas complejas:
+
+    div>(header>ul>li{$$.}*15>a[href="#nada"]{Enlace $})+footer>p>lorem10
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    Si está trabajando con el DOM (Document Object Model, o lo que es lo mismo, la Estructura del Documento HTML) del
+    navegador, puede pensar en los grupos como Fragmentos de documento: cada grupo contiene un subárbol de abreviaturas y
+    todos los elementos siguientes se insertan en el mismo nivel que el primer elemento del grupo.
+
+    Puede anidar grupos unos dentro de otros y combinarlos con el operador de multiplicación "*" :
+
+    div>table>tr>th*4{Cabecera$}^(tr>td*4{Fila$})*3+footer>p>lorem10
+    - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    Con los grupos, literalmente puede escribir marcas de página completa con una sola abreviatura, pero no lo haga.
+
+B.  Operadores de atributos
+
+    Los operadores de atributo se utilizan para modificar atributos de elementos generados. Por ejemplo, en HTML y XML puede
+    agregar rápidamente un classatributo al elemento generado.
+
+    1.  ID y CLASE
+        En CSS, utiliza elemento "#id" y elemento ".class" la notación permite llegar a los elementos con especificados "id" o
+        "class" "atributos". En Emmet, puede usar la misma sintaxis para agregar estos atributos al elemento especificado:
+
+        div#header+div.page+div#footer.class1.class2.class3
+        - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+
+    2.  Atributos personalizados
+        Puede usar la notación "[attr]" (como en CSS) para agregar atributos personalizados a su elemento HTML:
+
+        td[title="Hello world!" colspan=3]
+        - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+        - Puede colocar tantos atributos como desee entre corchetes.
+        - No tiene que especificar valores de atributo: 
+
+        td[colspan title] se producirá <td colspan="" title=""> con tabuladores dentro de cada atributo vacío.
+        - Puede utilizar comillas simples o dobles para citar valores de atributo.
+        - No necesita citar valores si no contienen espacios: td[title=hello colspan=3]funcionará.
+
+    3.  Numeración de artículos: $
+        Con el operador multiplicación "*" puede repetir elementos, pero con el $ que puede incrementar un contador. Coloque el operador "$" 
+        dentro del nombre del elemento, el nombre del atributo o el valor del atributo para generar el número actual de
+        elemento repetido:
+
+        ul>li.item${Lista $}*5
+        - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+        Puede utilizar varios $en una fila para rellenar el número con ceros:
+
+        ul>li.item$$${Lista $$$}*5
+        - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+    4.  Cambiar la base de numeración y la dirección
+        Con el modificador "@", puede cambiar la dirección de la numeración (ascendente o descendente) y la base (por ejemplo,
+        el valor inicial).
+
+        Por ejemplo, para cambiar de dirección, agregue @-después $:
+
+        ul>li.item$@-{Lista $@-}*5
+        - Pulsar {CTRL+ESPACIO} y visualizar en el IED.
+
+        Para cambiar el valor base del contador, agregue @Nmodificador a $:
+
+        ul>li.item$@3{Lista $@3}*5
+        - Grabar y visualizar navegador
+
+        Puedes usar estos modificadores juntos:
+
+        ul>li.item$@3{Lista $@-3}*5
+        - Grabar y visualizar navegador
+
+C. Texto: {}
+    Puede usar llaves para agregar texto al elemento:
+
+    a{Click me}
+    - Grabar y visualizar navegador
+
+    <a href="">Click me</a>
+    Tenga en cuenta que {text} se utiliza y se analiza como un elemento separado (como, div, petc.), pero tiene un
+    significado especial cuando está escrito justo después del elemento. Por ejemplo, a{click} y a>{click} producirá la
+    misma salida, pero a{click}+b{here} y a>{click}+b{here} no:
+
+    <!-- a{click}+b{here} -->
+    <a href="">click</a><b>here</b>
+
+    <!-- a>{click}+b{here} -->
+    <a href="">click<b>here</b></a>
+
+    En el segundo ejemplo, el <b> elemento se coloca dentro del <a> elemento. Y esa es la diferencia: cuando {text} se
+    escribe justo después del elemento, no cambia el contexto principal. Aquí hay un ejemplo más complejo que muestra por qué es importante:
+
+    p>{Click }+a{here}+{ to continue}
+    - Grabar y visualizar navegador
+
+    En este ejemplo, para escribir el elemento "Click here to continue" con un enlace al interior, nos hemos movido explícitamente hacia abajo en el árbol con el operador ">" después de la etiqueta <p>, pero en el caso de la etiqueta "a" no tenemos que hacerlo, ya que necesitamos el elemento <a> solo con la palabra "here", sin cambiar el contexto principal.
+
+    A modo de comparación, aquí está la misma abreviatura escrita sin > operador secundario :
+
+    p{Click }+a{here}+{ to continue}
+    - Grabar y visualizar navegador
+
+D.  Notas sobre el formato de abreviaturas
+
+    Cuando se familiarice con la sintaxis de abreviaturas de Emmet, es posible que desee utilizar algún
+    formato para que sus abreviaturas sean más legibles. Por ejemplo, use espacios entre elementos y
+    operadores, como este:
+
+    (header > ul.nav > li*5) + footer
+    Pero no funcionará, porque el espacio es un símbolo de parada donde Emmet detiene el análisis de
+    abreviaturas.
+
+    Muchos usuarios piensan erróneamente que cada abreviatura debe escribirse en una nueva línea, pero
+    están equivocados: puede escribir y expandir la abreviatura en cualquier parte del texto.
+
+    Es por eso que Emmet necesita algunos indicadores (como espacios) donde debería dejar de analizar
+    para no expandir nada que no necesite. Si todavía piensa que este formato es necesario para las
+    abreviaturas complejas para hacerlas más legibles:
+
+    1. Las abreviaturas no son un lenguaje de plantilla, no tienen que ser "legibles", tienen que ser
+    "rápidamente expandibles y removibles".
+
+    2. Realmente no es necesario escribir abreviaturas complejas. Deje de pensar que "escribir" es el
+    proceso más lento del desarrollo web.
+
+    3. Descubrirá rápidamente que construir una sola abreviatura compleja es mucho más lento y propenso
+    a errores que construir yescribir algunas breves

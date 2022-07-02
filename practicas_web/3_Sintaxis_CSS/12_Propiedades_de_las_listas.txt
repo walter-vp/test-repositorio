@@ -1,0 +1,125 @@
+Las listas HTML y CSS Propiedades de la lista
+
+En HTML, hay dos tipos principales de listas:
+
+listas no ordenadas (<ul>) - los elementos de la lista están marcados con "bullets" o viñetas.
+listas ordenadas (<ol>) - los elementos de la lista están marcados con números o letras.
+Las propiedades de la lista de CSS le permiten:
+
+Establecer diferentes marcadores de elementos de lista para las listas ordenadas
+Establecer diferentes marcadores de elementos de lista para listas desordenadas
+Configurar una imagen como el marcador de la lista de elementos
+Añadir colores de fondo para las listas y los elementos de la lista
+
+Pasemos a la parte práctica:
+Nota: Para los ejercicios del presente capítulo se creará el archivo: "10_Propiedades_de_texto_Ej-??.html". Los ?? serán reemplazados por el número del Ejercio, luego cncruste el siguiente código CSS(entre etiquetas <style> </style>) y HTML (entre etiquetas <body> </body>) en las secciones correspondientes.
+
+I.      Diferentes marcadores elemento de lista
+        El list-style-type propiedad especifica el tipo de marcador lista de elementos.
+        
+        Ejercicio 01: 12_Propiedades_de_las_listas_Ej-01.html
+                
+        HTML:
+        h2{La propiedad de tipo de estilo de lista}
+        p{Ejemplo de listas desordenadas: }
+        ul.a>li{Café}+li{Té}+li{Coca Cola}
+        ul.b>li{Lista 1}+li{Lista 2}+li{Lista 3}
+        p{Ejemplo de listas ordenadas: }
+        ol.c>li{Café}+li{Té}+li{Coca Cola}
+        ol.d>li{Lista 1}+li{Lista 2}+li{Lista 3}
+
+        CSS:
+        ul.a { list-style-type: circle; }
+        ul.b { list-style-type: square; }
+        ol.c { list-style-type: upper-roman; }
+        ol.d { list-style-type: lower-alpha; }
+
+II.     Una imagen como el marcador de la lista de elementos
+        La propiedad "list-style-image" especifica una imagen como el marcador de lista de elementos.
+        
+        Ejercicio 02: 12_Propiedades_de_las_listas_Ej-02.html
+        HTML:
+        h2{La propiedad list-style-image}
+        p{La propiedad list-style-image especifica una imagen como marcador de elemento de lista: }
+        ul>li{Café}+li{Té}+li{Coca Cola}
+
+        CSS:
+        ul { list-style-image: url('sqpurple.gif'); }
+
+III.    Colocando los marcadores de elemento <li> por dentro o fuera de la lista
+        La propiedad "list-style-position" especifica si los marcadores lista de artículos deben aparecer dentro o fuera del flujo del contenido del marcador del elemento HTML.
+
+        Ejercicio 03: 12_Propiedades_de_las_listas_Ej-03.html
+        HTML:
+       <h1>La propiedad list-style-position</h1>
+
+        <h2>lista-estilo-posición: exterior (predeterminado): </h2>
+
+        <ul class="a">
+                <li> Café: Lorem100 </li>
+                <li> Té: Lorem110 </li>
+                <li> Coca Cola: Lorem150 </li>
+        </ul>
+
+        <h2>posición-estilo-lista: interior: </h2>
+
+        <ul class="b">
+                <li>Café: Lorem100 </li>
+                <li>Té: Lorem110 </li>
+                <li>Coca Cola: Lorem150 </li>
+        </ul>
+
+        CSS:
+        ul.a { list-style-position: outside; }
+        ul.b { list-style-position: inside; }
+
+IV.     Lista - Abreviación de las propiedades
+        La propiedad "list-style" es una propiedad abreviada. Se utiliza para configurar todas las propiedades de la lista en una declaración.
+       
+        Ejercicio 04: 12_Propiedades_de_las_listas_Ej-04.html
+        HTML:
+        h2{The list-style Property}
+        p{La propiedad de estilo de lista es una propiedad abreviada que se utiliza para establecer todas las propiedades de la lista en una declaración.}
+        ul>li{Coffee}+li{Tea}+li{Coca Cola}
+
+        CSS:
+        ul { list-style: square inside url("sqpurple.gif"); }
+
+        Cuando se utiliza la propiedad rápida, el orden de los valores de la propiedad son:
+        - list-style-type (si no se especifica un estilo de imagen de la lista, el valor de esta propiedad se mostrará si la imagen por alguna razón no se puede visualizar).
+        - list-style-position (especifica si los marcadores lista de artículos deben aparecer dentro o fuera del flujo de contenido)
+        - list-style-image (especifica una imagen como el marcador de lista de elementos).
+        Si uno de los valores de las propiedades anteriormente faltan, se inserta el valor predeterminado de la propiedad que faltan, si los hubiere.
+
+VI.     Lista con Colores: Styling
+        Podemos también también listas de estilo con colores, para que se vean un poco más interesante.
+        Cualquier cosa añadida a la etiqueta <ol> o <ul>, afecta a toda la lista, mientras que las propiedades que se añaden a la etiqueta <li>  afectará a los elementos individuales de la lista.
+
+        Ejercicio 05: 12_Propiedades_de_las_listas_Ej-05.html
+        HTML:
+        h1{Aplicar estilos a listas con colores}
+        ol>li{Café}+li{Té}+li{Coca Cola}
+        ul>li{Café}+li{Té}+li{Coca Cola}
+
+        CSS:
+        ol {
+            background: #ff9999;
+            padding: 20px;
+        }
+
+        ol li {
+            background: #ffe5e5;
+            padding: 5px;
+            margin-left: 35px;
+        }
+
+        ul {
+            background: #3399ff;
+            padding: 20px;
+        }
+
+        ul li {
+            background: #cce5ff;
+            margin: 5px;
+        }
+        

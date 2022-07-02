@@ -1,0 +1,64 @@
+Estilo de Relleno (Padding)
+Las propiedades CSS: padding se utilizan para generar espacio alrededor del contenido de un elemento, dentro de los bordes definidos.
+
+Con CSS, tienes control total sobre el relleno. Existen propiedades para configurar el relleno para cada lado de un elemento (superior, derecha, inferior e izquierda).
+
+Nota: El relleno no se ve afectado por el color de fondo del elemento!
+
+CSS tiene propiedades para especificar el relleno para cada lado de un elemento:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+Todas las propiedades de relleno pueden tener los siguientes valores:
+
+longitud - especifica un relleno en px, pt, cm , etc.
+% - Especifica un relleno en % de la anchura del elemento que contiene
+inherit - especifica que el relleno debe ser heredado de elemento padre
+
+Practica:
+1. Cree el archivo 5_Estilo_Padding.html
+2. Cree el contenido básico. Digite "!" o "HTML5"
+3. Ingrese dentro del "Body" el siguiente código:
+    h2{Using individual padding properties}+div>p{This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px.}
+
+4. Grabar  y visualizar navegador.
+5. Cree el archivo 5_Estilo_Padding.css
+6.  Ingrese el siguiente código en el archivo 5_Estilo_Padding.css:
+
+    div {
+    border: 1px solid black;
+    background-color: lightblue;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px; 
+    }
+
+7. Vincule el archivo HTML con el archivo CSS. Grabar y visualizar en el navegador.
+8. Visualizar elementos con la herramienta INSPECTOR DE ELEMENTOS DEL CHROME.
+
+Abreviación de las propiedades:
+Para acortar el código, es posible especificar todas las propiedades de relleno en una propiedad.
+La siguiente sintaxis es una propiedad resumida para las siguientes propiedades de relleno individuales:
+
+padding-top: ;
+padding-right: ;
+padding-bottom: ;
+padding-left: ;
+
+padding: [padding-top]px [padding-right]px [padding-bottom]px [padding-left]px;
+
+9. En el archivo HTML el siguiente código fuera y dentro de las etiquetas <div> </div>:
+Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+- br
+- p.resumido>lorem20
+
+10. En el archivo CSS incorpore estas nuevas reglas. 
+Nota: No olvidar grabar al finalizar cada regla CSS y visualizar.
+
+p.resumido {
+    padding: 50px 30px 50px 80px;
+    border: 1px solid orange;
+}
