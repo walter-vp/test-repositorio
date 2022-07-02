@@ -65,7 +65,7 @@ Nota: Para los ejercicios del presente capítulo se creará el archivo: "1_Sinta
         4.      Ejercicio 04: 1_Sintaxis_HTML_Ej-04.html
                 <!DOCTYPE html>
                 <html>
-                <cuerpo>
+                <body>
 
                 <h2> Enlaces HTML </h2>
                 <p> Los enlaces HTML se definen con la etiqueta &lsaquo;a&rsaquo;: </p>
