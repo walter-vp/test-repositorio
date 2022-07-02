@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/stilos.css">
+    <title>Estructura Secuencial</title>
+</head>
+<body>
+    
+    <header>
+        <h1>ESTRUCTURA SECUENCIAL</h1>
+        <h2 class="centrado">Problema N° 01</h2>
+    </header>
+
+    <main>
+    <form action="">
+        
+        <table>
+            <tr>
+                <th class="col_izq">Variables</th>
+                <th class="col_der">Valores</th>
+            </tr>
+            <tr>
+                <td class="col_izq"><label for="txtn1">Número 1</label></td>
+                <td class="col_der"><input type="text" name="txtn1" id="txtn1" value=""></td>
+            </tr>
+            <tr>
+                <td class="col_izq"><label for="txtn2"></label>Número 2</td>
+                <td class="col_der"><input type="text" name="txtn2" id="txtn2" value=""></td>
+            </tr>
+            <tr>
+                <td class="col_izq"><label for="txtnS"></label>Suma</td>
+                <td class="col_der"><input type="text" name="txtS" id="txtS" value="" readonly></td>
+            </tr>
+            <tr>
+                <td class="col_izq"></td>
+                <td class="col_der"><button type="button" onclick="calcular()">Calcular</button></td>
+            </tr>
+        </table>
+
+    </form>
+        
+
+    </main>
+
+    <footer>
+        <p>Todos los derechos reservados &copy;2022 Ing. Walter Vásquez Piña</p>
+    </footer>
+
+    <script>
+        function calcular(){
+            // Variables
+            let n1, n2, suma;
+
+            n1 = Number(document.getElementById('txtn1').value);
+            n2 = Number(document.getElementById('txtn2').value);
+
+            // Proceso
+            suma = n1 + n2;
+
+            // Salida
+            document.getElementById('txtS').value = suma;
+            document.getElementById('txtn1').focus();
+        }
+    </script>
+
+</body>
+</html>
