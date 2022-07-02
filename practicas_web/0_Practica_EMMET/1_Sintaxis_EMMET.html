@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pactica EMMET 01</title>
+</head>
+
+<body>
+
+    <!-- div>ul>li{Elemento $}*5 -->
+    <div>
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>Elemento 5</li>
+        </ul>
+    </div>
+
+    <!-- div>p{lorem10}>bq{lorem10} -->
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, ducimus!
+        <blockquote>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, ipsa.
+        </blockquote>
+        </p>
+    </div>
+
+    <!-- div+p{lorem10}+bq{lorem10} -->
+    <div></div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur, veniam?</p>
+    <blockquote>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, aut!
+    </blockquote>
+
+    <!-- div{Lorem10}+div{Lorem10}>p{Lorem10}>span{Lorem10}+em{Lorem10}+bq{Lorem10} -->
+    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, quidem.</div>
+    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, aspernatur.
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, ab.
+            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, esse.
+            </span>
+            <em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, explicabo.</em>
+        <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, aliquam.</blockquote>
+        </p>
+    </div>
+
+    <!-- div{lorem10}+div{lorem10}>p{lorem10}>span{lorem10}+em{lorem10}^bq{lorem10} -->
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, nisi.</div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, molestiae.
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, reprehenderit?
+            <span>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, quam?
+            </span>
+            <em>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, perspiciatis?
+            </em>
+        </p>
+        <blockquote>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, asperiores.</blockquote>
+    </div>
+
+    <!-- div{lorem10}+div{lorem10}>p{lorem10}>span{lorem10}+em{lorem10}^^bq{lorem10} -->
+    <div>lorem10</div>
+    <div>lorem10
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, amet?<span>Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Atque, fuga.</span><em>Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Natus, quidem.</em>
+        </p>
+    </div>
+    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, accusantium?</blockquote>
+
+    <!-- div{lorem10}>div{lorem10}>p{lorem10}>span{lorem10}+em{lorem10}^^^bq{lorem10} -->
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, adipisci!
+        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, odio.
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae, vel.<span>Lorem ipsum dolor, sit amet
+                    consectetur adipisicing elit. Nulla, eius!</span><em>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Alias, dolorum!</em>
+            </p>
+        </div>
+    </div>
+    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, labore?</blockquote>
+
+    <!-- ul>li{Lista $}*5 -->
+    <ul>
+        <li>Lista 1</li>
+        <li>Lista 2</li>
+        <li>Lista 3</li>
+        <li>Lista 4</li>
+        <li>Lista 5</li>
+    </ul>
+
+    <!-- div>(header>ul>li{$$.}*15>a[href="#nada"]{Enlace $})+footer>p>lorem10 -->
+    <div>
+        <header>
+            <ul>
+                <li>01.<a href="#nada">Enlace 1</a></li>
+                <li>02.<a href="#nada">Enlace 2</a></li>
+                <li>03.<a href="#nada">Enlace 3</a></li>
+                <li>04.<a href="#nada">Enlace 4</a></li>
+                <li>05.<a href="#nada">Enlace 5</a></li>
+                <li>06.<a href="#nada">Enlace 6</a></li>
+                <li>07.<a href="#nada">Enlace 7</a></li>
+                <li>08.<a href="#nada">Enlace 8</a></li>
+                <li>09.<a href="#nada">Enlace 9</a></li>
+                <li>10.<a href="#nada">Enlace 10</a></li>
+                <li>11.<a href="#nada">Enlace 11</a></li>
+                <li>12.<a href="#nada">Enlace 12</a></li>
+                <li>13.<a href="#nada">Enlace 13</a></li>
+                <li>14.<a href="#nada">Enlace 14</a></li>
+                <li>15.<a href="#nada">Enlace 15</a></li>
+            </ul>
+        </header>
+        <footer>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, sunt!</p>
+        </footer>
+    </div>
+
+    <!-- div>table>tr>th*4{Cabecera$}^(tr>td*4{Fila$})*3+footer>p>lorem10 -->
+    <div>
+        <table>
+            <tr>
+                <th>Cabecera1</th>
+                <th>Cabecera2</th>
+                <th>Cabecera3</th>
+                <th>Cabecera4</th>
+            </tr>
+            <tr>
+                <td>Fila1</td>
+                <td>Fila2</td>
+                <td>Fila3</td>
+                <td>Fila4</td>
+            </tr>
+            <tr>
+                <td>Fila1</td>
+                <td>Fila2</td>
+                <td>Fila3</td>
+                <td>Fila4</td>
+            </tr>
+            <tr>
+                <td>Fila1</td>
+                <td>Fila2</td>
+                <td>Fila3</td>
+                <td>Fila4</td>
+            </tr>
+            <footer>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, dolores!</p>
+            </footer>
+        </table>
+    </div>
+
+    <br>
+
+    <!-- div#header+div.page+div#footer.class1.class2.class3 -->
+    <div id="header">Lorem ipsum dolor sit amet.</div>
+    <div class="page">Lorem ipsum dolor sit amet.</div>
+    <div id="footer" class="class1 class2 class3">Lorem ipsum dolor sit amet.</div>
+
+    <!-- ul>li.item${Lista $}*5 -->
+    <ul>
+        <li class="item1">Lista 1</li>
+        <li class="item2">Lista 2</li>
+        <li class="item3">Lista 3</li>
+        <li class="item4">Lista 4</li>
+        <li class="item5">Lista 5</li>
+    </ul>
+
+    <!-- ul>li.item$$${Lista $$$}*5 -->
+    <ul>
+        <li class="item001">Lista 001</li>
+        <li class="item002">Lista 002</li>
+        <li class="item003">Lista 003</li>
+        <li class="item004">Lista 004</li>
+        <li class="item005">Lista 005</li>
+    </ul>
+
+    <!-- ul>li.item$@-{Lista $@-}*5 -->
+    <ul>
+        <li class="item5">Lista 5</li>
+        <li class="item4">Lista 4</li>
+        <li class="item3">Lista 3</li>
+        <li class="item2">Lista 2</li>
+        <li class="item1">Lista 1</li>
+    </ul>
+
+    <!-- ul>li.item$@3{Lista $@3}*5 -->
+    <ul>
+        <li class="item3">Lista 3</li>
+        <li class="item4">Lista 4</li>
+        <li class="item5">Lista 5</li>
+        <li class="item6">Lista 6</li>
+        <li class="item7">Lista 7</li>
+    </ul>
+
+    <!-- ul>li.item$@3{Lista $@-3}*5 -->
+    <ul>
+        <li class="item3">Lista 7</li>
+        <li class="item4">Lista 6</li>
+        <li class="item5">Lista 5</li>
+        <li class="item6">Lista 4</li>
+        <li class="item7">Lista 3</li>
+    </ul>
+
+</body>
+
+</html>
